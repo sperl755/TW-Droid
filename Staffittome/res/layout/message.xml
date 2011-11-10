@@ -1,0 +1,53 @@
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:orientation="vertical"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:background="@drawable/backgroundcolor" android:isScrollContainer="true">
+    <FrameLayout android:layout_height="wrap_content" android:id="@+id/frameLayout1" android:layout_width="match_parent">
+        <ImageView android:scaleType="centerCrop" android:id="@+id/imageView1" android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_gravity="top" android:paddingTop="0px" android:src="@drawable/header_bgx"></ImageView>
+        <ImageView android:id="@+id/imageView3" android:layout_height="wrap_content" android:layout_width="wrap_content" android:src="@drawable/logox" android:paddingTop="10dp" android:paddingLeft="3dp" android:layout_gravity="center_horizontal"></ImageView>
+        <Button android:id="@+id/notificationlit" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/notify_alertx" android:layout_gravity="right"  android:gravity="right" android:layout_marginTop="3dp" android:layout_marginRight="4dp"></Button>
+        <Button android:id="@+id/notificationunlit" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/notifyx" android:layout_gravity="right"  android:gravity="right" android:layout_marginTop="3dp" android:layout_marginRight="4dp"></Button>      
+        <ImageButton android:background="@drawable/back_button" android:src="@drawable/back_button_selector" android:layout_height="wrap_content" android:id="@+id/backInbox" android:layout_width="wrap_content" android:layout_gravity="center_vertical" android:layout_marginLeft="4dp"></ImageButton>
+    </FrameLayout>
+    <FrameLayout android:layout_width="match_parent" android:id="@+id/frameLayout4" android:layout_height="match_parent">
+        <ScrollView android:layout_width="match_parent" android:layout_height="match_parent" android:id="@+id/scrollView1">
+            <LinearLayout android:layout_height="match_parent" android:id="@+id/linearLayout1" android:layout_width="match_parent" android:orientation="vertical">
+                <LinearLayout android:id="@+id/frameLayout8" android:layout_width="match_parent" android:paddingTop="10px" android:layout_height="wrap_content">
+                    <FrameLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:id="@+id/frameLayout2">
+                        <ImageView android:id="@+id/imageView4" android:src="@drawable/module_headerx" android:layout_width="match_parent" android:layout_height="wrap_content"></ImageView>
+                        <TextView android:paddingLeft="15dp" android:textColor="#31486a" android:text="Subject goes here" android:layout_width="wrap_content" android:layout_gravity="center_vertical" android:layout_height="wrap_content" android:id="@+id/messageSubject"></TextView>
+                        <Button android:background="@drawable/gaybutton" android:layout_marginRight="15dp" android:textColor="#7b95c4" android:layout_width="wrap_content" android:layout_gravity="center_vertical|right" android:layout_height="wrap_content" android:text="Dali Zheng" android:id="@+id/recipiantButton"></Button>
+                    </FrameLayout>
+                    <ImageView android:id="@+id/imageView2" android:layout_width="wrap_content" android:layout_height="20px" android:src="@drawable/header_shadowx" android:layout_gravity="top" android:scaleType="centerCrop"></ImageView>
+                    <ImageView android:id="@+id/ImageView01" android:layout_width="wrap_content" android:layout_height="20px" android:src="@drawable/footer_shadowx" android:layout_gravity="bottom" android:paddingTop="0dp" android:scaleType="centerCrop"></ImageView>
+                </LinearLayout>
+                <LinearLayout android:id="@+id/LinearLayout01" android:layout_width="match_parent" android:layout_height="wrap_content">
+                    <FrameLayout android:layout_width="match_parent" android:layout_height="match_parent" android:id="@+id/FrameLayout01">
+                        <ImageView android:id="@+id/ImageView03" android:src="@drawable/module_row_lastx" android:layout_width="match_parent" android:layout_height="wrap_content"></ImageView>
+                        <TextView android:paddingLeft="70dp" android:textColor="#333333" android:paddingBottom="22dp" android:text="Dali Zheng" android:gravity="center_vertical" android:layout_width="wrap_content" android:layout_gravity="center_vertical" android:layout_height="wrap_content" android:id="@+id/senderid"></TextView>
+                        <TextView android:paddingLeft="70dp" android:textColor="#666" android:layout_marginRight="25dp" android:paddingTop="10dp" android:text="Herp Derp everyone! thats what i want " android:layout_width="wrap_content" android:layout_gravity="center_vertical" android:layout_height="wrap_content" android:textSize="12dp" android:id="@+id/recipientMessage1"></TextView>
+                    </FrameLayout>
+                </LinearLayout>
+                <LinearLayout android:id="@+id/linearLayout2" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_gravity="bottom">
+                    <FrameLayout android:layout_width="match_parent" android:layout_height="match_parent" android:id="@+id/frameLayout2">
+                        <ImageView android:id="@+id/imageView4" android:src="@drawable/module_headerx" android:layout_width="match_parent" android:layout_height="wrap_content" android:paddingTop="10px"></ImageView>
+                        <TextView android:paddingLeft="15dp" android:textColor="#31486a" android:id="@+id/notificationsinbox" android:text="Respond to Message" android:layout_width="wrap_content" android:layout_gravity="center_vertical" android:layout_height="wrap_content"></TextView>
+                    </FrameLayout>
+                    <FrameLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:id="@+id/frameLayout3" android:paddingBottom="10dp">
+                        <ImageView android:id="@+id/imageView6" android:src="@drawable/input_bg" android:layout_width="match_parent" android:layout_height="wrap_content"></ImageView>
+                        <EditText android:lines="3" android:maxLines="3" android:maxHeight="135px" android:maxWidth="419px" android:layout_width="wrap_content" android:background="@drawable/input_box" android:layout_height="135px" android:layout_marginTop="10dp" android:layout_gravity="center_horizontal|top" android:paddingLeft="10px" android:id="@+id/messageBox">
+                            <requestFocus></requestFocus>
+                        </EditText>
+                        <Button android:background="@drawable/gaybutton" android:layout_marginRight="15dp" android:textColor="#7b95c4" android:layout_marginLeft="20dp" android:layout_width="wrap_content" android:layout_marginBottom="10dp" android:layout_gravity="bottom|left" android:layout_height="wrap_content" android:text="Send" android:id="@+id/sendButton"></Button>
+                        <TextView android:paddingLeft="70dp" android:textColor="#999" android:layout_marginRight="25dp" android:id="@+id/TextView05" android:text="120 characters left." android:layout_width="wrap_content" android:layout_marginBottom="20dp" android:layout_gravity="bottom|right" android:layout_height="wrap_content" android:textSize="12dp"></TextView>
+                    </FrameLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+        <ImageView android:id="@+id/imageView2" android:layout_width="wrap_content" android:layout_height="20px" android:src="@drawable/header_shadowx" android:layout_gravity="top" android:scaleType="centerCrop"></ImageView>
+        <ImageView android:id="@+id/ImageView01" android:layout_width="wrap_content" android:layout_height="20px" android:src="@drawable/footer_shadowx" android:layout_gravity="bottom" android:paddingTop="0dp" android:scaleType="centerCrop"></ImageView>
+    </FrameLayout>
+    
+</LinearLayout>

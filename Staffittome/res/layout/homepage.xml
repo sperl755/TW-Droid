@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TabHost xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@android:id/tabhost"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:orientation="vertical"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:background="@drawable/backgroundcolor" android:isScrollContainer="true">
+    <FrameLayout android:layout_height="wrap_content" android:id="@+id/frameLayout1" android:layout_width="match_parent">
+        <ImageView android:scaleType="centerCrop" android:id="@+id/imageView1" android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_gravity="top" android:paddingTop="0px" android:src="@drawable/header_bgx"></ImageView>
+       <ImageView android:id="@+id/imageView3" android:layout_height="match_parent" android:layout_width="wrap_content" android:src="@drawable/toverlay"></ImageView> 
+        <Button android:id="@+id/notificationlit" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/notify_alertx" android:layout_gravity="right|center_vertical"  android:gravity="right" android:layout_marginTop="4dp" android:layout_marginRight="4dp"></Button>
+        <Button android:id="@+id/notificationunlit" android:layout_width="48px" android:layout_height="50px" android:background="@drawable/notifyx" android:layout_gravity="right"  android:gravity="right" android:layout_marginTop="7dp" android:layout_marginRight="4dp"></Button>
+ 
+    </FrameLayout>
+        
+          
+
+   <FrameLayout android:layout_height="wrap_content" android:id="@+id/tabframe" android:layout_width="match_parent">
+      
+                 
+      <LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:orientation="vertical"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:background="@drawable/tab_bg"
+   android:isScrollContainer="true">
+           <TabWidget
+            android:id="@android:id/tabs"
+            android:layout_width="fill_parent"
+            android:layout_height="70px"
+            />
+           <FrameLayout
+            android:id="@android:id/tabcontent"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:padding="0dp" 
+           />
+        
+     
+    </LinearLayout>
+      <ImageView android:scaleType="centerCrop"  android:id="@+id/cornerleft" android:layout_height="match_parent" android:layout_width="wrap_content" android:src="@drawable/top_corner_left" android:layout_gravity="left"></ImageView> 
+   <ImageView android:scaleType="centerCrop" android:id="@+id/cornerright" android:layout_height="match_parent" android:layout_width="wrap_content" android:layout_gravity="right" android:src="@drawable/top_corner_right" ></ImageView> 
+   
+     </FrameLayout>
+   </LinearLayout>
+   </TabHost>
+   
+    

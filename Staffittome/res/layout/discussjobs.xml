@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:orientation="vertical"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent">
+    <TextView android:text="JobTitle" android:textAppearance="?android:attr/textAppearanceLarge" android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/textView1" android:gravity="center_horizontal"></TextView>
+        <TextView android:text="Posted by: (PhotoGoesHere)" android:id="@+id/textView2" android:layout_width="wrap_content" android:layout_height="wrap_content"></TextView>
+            <TextView android:text="Job Details: $100hr, 1.2 mi from you, 8hr job, etc" android:id="@+id/textView3" android:layout_width="wrap_content" android:layout_height="wrap_content"></TextView>
+            <TextView android:text="Job Description: Blah blah we need a blah to do blah blah tasks around the office and must be certified in blah and is a blah learner etc." android:textAppearance="?android:attr/textAppearanceSmall" android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/textView4" android:gravity="center_horizontal"></TextView>
+            <TextView android:text="Enter Your Message:" android:textAppearance="?android:attr/textAppearanceMedium" android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/textView5"></TextView>
+            <EditText android:layout_height="wrap_content" android:layout_width="match_parent" android:id="@+id/editText1">
+                <requestFocus></requestFocus>
+            </EditText>
+            <Button android:layout_height="wrap_content" android:layout_width="wrap_content" android:gravity="center_horizontal" android:id="@+id/button1" android:text="Send Message"></Button>
+    
+</LinearLayout>

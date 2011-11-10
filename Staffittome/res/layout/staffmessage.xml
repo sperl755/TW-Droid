@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:orientation="vertical"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:background="@drawable/backgroundcolor" android:isScrollContainer="true">
+    <FrameLayout android:layout_height="wrap_content" android:layout_width="match_parent" android:id="@+id/frameLayout1">
+        <ImageView android:layout_gravity="top" android:layout_height="wrap_content" android:scaleType="centerCrop" android:layout_width="wrap_content" android:src="@drawable/header_bgx" android:paddingTop="0px" android:id="@+id/imageView1"></ImageView>
+        <ImageView android:layout_gravity="center_horizontal" android:layout_height="wrap_content" android:paddingLeft="3dp" android:layout_width="wrap_content" android:src="@drawable/logox" android:paddingTop="10dp" android:id="@+id/imageView3"></ImageView>
+        <Button android:gravity="right" android:layout_width="wrap_content" android:layout_marginTop="3dp" android:layout_gravity="right" android:id="@+id/notificationlit" android:layout_height="wrap_content" android:background="@drawable/notify_alertx" android:layout_marginRight="4dp"></Button>
+        <ImageButton android:layout_gravity="center_vertical" android:src="@drawable/back_button_selector" android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_marginLeft="4dp" android:background="@drawable/back_button" android:id="@+id/backInbox"></ImageButton>
+    </FrameLayout>
+    <FrameLayout android:layout_width="match_parent" android:id="@+id/frameLayout2" android:layout_height="match_parent">
+        <ImageView android:layout_gravity="top" android:src="@drawable/header_shadowx" android:id="@+id/imageView2" android:layout_height="20px" android:scaleType="centerCrop" android:layout_width="wrap_content"></ImageView>
+        <ImageView android:layout_gravity="bottom" android:layout_height="20px" android:scaleType="centerCrop" android:layout_width="wrap_content" android:src="@drawable/footer_shadowx" android:id="@+id/ImageView01"></ImageView>
+        <ScrollView android:layout_height="match_parent" android:layout_width="match_parent" android:id="@+id/scrollView1">
+            <LinearLayout android:id="@+id/linearLayout1" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="match_parent">
+                <FrameLayout android:layout_height="wrap_content" android:layout_width="match_parent" android:id="@+id/relativeLayout1">
+                    <FrameLayout android:layout_height="match_parent" android:layout_width="match_parent" android:id="@+id/FrameLayout02" android:paddingTop="10px">
+                        <ImageView android:layout_gravity="center_horizontal" android:layout_height="wrap_content" android:adjustViewBounds="true" android:layout_width="wrap_content" android:src="@drawable/module_headerx" android:id="@+id/ImageView02"></ImageView>
+                        <TextView android:textColor="#31486a" android:layout_width="wrap_content" android:text="Send a Proposal" android:layout_gravity="center_vertical" android:id="@+id/myCapabilitiesText" android:layout_height="match_parent" android:gravity="center_vertical" android:paddingLeft="15dp"></TextView>
+                    </FrameLayout>
+                </FrameLayout>
+                <FrameLayout android:layout_height="match_parent" android:layout_width="match_parent" android:id="@+id/frameLayout6">
+                    <ImageView android:layout_height="wrap_content" android:layout_width="match_parent" android:src="@drawable/module_rowx" android:id="@+id/imageView13"></ImageView>
+                    <TextView android:textColor="#333333" android:layout_width="wrap_content" android:text="Capability" android:layout_gravity="center_vertical" android:id="@+id/jobSkillsReq1" android:layout_height="wrap_content" android:gravity="center_vertical" android:paddingLeft="20dp"></TextView>
+                    <Spinner android:text="Select Capability" android:layout_height="wrap_content" android:id="@+id/spinner1" android:layout_gravity="center_vertical|right" android:layout_width="320px" android:layout_marginRight="20dp"></Spinner>
+                </FrameLayout>
+                <FrameLayout android:layout_height="match_parent" android:layout_width="match_parent" android:id="@+id/FrameLayout04">
+                    <ImageView android:layout_height="wrap_content" android:layout_width="match_parent" android:src="@drawable/module_rowx" android:id="@+id/ImageView05"></ImageView>
+                    <TextView android:textColor="#333333" android:layout_width="wrap_content" android:text="Rate" android:layout_gravity="center_vertical" android:id="@+id/TextView05" android:layout_height="wrap_content" android:gravity="center_vertical" android:paddingLeft="20dp"></TextView>
+                    <SeekBar android:layout_height="wrap_content" android:layout_gravity="center_vertical|right" android:layout_marginRight="20dp" android:layout_width="320px" android:id="@+id/seekRate"></SeekBar>
+                    <TextView android:textColor="#999" android:layout_width="wrap_content" android:text="$40" android:layout_gravity="center_vertical" android:layout_height="wrap_content" android:gravity="center_vertical" android:paddingLeft="20dp" android:layout_marginLeft="30dp" android:id="@+id/seekRateValue"></TextView>
+                </FrameLayout>
+                <FrameLayout android:layout_height="match_parent" android:layout_width="match_parent" android:id="@+id/FrameLayout03">
+                    <ImageView android:layout_height="wrap_content" android:layout_width="match_parent" android:src="@drawable/module_rowx" android:id="@+id/ImageView04"></ImageView>
+                    <TextView android:textColor="#333333" android:layout_width="wrap_content" android:text="Email" android:layout_gravity="center_vertical" android:id="@+id/TextView03" android:layout_height="wrap_content" android:gravity="center_vertical" android:paddingLeft="20dp"></TextView>
+                    <EditText android:layout_height="wrap_content" android:inputType="textEmailAddress" android:layout_width="320px" android:layout_gravity="center_vertical|right" android:layout_marginRight="20dp" android:id="@+id/emailedit">
+                        <requestFocus></requestFocus>
+                    </EditText>
+                </FrameLayout>
+               <FrameLayout android:layout_height="match_parent" android:layout_width="match_parent" android:id="@+id/FrameLayout01">
+                    <ImageView android:layout_height="wrap_content" android:layout_width="match_parent" android:src="@drawable/module_rowx" android:id="@+id/ImageView03"></ImageView>
+                    <TextView android:textColor="#333333" android:layout_width="wrap_content" android:text="Subject" android:layout_gravity="center_vertical" android:id="@+id/TextView01" android:layout_height="wrap_content" android:gravity="center_vertical" android:paddingLeft="20dp"></TextView>
+                    <EditText android:layout_width="320px" android:layout_gravity="center_vertical|right" android:layout_height="wrap_content" android:layout_marginRight="20dp" android:id="@+id/proposalSubject"></EditText>
+                </FrameLayout> 
+                <FrameLayout android:layout_height="wrap_content" android:layout_width="match_parent" android:id="@+id/frameLayout5">
+                    <ImageView android:layout_height="wrap_content" android:src="@drawable/proposal_bg_text" android:id="@+id/imageView4" android:layout_width="match_parent"></ImageView>
+                    <EditText android:layout_width="wrap_content" android:background="@drawable/staff_message_bg" android:layout_height="wrap_content" android:layout_gravity="center_vertical|center_horizontal" android:id="@+id/proposalEdit"></EditText>
+                </FrameLayout>
+                <FrameLayout android:layout_height="wrap_content" android:layout_width="match_parent" android:id="@+id/frameLayout3" android:layout_gravity="bottom">
+                    <ImageButton android:layout_height="wrap_content" android:layout_width="wrap_content" android:background="@drawable/send_proposal" android:src="@drawable/send_proposal_selector" android:id="@+id/sendProposalButton" android:layout_gravity="center_vertical|center_horizontal"></ImageButton>
+                    <ImageView android:layout_height="wrap_content" android:layout_width="wrap_content" android:src="@drawable/proposallines" android:id="@+id/imageView5"></ImageView>
+                </FrameLayout>
+            </LinearLayout>
+        </ScrollView>
+    </FrameLayout>
+    
+    </LinearLayout>

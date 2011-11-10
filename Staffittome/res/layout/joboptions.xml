@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:orientation="vertical"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:background="@drawable/backgroundcolor" android:isScrollContainer="true">
+    <FrameLayout android:id="@+id/frameLayout2" android:layout_width="match_parent" android:layout_height="match_parent">
+        <ImageView android:src="@drawable/header_shadowx" android:layout_height="wrap_content" android:id="@+id/ImageView01" android:layout_width="wrap_content" android:scaleType="centerCrop"></ImageView>
+        <ImageView android:src="@drawable/footer_shadowx" android:layout_height="wrap_content" android:layout_gravity="bottom" android:id="@+id/imageView1" android:layout_width="wrap_content" android:scaleType="centerCrop"></ImageView>
+        <LinearLayout android:id="@+id/linearLayout2" android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" android:paddingTop="20dp">
+            <LinearLayout android:id="@+id/linearLayout1" android:layout_height="wrap_content" android:layout_width="match_parent">
+                <FrameLayout android:id="@+id/frameLayout6" android:layout_height="match_parent" android:layout_width="match_parent">
+                    <ImageView android:src="@drawable/module_row_singlex" android:id="@+id/imageView13" android:layout_height="wrap_content" android:layout_width="match_parent"></ImageView>
+                    <TextView android:id="@+id/textView4" android:gravity="center_vertical" android:text="Category" android:textColor="#333333" android:layout_gravity="center_vertical" android:paddingBottom="20dp" android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingLeft="70dp"></TextView>
+                    <ImageButton android:layout_gravity="center_vertical|right" android:background="@drawable/arrow" android:layout_marginRight="20dp" android:id="@+id/imageButton12" android:layout_height="wrap_content" android:layout_width="wrap_content"></ImageButton>
+                </FrameLayout>
+            </LinearLayout>
+            <LinearLayout android:id="@+id/linearLayout1" android:layout_height="wrap_content" android:layout_width="match_parent">
+                <FrameLayout android:id="@+id/frameLayout6" android:layout_height="match_parent" android:layout_width="match_parent">
+                    <ImageView android:src="@drawable/module_row_singlex" android:id="@+id/imageView13" android:layout_height="wrap_content" android:layout_width="match_parent"></ImageView>
+                    <TextView android:id="@+id/textView4" android:gravity="center_vertical" android:text="Compensation Amount" android:textColor="#333333" android:layout_gravity="center_vertical" android:paddingBottom="20dp" android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingLeft="70dp"></TextView>
+                    <ImageButton android:layout_gravity="center_vertical|right" android:background="@drawable/arrow" android:layout_marginRight="20dp" android:id="@+id/imageButton41" android:layout_height="wrap_content" android:layout_width="wrap_content"></ImageButton>
+                </FrameLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </FrameLayout>
+  </LinearLayout>

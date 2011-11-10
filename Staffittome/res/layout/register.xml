@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    >
+    <TextView android:text="Please Enter Your Name" android:id="@+id/textView1" android:layout_width="wrap_content" android:layout_height="wrap_content"></TextView>
+    <EditText android:layout_height="wrap_content" android:layout_width="match_parent" android:inputType="textPersonName" android:id="@+id/nameRegister">
+        <requestFocus></requestFocus>
+    </EditText>
+	<TextView
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:text="Please enter your email"
+	    />
+	<TextView
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:text="Email:"
+	    />
+	<EditText
+		android:id="@+id/emailRegister"
+		android:singleLine="true"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	/>
+	<TextView
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:text="Password: (Must be atleast 6 characters long)"
+	    />
+	<EditText
+		android:id="@+id/passwordRegister"
+		android:password="true"
+		android:singleLine="true"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	/>
+	<Button
+		android:id="@+id/register_buttonRegister"
+		android:text="Create Your Account"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	/>
+	<TextView
+		android:id="@+id/result"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    />
+	    
+</LinearLayout>

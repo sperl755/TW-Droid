@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+      package="com.staff"
+      android:versionCode="1"
+      android:versionName="1.0">
+    <uses-sdk android:minSdkVersion="8" />
+
+    <application android:icon="@drawable/icon" android:label="@string/app_name">
+        <activity android:name=".StaffActivity"
+      			  android:screenOrientation="portrait"
+                  android:label="@string/app_name"
+                  android:theme="@android:style/Theme.NoTitleBar"
+                  >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+	<activity android:name=".Register" ></activity>
+		<activity android:name=".FacebookActivity"></activity>
+		<activity android:name=".HomePage"></activity>
+<activity android:name=".TabMain" android:theme="@android:style/Theme.NoTitleBar"
+android:screenOrientation="portrait" ></activity>
+		<activity android:name=".JobApply" android:theme="@android:style/Theme.NoTitleBar"       			  android:screenOrientation="portrait"
+		 ></activity>
+		<activity android:name=".DiscussJobs" ></activity>
+		<activity android:name=".MessageInbox" android:theme="@android:style/Theme.NoTitleBar"       			  android:screenOrientation="portrait"
+		 ></activity>
+		<activity android:name=".SearchMaps" android:windowSoftInputMode="adjustResize" ></activity>
+		<activity android:name=".CheckIn" ></activity>
+		<activity android:name=".DashboardActivity" ></activity>
+		<activity android:name=".StaffYourself" ></activity>
+		<activity android:name=".SYourself" ></activity>
+		<activity android:name=".StaffToFriend" ></activity>
+		<activity android:name=".ListJobs" ></activity>
+		<activity android:name=".JobOptions" ></activity>
+		<activity android:name=".ManualTime" ></activity>
+		<activity android:name=".Proposal" android:theme="@android:style/Theme.NoTitleBar"
+android:windowSoftInputMode="adjustResize" android:screenOrientation="portrait" ></activity>
+		<activity android:name=".Message" android:theme="@android:style/Theme.NoTitleBar"
+android:windowSoftInputMode="adjustResize" android:screenOrientation="portrait" ></activity>
+		<activity android:name=".SearchTabMain" android:theme="@android:style/Theme.NoTitleBar"
+android:windowSoftInputMode="adjustResize" android:screenOrientation="portrait" ></activity>
+		
+		<service android:name="StaffService"> </service>
+   <uses-library android:name="com.google.android.maps" />
+   
+    </application>
+     <uses-permission android:name="android.permission.CAMERA" />
+ <uses-feature android:name="android.hardware.camera" />
+ <uses-feature android:name="android.hardware.camera.autofocus" />
+ <uses-permission android:name="android.permission.RECORD_AUDIO" />
+<uses-permission android:name="android.permission.INTERNET"></uses-permission>
+<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"></uses-permission>
+<uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION"></uses-permission>
+
+
+</manifest>

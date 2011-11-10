@@ -1,0 +1,24 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/mainlayout"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <com.google.android.maps.MapView
+        android:id="@+id/mapview"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:clickable="true"
+        android:apiKey="0kN3xdrrzKtxkUpDRCq8HrIU9AZgcN4Vp43Ja9g"
+    />
+    <ImageView android:src="@drawable/footer_shadowx" android:layout_gravity="bottom" android:layout_height="wrap_content" android:id="@+id/imageView2" android:layout_width="wrap_content"></ImageView>
+    <ImageView android:src="@drawable/black_header_shadow" android:layout_height="wrap_content" android:id="@+id/imageView1" android:layout_width="wrap_content"></ImageView>
+    <LinearLayout android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/layout_zoom" android:layout_centerHorizontal="true" android:layout_gravity="right"></LinearLayout>
+    <FrameLayout android:id="@+id/frameLayout1" android:layout_alignParentBottom="true" android:layout_height="wrap_content" android:layout_width="match_parent" android:layout_gravity="bottom">
+        <EditText android:editable="true" android:singleLine="true" android:layout_height="wrap_content" android:id="@+id/editSearch" android:layout_width="match_parent"></EditText>
+        <Button android:id="@+id/searchButton" android:layout_height="wrap_content" android:layout_gravity="right" android:layout_width="70px"></Button>
+        <Button android:id="@+id/removeButton" android:layout_height="wrap_content" android:layout_gravity="right" android:layout_width="70px"></Button>
+        
+    </FrameLayout>
+
+</FrameLayout>
