@@ -137,7 +137,7 @@ public class SYourself extends Activity {
 	        receiver = new ResponseReceiver();
 	        registerReceiver(receiver, filter);
 	        Intent msgIntent = new Intent(this, StaffService.class);
-		      msgIntent.putExtra(StaffService.PARAM_IN_MSG, "runHome");
+		      msgIntent.putExtra(StaffService.PARAM_IN_MSG, "staffSelf");
 		      startService(msgIntent);
 		      
 	   }
@@ -213,6 +213,7 @@ public void parseProposals(String stuff){
     JSONArray jsearch;
 	JSONObject json_data = null;
 	JSONObject proposal_data;
+	int count = 0;
 	JSONTokener tokener = new JSONTokener(stuff);
     try {
 		jresult = new JSONArray(tokener);
@@ -228,7 +229,9 @@ public void parseProposals(String stuff){
 	  String title = proposal_data.getString("title");
 	  String description_of_service = proposal_data.getString("description_of_service");
 	  setProposalTexts(title, description_of_service, i);
+	  count++;
 	  }
+	  jobApplicationsNum.setText(Integer.toString(count)+" jobs");
 	} catch (JSONException e) {
 		// TODO Auto-generated catch block
 		e.printStackTrace();

@@ -81,7 +81,7 @@ public class CheckIn extends Activity {
 	private TextView uname;
 	private Button connectionsButton;
 	private TextView myJobsText;
-	private TextView myJobsNum;
+	private static TextView myJobsNum;
 	private static TextView myJobTitle1;
 	private static TextView myJobDesc1;
 	private ImageButton myJobManual1;
@@ -91,7 +91,7 @@ public class CheckIn extends Activity {
 	private ImageButton myJobCheckIn2;
 	private ImageButton myJobManual2;
 	private TextView jobApplicationText;
-	private TextView jobApplicationsNum;
+	private static TextView jobApplicationsNum;
 	private static TextView jobAppTitle1;
 	private static TextView jobAppDesc1;
 	private TextView jobAppStatus1;
@@ -224,14 +224,20 @@ public class CheckIn extends Activity {
 	        	
 	        	Bundle extras = intent.getExtras();
 
-	        	//Get & Set User Capabilities
+	        	//Get & Set User applied jobs
 	        	if (extras.getString("appliedjobs")!=null) {
 	        		parseResponse(extras.getString("appliedjobs")); 
 	        	}
+	        	// Get & Set user contracts
 	        	if (extras.getString("contracts")!=null){
 	        		parseContracts(extras.getString("contracts"));
 	        	}
-	        	
+	        	//Get & Set User Connection #
+	        	if (extras.getString("connnum")!=null) {
+	        	String connnum = extras.getString("connnum");
+	        	connectionsButton.setText(connnum);
+	        	}
+
 	        }
 	        
 	    }
@@ -240,18 +246,22 @@ public class CheckIn extends Activity {
 		JSONArray jresult;
         JSONArray jsearch;
 		JSONObject json_data = null;
+		int count=0;
+        Log.d("TAG", "STUFF WITHIN PARSE CONTRACTS "+stuff);
+
 		  JSONTokener tokener = new JSONTokener(stuff);
         try {
 			jresult = new JSONArray(tokener);
-        Log.d("TAG", "IN PARSE CONTRACTS");
 
 		  for (int i=0; i<jresult.length(); i++) { //Runs through the Job postings for as long as the array is
 
 	  json_data = jresult.getJSONObject(i); //For each json object
 	  String title = json_data.getString("title");
-	  String employer_name = json_data.getString("applied_at");
+	  String employer_name = json_data.getString("employer_name");
 	  setContracts(title, employer_name, i);
+	  count++;
     }        
+		  myJobsNum.setText(Integer.toString(count)+" jobs");
 	} catch (JSONException e) {
 		e.printStackTrace();
 	}
@@ -289,6 +299,7 @@ public class CheckIn extends Activity {
 		JSONArray jresult;
         JSONArray jsearch;
 		JSONObject json_data = null;
+		int count = 0;
 		  JSONTokener tokener = new JSONTokener(stuff);
         try {
 			jresult = new JSONArray(tokener);
@@ -308,9 +319,10 @@ public class CheckIn extends Activity {
   	  Log.d("TAG",applied_at);
   	  Log.d("TAG",job_id);
   	  Log.d("TAG",Integer.toString(i));
-  	 
+  	 count++;
   	  setTexts(title, company_name, job_id, i);
 		  }
+		  jobApplicationsNum.setText(Integer.toString(count)+" jobs");
     	} catch (JSONException e) {
 			e.printStackTrace();
 		}

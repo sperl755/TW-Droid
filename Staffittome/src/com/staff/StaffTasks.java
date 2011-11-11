@@ -236,6 +236,7 @@ public static String getMessages(Context c) {
 }
 public static String viewContracts(Context c) {
 	SharedPreferences prefs= PreferenceManager.getDefaultSharedPreferences(c); 
+	String contracts = null; 
     String key = prefs.getString("staffkey", null);
 	       Log.d("TAG",key);
 	        MyHttpClient client = new MyHttpClient(c);
@@ -246,8 +247,8 @@ public static String viewContracts(Context c) {
 	        try {
 	        post.setEntity(new UrlEncodedFormEntity(nameValuePairs));
 			ResponseHandler<String> responseHandler=new BasicResponseHandler();
-			String responseBody = client.execute(post, responseHandler);
-			Log.d("TAG","TEST RESULTS FROM HTTPS VIEW CONTRACTS IS: "+responseBody);
+			contracts = client.execute(post, responseHandler);
+			Log.d("TAG","TEST RESULTS FROM HTTPS VIEW CONTRACTS IS: "+contracts);
 			
 			} catch (ClientProtocolException e) {
 				e.printStackTrace();
@@ -256,7 +257,7 @@ public static String viewContracts(Context c) {
 			} catch (ParseException e) {
 				e.printStackTrace();
 			}
-		return "";
+		return contracts;
 }
 public static String viewAppliedJobs(Context c) {
 	SharedPreferences prefs= PreferenceManager.getDefaultSharedPreferences(c); 

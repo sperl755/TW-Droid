@@ -53,6 +53,7 @@ public class StaffService extends IntentService {
         } else if (msg.equals("checkIn")){ // All things needed for the check in page
         	broadcastIntent.putExtra("appliedjobs", StaffTasks.viewAppliedJobs(this));
         	broadcastIntent.putExtra("contracts", StaffTasks.viewContracts(this)); 
+        	broadcastIntent.putExtra("connnum", StaffTasks.getFriendCount(access_token));
         	sendBroadcast(broadcastIntent);
             stopSelf();
         } else if (msg.equals("availOn")){ // Async way of setting availability on

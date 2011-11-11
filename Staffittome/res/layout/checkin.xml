@@ -31,7 +31,7 @@
                                    <FrameLayout android:id="@+id/FrameLayout02" android:layout_height="match_parent" android:layout_gravity="center_horizontal|clip_horizontal" android:layout_width="match_parent">
                                        <ImageView android:layout_gravity="center_horizontal" android:src="@drawable/module_headerx" android:adjustViewBounds="true" android:id="@+id/ImageView02" android:layout_height="wrap_content" android:layout_width="wrap_content"></ImageView>
                                        <TextView android:gravity="center_vertical" android:text="My Jobs" android:textColor="#31486a" android:layout_height="match_parent" android:layout_width="wrap_content" android:paddingLeft="15dp" android:id="@+id/myJobsText"></TextView>
-                                       <TextView android:paddingRight="20dp" android:text="2 jobs" android:textColor="#7b95c4" android:layout_gravity="center_vertical|right" android:textSize="10dp" android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/myJobsNum"></TextView>
+                                       <TextView android:paddingRight="20dp" android:text=".. jobs" android:textColor="#7b95c4" android:layout_gravity="center_vertical|right" android:textSize="10dp" android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/myJobsNum"></TextView>
                                    </FrameLayout>
                                </LinearLayout>
                                <LinearLayout android:id="@+id/linearLayout1" android:layout_height="wrap_content" android:layout_width="match_parent">
@@ -59,7 +59,7 @@
                                    <FrameLayout android:id="@+id/FrameLayout02" android:layout_height="match_parent" android:layout_gravity="center_horizontal|clip_horizontal" android:layout_width="match_parent">
                                        <ImageView android:layout_gravity="center_horizontal" android:src="@drawable/module_headerx" android:adjustViewBounds="true" android:id="@+id/ImageView02" android:layout_height="wrap_content" android:layout_width="wrap_content"></ImageView>
                                        <TextView android:gravity="center_vertical" android:text="Job Applications" android:textColor="#31486a" android:layout_height="match_parent" android:layout_width="wrap_content" android:paddingLeft="15dp" android:id="@+id/jobApplicationsText"></TextView>
-                                       <TextView android:paddingRight="20dp" android:text="2 jobs" android:textColor="#7b95c4" android:layout_gravity="center_vertical|right" android:textSize="10dp" android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/jobApplicationsNum"></TextView>
+                                       <TextView android:paddingRight="20dp" android:text=".. jobs" android:textColor="#7b95c4" android:layout_gravity="center_vertical|right" android:textSize="10dp" android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/jobApplicationsNum"></TextView>
                                    </FrameLayout>
                                </LinearLayout>
                                <LinearLayout android:id="@+id/linearLayout1" android:layout_height="wrap_content" android:layout_width="match_parent">
