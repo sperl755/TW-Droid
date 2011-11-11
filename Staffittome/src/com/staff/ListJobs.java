@@ -10,6 +10,7 @@ import android.widget.ImageButton;
 
 public class ListJobs extends Activity {
 	private ImageButton job1;
+	private static String jobfeed;
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -22,4 +23,7 @@ public class ListJobs extends Activity {
 		}
 	});
 }
+	public static void getJobFeed(String jobs){
+		jobfeed=jobs;
+	}
 }

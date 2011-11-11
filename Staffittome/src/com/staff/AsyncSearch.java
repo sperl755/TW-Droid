@@ -79,6 +79,7 @@ public class AsyncSearch extends AsyncTask<String, Integer, String> implements
 	protected void onPostExecute(String b) {
 		//progressDialog.dismiss();
 		mresults = b;
+		ListJobs.getJobFeed(b);
 	}
 
 	public void onCancel(DialogInterface arg0) {
