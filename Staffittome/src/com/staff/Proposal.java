@@ -12,19 +12,29 @@ import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.BasicResponseHandler;
 import org.apache.http.message.BasicNameValuePair;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+import org.json.JSONTokener;
+
+import com.staff.SYourself.ResponseReceiver;
 
 import android.app.Activity;
 import android.content.ActivityNotFoundException;
+import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.SeekBar;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -43,11 +53,14 @@ public class Proposal extends Activity{
 	private String staffkey;
 	private EditText proposalSubject;
 	private String value;
+    private ResponseReceiver receiver;
+    private Spinner capspin;
+
 	   @Override
 	   public void onCreate(Bundle savedInstanceState) {
 	       super.onCreate(savedInstanceState);
 	       setContentView(R.layout.staffmessage);
-	       
+	       capspin = (Spinner)this.findViewById(R.id.capspin);
 	       emailedit = (EditText)this.findViewById(R.id.emailedit);
 	       seekRate = (SeekBar)this.findViewById(R.id.seekRate);
 	       sendproposal = (ImageButton)this.findViewById(R.id.sendProposalButton);	
@@ -84,9 +97,61 @@ public class Proposal extends Activity{
 
 	            }
 	        });
+	     
 	       
 	       
+	        IntentFilter filter = new IntentFilter(ResponseReceiver.ACTION_RESP);
+	        filter.addCategory(Intent.CATEGORY_DEFAULT);
+	        receiver = new ResponseReceiver();
+	        registerReceiver(receiver, filter);
+	        Intent msgIntent = new Intent(this, StaffService.class);
+		    msgIntent.putExtra(StaffService.PARAM_IN_MSG, "proposal");
+		    startService(msgIntent);
+		      
 	   }
+	   
+	   public class ResponseReceiver extends BroadcastReceiver {
+	        public static final String ACTION_RESP = "com.staff.intent.action.MESSAGE_PROCESSED";
+	        @Override
+	        public void onReceive(Context context, Intent intent) {
+	        	
+	        	/*
+	        	 * RECIEVE EXTRAS FROM INTENT 
+	        	 */
+	        	
+	        	Bundle extras = intent.getExtras();
+
+	        	//Get & Set User Capabilities
+	        	if (extras.getString("profdetails")!=null) {
+		        	seperateCaps(extras.getString("profdetails")); 
+	        	}	        	
+	        }
+	        
+	    }
+	   private void seperateCaps(String responseBody) {
+			 Log.d("TAG", "IN PARSE RESPONSE FOR STAFF YOURSELF: "+responseBody);
+			 JSONObject cap; 
+			 JSONArray jcapabilities; 
+			 JSONObject json_data = null;
+			 JSONTokener tokener = new JSONTokener(responseBody);
+			 try {
+				json_data = new JSONObject(tokener);
+				jcapabilities = json_data.getJSONArray("capabilities");
+				for (int i=0;i<jcapabilities.length();i++){
+					cap = jcapabilities.getJSONObject(i);
+					String title = cap.getString("title");
+					String price = cap.getString("price");
+					populateSpinner(title,price,i);
+				}
+			 } catch (JSONException e) {
+				e.printStackTrace();
+			}
+		}
+	private void populateSpinner(String title, String price, int i) {
+		  String[] caparray = new String[10];
+	      ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item, caparray);
+	      capspin.setAdapter(adapter);		
+	}
 	private void sendProposal(String capabilities2, String rate2,
 			String email2, String subject2, String message2) {
 	        //Log.d("TAG",key);

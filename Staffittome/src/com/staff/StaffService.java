@@ -49,7 +49,10 @@ public class StaffService extends IntentService {
         	broadcastIntent.putExtra("profdetails", StaffTasks.getProfDetails(this));
         	sendBroadcast(broadcastIntent);
             stopSelf();
-            
+        } else if (msg.equals("proposal")){ // All things needed for the staff yourself page
+        	broadcastIntent.putExtra("profdetails", StaffTasks.getProfDetails(this));
+        	sendBroadcast(broadcastIntent);
+            stopSelf();     
         } else if (msg.equals("checkIn")){ // All things needed for the check in page
         	broadcastIntent.putExtra("appliedjobs", StaffTasks.viewAppliedJobs(this));
         	broadcastIntent.putExtra("contracts", StaffTasks.viewContracts(this)); 
