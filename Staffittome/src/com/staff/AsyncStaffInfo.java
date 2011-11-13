@@ -33,8 +33,6 @@ import android.widget.TextView;
 public class AsyncStaffInfo extends AsyncTask<String, Integer, String> implements
 		OnCancelListener {
 	private final Context mContext;
-	private String jobs;
-	private String appliedjobs;
 	private String connnum; 
 	private Bitmap userpic;
 	private final Button mButton;
@@ -51,20 +49,18 @@ public class AsyncStaffInfo extends AsyncTask<String, Integer, String> implement
 		pic = imageview;
 	}
 	@Override
+	/*
+	 * This class will work along staffservice, yet it will only be a one time instance use, it will log in, fetch info, and instanstiate the StaffTasks class
+	 * StaffService will take care of all the other functions that will need reloading asynchronously once the activities are loaded individualy.
+	 */
+	
 	protected String doInBackground(String... params) {
 		try {
 		username = StaffTasks.getInfo(params[0], mContext);
+		publishProgress(30);
 		userpic = StaffTasks.getUserPic();
 		connnum = StaffTasks.getFriendCount(params[0]);
-		jobs = StaffTasks.jobDiscovery(mContext);
-		publishProgress(10);
-		appliedjobs = StaffTasks.viewAppliedJobs(mContext);
-		publishProgress(20);
-		String e = StaffTasks.getMessages(mContext);
-		String g = StaffTasks.viewContracts(mContext);
-		String h = StaffTasks.getAvailability(mContext);
-		String i = StaffTasks.getProfDetails(mContext);
-		String j = StaffTasks.getProposals(mContext);
+		publishProgress(90);
 		//Bitmap[] b = StaffTasks.getFriendReel(mContext);
 			} catch (IOException e) {
 				e.printStackTrace();
@@ -88,12 +84,9 @@ public class AsyncStaffInfo extends AsyncTask<String, Integer, String> implement
 		((Activity) mContext).getWindow().setFeatureInt(
 				Window.FEATURE_PROGRESS, values[0]);
 		if (values[0] == 10) {
-			DashboardActivity.parseResponse(jobs, 0);
-			mButton.setText(connnum);
-			uname.setText(username);
-			pic.setImageBitmap(userpic);
+			// Do nothing 
 		}if (values[0] == 20) {
-			//CheckIn.parseResponse(appliedjobs);
+			// Do nothing
 		}
 
 	}
