@@ -58,10 +58,10 @@ public class AsyncStaffInfo extends AsyncTask<String, Integer, String> implement
 		try {
 		username = StaffTasks.getInfo(params[0], mContext);
 		publishProgress(30);
+		Log.d("TAG","IN THE FUCKING ASYNC TASKSASDASDJSADhSADKHJSAJDKHASJKHDASJDKHSDHJAAJKHSDAJKDASJDKHAJDHHJKDSAJKDS");
 		userpic = StaffTasks.getUserPic();
 		connnum = StaffTasks.getFriendCount(params[0]);
 		publishProgress(90);
-		//Bitmap[] b = StaffTasks.getFriendReel(mContext);
 			} catch (IOException e) {
 				e.printStackTrace();
 			} catch (FacebookError e) {
@@ -83,9 +83,8 @@ public class AsyncStaffInfo extends AsyncTask<String, Integer, String> implement
 		super.onProgressUpdate(values);
 		((Activity) mContext).getWindow().setFeatureInt(
 				Window.FEATURE_PROGRESS, values[0]);
-		if (values[0] == 10) {
-			// Do nothing 
-		}if (values[0] == 20) {
+		if (values[0] == 30) {
+		}if (values[0] == 90) {
 			// Do nothing
 		}
 
@@ -93,6 +92,9 @@ public class AsyncStaffInfo extends AsyncTask<String, Integer, String> implement
 
 	@Override
 	protected void onPostExecute(String b) {
+		mButton.setText(connnum);
+		pic.setImageBitmap(userpic);
+		
 	}	
 
 	public void onCancel(DialogInterface arg0) {

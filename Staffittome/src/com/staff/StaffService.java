@@ -16,6 +16,7 @@ import android.util.Log;
 public class StaffService extends IntentService {
     public static final String PARAM_IN_MSG = "";
     public static final String PARAM_OUT_MSG = "";
+    private int counter=0;
 
     public StaffService() {
         super("StaffService");
@@ -72,25 +73,21 @@ public class StaffService extends IntentService {
            // stopSelf();
         
         } else if (msg.equals("start")){
-        
-        	broadcastIntent.putExtra("username", StaffTasks.getInfo(access_token, this));
-        	broadcastIntent.putExtra("userpic", StaffTasks.getUserPic()); 
+        	if (counter==0){
+            	Thread.sleep(4000);
+        	}
         	broadcastIntent.putExtra("discovery", StaffTasks.jobDiscovery(this));
-        	broadcastIntent.putExtra("connnum", StaffTasks.getFriendCount(access_token));
-        	broadcastIntent.putExtra("profdetails", StaffTasks.getProfDetails(this));
             sendBroadcast(broadcastIntent);
-        	broadcastIntent.putExtra("appliedjobs", StaffTasks.viewAppliedJobs(this));
-        	broadcastIntent.putExtra("messages", StaffTasks.getMessages(this)); 
-        	broadcastIntent.putExtra("contracts", StaffTasks.viewContracts(this)); 
-        	broadcastIntent.putExtra("availability", StaffTasks.getAvailability(this)); 
-        	broadcastIntent.putExtra("proposals", StaffTasks.getProposals(this));
-
+            counter++;
+            stopSelf();
         }} catch (IOException e1) {
 			e1.printStackTrace();
 		} catch (FacebookError e1) {
 			e1.printStackTrace();
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
-        sendBroadcast(broadcastIntent);
         stopSelf();
     
     }

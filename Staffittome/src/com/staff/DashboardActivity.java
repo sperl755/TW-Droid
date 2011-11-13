@@ -129,7 +129,7 @@ public class DashboardActivity extends Activity {
 	private Drawable r2;
 	private Drawable r3;
 	private Drawable r4;
-    private ResponseReceiver receiver;
+    private static ResponseReceiver receiver;
     public static int counter =0;
 
 	
@@ -237,18 +237,23 @@ public class DashboardActivity extends Activity {
 		     randDisc3.setBackgroundDrawable(r1);
 		     randDisc4.setBackgroundDrawable(r3); 
 	  }
-      /*
-       * Starting the intent service
-       */
-    	   
-    	  Log.d("TAG", "WITHIN THE INTENT STARTING THING AND THE COUNTER IS: "+counter);
-    	  IntentFilter filter = new IntentFilter(ResponseReceiver.ACTION_RESP);
-          filter.addCategory(Intent.CATEGORY_DEFAULT);
-          receiver = new ResponseReceiver();
-          registerReceiver(receiver, filter);
-      final Intent msgIntent = new Intent(this, StaffService.class);
-      msgIntent.putExtra(StaffService.PARAM_IN_MSG, "start");
-      startService(msgIntent);	
+    	  
+    	/*
+    	 * GET FB KEY  
+    	 */
+    		SharedPreferences prefs= PreferenceManager.getDefaultSharedPreferences(getApplicationContext()); 
+            access_token = prefs.getString("access_token", null);
+              	  
+    /*
+     * Starting the ASYNC STAFF INFO	  
+     */
+    	  
+         if (counter==0)   {
+    	 AsyncStaffInfo async = new AsyncStaffInfo(this, connButton, uname, user_picture); 
+    	 async.execute(access_token);
+    	 counter++;
+         } 
+    
     	  
     	  
       /*
@@ -264,10 +269,7 @@ public class DashboardActivity extends Activity {
 		jobSuggesComp4.setText(".....");
       
       
-    	SharedPreferences prefs= PreferenceManager.getDefaultSharedPreferences(getApplicationContext()); 
-        access_token = prefs.getString("access_token", null);
-      
-        Log.d("TAG", "BEFORE GET FACEBOOK INFO");
+    
 
    
   	try {
@@ -380,8 +382,8 @@ public class DashboardActivity extends Activity {
           {
               availableOn.setVisibility(View.INVISIBLE);
         	  availableOff.setVisibility(View.VISIBLE);
-        	  msgIntent.putExtra(StaffService.PARAM_IN_MSG, "availOff");
-              startService(msgIntent);
+        	  //msgIntent.putExtra(StaffService.PARAM_IN_MSG, "availOff");
+              //startService(msgIntent);
         	  
         	  Log.d("TAG", "AVAILABILITY IS NOW OFF");
           }
@@ -392,8 +394,8 @@ public class DashboardActivity extends Activity {
           {
         	  availableOff.setVisibility(View.INVISIBLE);
               availableOn.setVisibility(View.VISIBLE);
-              msgIntent.putExtra(StaffService.PARAM_IN_MSG, "availOn");
-              startService(msgIntent);
+              //msgIntent.putExtra(StaffService.PARAM_IN_MSG, "availOn");
+              //startService(msgIntent);
               Log.d("TAG", "AVAILABILITY IS NOW ON");
 
           }
@@ -428,16 +430,27 @@ public class DashboardActivity extends Activity {
 		});
       
   
-      
-     // startintentServie();
+      Log.d("TAG", "WITHIN THE INTENT STARTING THING AND THE COUNTER IS: "+counter);
+	  IntentFilter filter = new IntentFilter(ResponseReceiver.ACTION_RESP);
+      filter.addCategory(Intent.CATEGORY_DEFAULT);
+      receiver = new ResponseReceiver();
+      registerReceiver(receiver, filter);
+      final Intent msgIntent = new Intent(this, StaffService.class);
+      msgIntent.putExtra(StaffService.PARAM_IN_MSG, "start");
+      startService(msgIntent);	
       
       	}
 	
-	  private void startintentServie() {
+	  public static  void startintentServie() {
 		  if (counter == 0)
 		  {
-		// THIS IS JUST A TEST FIELD FOR NOW, THE LONG TERM GOAL IS TO HAVE STAFFSERVICE SAVE INFORMATION...
-		  }
+			  /*
+		       * Starting the intent service
+		       */
+		    
+			 
+		    	 
+		      }
 	}
 
 	public class ResponseReceiver extends BroadcastReceiver {
@@ -455,27 +468,10 @@ public class DashboardActivity extends Activity {
 	        	 */
 	        	
 	        	Bundle extras = intent.getExtras();
-	        	
-	        	//Get & Set User Profile Picture
-	        	if (extras.getParcelable("userpic")!=null) {
-	        	Bitmap userpic = extras.getParcelable("userpic");
-	        	user_picture.setImageBitmap(userpic);
-	        	}
-	        	//Get & Set User Connection #
-	        	if (extras.getString("connnum")!=null) {
-	        	String connnum = extras.getString("connnum");
-	        	connButton.setText(connnum);
-	        	}
-	        	
 	        	//Get & Set User Job Discovery
 	        	if (extras.getString("discovery")!=null) {
 	        	parseResponse(extras.getString("discovery"),0); 
 	        	}
-	        	
-	        	if (extras.getString("profdetails")!=null) {
-		        	//home.parseResponse(extras.getString("profdetails")); 
-	        	}
-	        	
 	        }
 	        
 	    }
