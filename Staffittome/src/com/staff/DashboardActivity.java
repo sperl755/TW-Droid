@@ -129,8 +129,7 @@ public class DashboardActivity extends Activity {
 	private Drawable r2;
 	private Drawable r3;
 	private Drawable r4;
-    private static ResponseReceiver receiver;
-    public static int counter =0;
+    //private static ResponseReceiver receiver;
 
 	
 	@Override
@@ -248,12 +247,10 @@ public class DashboardActivity extends Activity {
      * Starting the ASYNC STAFF INFO	  
      */
     	  
-         if (counter==0)   {
     	 AsyncStaffInfo async = new AsyncStaffInfo(this, connButton, uname, user_picture); 
     	 async.execute(access_token);
-    	 counter++;
-         } 
-    
+
+    //
     	  
     	  
       /*
@@ -430,19 +427,19 @@ public class DashboardActivity extends Activity {
 		});
       
   
-      Log.d("TAG", "WITHIN THE INTENT STARTING THING AND THE COUNTER IS: "+counter);
-	  IntentFilter filter = new IntentFilter(ResponseReceiver.ACTION_RESP);
-      filter.addCategory(Intent.CATEGORY_DEFAULT);
-      receiver = new ResponseReceiver();
-      registerReceiver(receiver, filter);
-      final Intent msgIntent = new Intent(this, StaffService.class);
-      msgIntent.putExtra(StaffService.PARAM_IN_MSG, "start");
-      startService(msgIntent);	
+      //Log.d("TAG", "WITHIN THE INTENT STARTING THING AND THE COUNTER IS: "+counter);
+	  //IntentFilter filter = new IntentFilter(ResponseReceiver.ACTION_RESP);
+      //filter.addCategory(Intent.CATEGORY_DEFAULT);
+      //receiver = new ResponseReceiver();
+      //registerReceiver(receiver, filter);
+      //final Intent msgIntent = new Intent(this, StaffService.class);
+      //msgIntent.putExtra(StaffService.PARAM_IN_MSG, "start");
+      //startService(msgIntent);	
       
       	}
 	
 	  public static  void startintentServie() {
-		  if (counter == 0)
+		//  if (counter == 0)
 		  {
 			  /*
 		       * Starting the intent service
@@ -452,7 +449,7 @@ public class DashboardActivity extends Activity {
 		    	 
 		      }
 	}
-
+/*
 	public class ResponseReceiver extends BroadcastReceiver {
 	        public static final String ACTION_RESP = "com.staff.intent.action.MESSAGE_PROCESSED";
 	        @Override
@@ -462,10 +459,7 @@ public class DashboardActivity extends Activity {
 	            // Update UI, new "message" processed by SimpleIntentService
 	           	String name = intent.getStringExtra("username");
 	        	uname.setText(name);
-	        	
-	        	/*
-	        	 * RECIEVE EXTRAS FROM INTENT 
-	        	 */
+	     
 	        	
 	        	Bundle extras = intent.getExtras();
 	        	//Get & Set User Job Discovery
@@ -475,7 +469,7 @@ public class DashboardActivity extends Activity {
 	        }
 	        
 	    }
-
+*/
 	
 	
 	public void postToWall(String id) {

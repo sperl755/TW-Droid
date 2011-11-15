@@ -53,7 +53,6 @@ import android.widget.Toast;
 
 import com.facebook.android.*;
 import com.facebook.android.Facebook.*;
-import com.staff.DashboardActivity.ResponseReceiver;
 
 public class HomePage extends Activity {
     private JSONObject json_data = null;
