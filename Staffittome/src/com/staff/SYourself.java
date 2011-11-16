@@ -62,6 +62,8 @@ public class SYourself extends Activity {
 	private String staffuser;
     private ResponseReceiver receiver;
     private String profinfo;
+    private String[] capstring = new String[10];
+    //private String[] capstring;
 	   @Override
 	   public void onCreate(Bundle savedInstanceState) {
 	       super.onCreate(savedInstanceState);
@@ -143,7 +145,7 @@ public class SYourself extends Activity {
 	   }
 	   private void startIntent(){
 		   Intent intent = new Intent(this, Proposal.class);
-   		intent.putExtra("profinfo", profinfo);
+   		intent.putExtra("profinfo", capstring);
    		this.startActivity(intent);
 	   }
 	   
@@ -164,7 +166,6 @@ public class SYourself extends Activity {
 	        	//Get & Set User Capabilities
 	        	if (extras.getString("profdetails")!=null) {
 		        	seperateCaps(extras.getString("profdetails")); 
-		        	profinfo =extras.getString("profdetails");
 	        	}
 	        	if (extras.getString("proposals")!=null){
 	        		parseProposals(extras.getString("proposals"));
@@ -280,6 +281,7 @@ private void seperateCaps(String responseBody) {
 		for (int i=0;i<jcapabilities.length();i++){
 			cap = jcapabilities.getJSONObject(i);
 			String title = cap.getString("title");
+			capstring[i]=title;
 			String price = cap.getString("price");
 			setTexts(title,price,i);
 		}
