@@ -103,7 +103,7 @@ public class Proposal extends Activity{
 	        Log.d("TAG","CAP ARRAY IS "+profinfo.length +" SHITS LONG");
 	        String[] caparray = new String[profinfo.length];
 	        //String[] caparray = new String[4];
-	        for (int i =0;i>profinfo.length-1;i++){
+	        for (int i =0;i<profinfo.length;i++){
 	        	if(profinfo[i]!=null){
 	        	caparray[i]=profinfo[i];
 	        	} else {
