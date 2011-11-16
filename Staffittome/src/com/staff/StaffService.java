@@ -4,6 +4,7 @@ import java.io.IOException;
 
 
 import com.facebook.android.FacebookError;
+import com.staff.CheckIn.ResponseReceiver;
 //import com.staff.DashboardActivity.ResponseReceiver;
 
 import android.app.IntentService;
@@ -31,7 +32,7 @@ public class StaffService extends IntentService {
     	SharedPreferences prefs= PreferenceManager.getDefaultSharedPreferences(getApplicationContext()); 
         String access_token = prefs.getString("access_token", null);
         Intent broadcastIntent = new Intent();
-        //broadcastIntent.setAction(ResponseReceiver.ACTION_RESP);
+        broadcastIntent.setAction(ResponseReceiver.ACTION_RESP);
         broadcastIntent.addCategory(Intent.CATEGORY_DEFAULT);
         //Intent testIntent = new Intent();
         //testIntent.setAction(ResponseReceiver.ACTION_RESP);

@@ -25,6 +25,7 @@ import org.json.JSONTokener;
 import com.facebook.android.Facebook;
 import com.facebook.android.FacebookError;
 import com.facebook.android.Util;
+import com.staff.CheckIn.ResponseReceiver;
 
 import android.R.drawable;
 import android.app.Activity;
@@ -129,7 +130,7 @@ public class DashboardActivity extends Activity {
 	private Drawable r2;
 	private Drawable r3;
 	private Drawable r4;
-    //private static ResponseReceiver receiver;
+    private static ResponseReceiver receiver;
 
 	
 	@Override
@@ -427,16 +428,19 @@ public class DashboardActivity extends Activity {
 		});
       
   
-      //Log.d("TAG", "WITHIN THE INTENT STARTING THING AND THE COUNTER IS: "+counter);
-	  //IntentFilter filter = new IntentFilter(ResponseReceiver.ACTION_RESP);
-      //filter.addCategory(Intent.CATEGORY_DEFAULT);
-      //receiver = new ResponseReceiver();
-      //registerReceiver(receiver, filter);
-      //final Intent msgIntent = new Intent(this, StaffService.class);
-      //msgIntent.putExtra(StaffService.PARAM_IN_MSG, "start");
-      //startService(msgIntent);	
+	  IntentFilter filter = new IntentFilter(ResponseReceiver.ACTION_RESP);
+      filter.addCategory(Intent.CATEGORY_DEFAULT);
+      receiver = new ResponseReceiver();
+      registerReceiver(receiver, filter);
+      final Intent msgIntent = new Intent(this, StaffService.class);
+      msgIntent.putExtra(StaffService.PARAM_IN_MSG, "start");
+      startService(msgIntent);	
       
       	}
+	
+	protected void onResume() {
+        super.onResume();
+        }
 	
 	  public static  void startintentServie() {
 		//  if (counter == 0)
@@ -449,7 +453,7 @@ public class DashboardActivity extends Activity {
 		    	 
 		      }
 	}
-/*
+
 	public class ResponseReceiver extends BroadcastReceiver {
 	        public static final String ACTION_RESP = "com.staff.intent.action.MESSAGE_PROCESSED";
 	        @Override
@@ -469,7 +473,7 @@ public class DashboardActivity extends Activity {
 	        }
 	        
 	    }
-*/
+
 	
 	
 	public void postToWall(String id) {

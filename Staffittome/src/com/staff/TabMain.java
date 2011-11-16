@@ -42,11 +42,11 @@ public class TabMain extends TabActivity {
 		setupTabHost();
 		mTabHost.getTabWidget().setDividerDrawable(R.drawable.menu_seperator);
 
-	    addActivityTab(new TextView(this), R.drawable.home, new Intent(TabMain.this, DashboardActivity.class));
-		addActivityTab(new TextView(this), R.drawable.search, new Intent(TabMain.this, SearchTabMain.class));
-		addActivityTab(new TextView(this), R.drawable.staff_out, new Intent(TabMain.this, SYourself.class));
-		addActivityTab(new TextView(this), R.drawable.jobs, new Intent(TabMain.this, CheckIn.class));
-		addActivityTab(new TextView(this), R.drawable.profile, new Intent(TabMain.this, HomePage.class));
+	    addActivityTab(new TextView(this), "Dashboard", R.drawable.home, new Intent(TabMain.this, DashboardActivity.class));
+		addActivityTab(new TextView(this), "Job Search", R.drawable.search, new Intent(TabMain.this, SearchTabMain.class));
+		addActivityTab(new TextView(this), "Staff Out", R.drawable.staff_out, new Intent(TabMain.this, SYourself.class));
+		addActivityTab(new TextView(this), "My Jobs", R.drawable.jobs, new Intent(TabMain.this, CheckIn.class));
+		addActivityTab(new TextView(this), "Profile", R.drawable.profile, new Intent(TabMain.this, HomePage.class));
 	
 	
 		notification = (Button)this.findViewById(R.id.notificationlit);
@@ -74,18 +74,19 @@ public class TabMain extends TabActivity {
 	      });
 	
 	}
-    private void addActivityTab(final View view, int iconResource, Intent intent) {
-		View tabview = createTabView(mTabHost.getContext(), iconResource);
-		TabSpec setContent = mTabHost.newTabSpec("").setIndicator(tabview)
+    private void addActivityTab(final View view, final String tag, int iconResource, Intent intent) {
+		View tabview = createTabView(mTabHost.getContext(), tag, iconResource);
+		TabSpec setContent = mTabHost.newTabSpec(tag).setIndicator(tabview)
 				.setContent(intent);
 		mTabHost.addTab(setContent);
+
 	}
     
     // Use this method if you only want the tab to execute a method
-    private void addMethodTab(final View view, int iconResource) {
-		View tabview = createTabView(mTabHost.getContext(), iconResource);
+    private void addMethodTab(final View view, final String tag, int iconResource) {
+		View tabview = createTabView(mTabHost.getContext(), tag, iconResource);
 
-		TabSpec setContent = mTabHost.newTabSpec("").setIndicator(tabview)
+		TabSpec setContent = mTabHost.newTabSpec(tag).setIndicator(tabview)
 				.setContent(new TabContentFactory() {
 					public View createTabContent(String tag) {
 						return view;
@@ -95,14 +96,15 @@ public class TabMain extends TabActivity {
 
 	}
     
-    private  View createTabView(final Context context, int iconResource) {
+    private  View createTabView(final Context context, final String text,
+			int iconResource) {
     	Typeface hb = Typeface.createFromAsset(getAssets(),
 	      "fonts/hb.ttf");
 		View view = LayoutInflater.from(context)
 				.inflate(R.layout.main_tabs_bg, null);
-		//TextView tv = (TextView) view.findViewById(R.id.tabsText);
-		//tv.setTypeface(hb);
-		//tv.setText(text);
+		TextView tv = (TextView) view.findViewById(R.id.tabsText);
+		tv.setTypeface(hb);
+		tv.setText(text);
 
 		ImageView icon = (ImageView) view.findViewById(R.id.tabsIcon);
 		icon.setImageResource(iconResource);
