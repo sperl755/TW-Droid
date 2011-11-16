@@ -25,7 +25,7 @@
                 <FrameLayout android:layout_height="match_parent" android:layout_width="match_parent" android:id="@+id/frameLayout6">
                     <ImageView android:layout_height="wrap_content" android:layout_width="match_parent" android:src="@drawable/module_rowx" android:id="@+id/imageView13"></ImageView>
                     <TextView android:textColor="#333333" android:layout_width="wrap_content" android:text="Capability" android:layout_gravity="center_vertical" android:id="@+id/jobSkillsReq1" android:layout_height="wrap_content" android:gravity="center_vertical" android:paddingLeft="20dp"></TextView>
-                    <Spinner android:text="Select Capability" android:layout_height="wrap_content" android:layout_gravity="center_vertical|right" android:layout_width="320px" android:layout_marginRight="20dp" android:id="@+id/capspin"></Spinner>
+                    <Spinner android:text="Select Capability" android:layout_gravity="center_vertical|right" android:layout_width="320px" android:layout_marginRight="20dp" android:id="@+id/capspin" android:layout_height="60px"></Spinner>
                 </FrameLayout>
                 <FrameLayout android:layout_height="match_parent" android:layout_width="match_parent" android:id="@+id/FrameLayout04">
                     <ImageView android:layout_height="wrap_content" android:layout_width="match_parent" android:src="@drawable/module_rowx" android:id="@+id/ImageView05"></ImageView>

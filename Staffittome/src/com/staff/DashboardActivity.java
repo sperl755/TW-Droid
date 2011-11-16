@@ -461,9 +461,6 @@ public class DashboardActivity extends Activity {
 	        	//CheckIn check = new CheckIn();
 	             HomePage home = new HomePage();
 	            // Update UI, new "message" processed by SimpleIntentService
-	           	String name = intent.getStringExtra("username");
-	        	uname.setText(name);
-	     
 	        	
 	        	Bundle extras = intent.getExtras();
 	        	//Get & Set User Job Discovery

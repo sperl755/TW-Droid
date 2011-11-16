@@ -58,7 +58,6 @@ public class AsyncStaffInfo extends AsyncTask<String, Integer, String> implement
 		try {
 		username = StaffTasks.getInfo(params[0], mContext);
 		publishProgress(30);
-		Log.d("TAG","IN THE FUCKING ASYNC TASKSASDASDJSADhSADKHJSAJDKHASJKHDASJDKHSDHJAAJKHSDAJKDASJDKHAJDHHJKDSAJKDS");
 		userpic = StaffTasks.getUserPic();
 		connnum = StaffTasks.getFriendCount(params[0]);
 		publishProgress(90);
@@ -94,7 +93,7 @@ public class AsyncStaffInfo extends AsyncTask<String, Integer, String> implement
 	protected void onPostExecute(String b) {
 		mButton.setText(connnum);
 		pic.setImageBitmap(userpic);
-		
+		uname.setText(username);
 	}	
 
 	public void onCancel(DialogInterface arg0) {

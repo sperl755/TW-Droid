@@ -61,7 +61,7 @@ public class SYourself extends Activity {
 	private Object name;
 	private String staffuser;
     private ResponseReceiver receiver;
-
+    private String profinfo;
 	   @Override
 	   public void onCreate(Bundle savedInstanceState) {
 	       super.onCreate(savedInstanceState);
@@ -127,7 +127,7 @@ public class SYourself extends Activity {
 	        {
 	            public void onClick(View v)
 	            {
-					startActivity(new Intent(SYourself.this, Proposal.class));
+	        		startIntent();
 	            }
 	        });
 	        
@@ -140,6 +140,11 @@ public class SYourself extends Activity {
 		      msgIntent.putExtra(StaffService.PARAM_IN_MSG, "staffSelf");
 		      startService(msgIntent);
 		      
+	   }
+	   private void startIntent(){
+		   Intent intent = new Intent(this, Proposal.class);
+   		intent.putExtra("profinfo", profinfo);
+   		this.startActivity(intent);
 	   }
 	   
 	   
@@ -159,6 +164,7 @@ public class SYourself extends Activity {
 	        	//Get & Set User Capabilities
 	        	if (extras.getString("profdetails")!=null) {
 		        	seperateCaps(extras.getString("profdetails")); 
+		        	profinfo =extras.getString("profdetails");
 	        	}
 	        	if (extras.getString("proposals")!=null){
 	        		parseProposals(extras.getString("proposals"));

@@ -26,6 +26,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.util.Log;
@@ -53,7 +54,6 @@ public class Proposal extends Activity{
 	private String staffkey;
 	private EditText proposalSubject;
 	private String value;
-    private ResponseReceiver receiver;
     private Spinner capspin;
 
 	   @Override
@@ -98,36 +98,22 @@ public class Proposal extends Activity{
 	            }
 	        });
 	     
-	       
-	       
-	        IntentFilter filter = new IntentFilter(ResponseReceiver.ACTION_RESP);
-	        filter.addCategory(Intent.CATEGORY_DEFAULT);
-	        receiver = new ResponseReceiver();
-	        registerReceiver(receiver, filter);
-	        Intent msgIntent = new Intent(this, StaffService.class);
-		    msgIntent.putExtra(StaffService.PARAM_IN_MSG, "proposal");
-		    startService(msgIntent);
-		      
-	   }
+	       Bundle extras = getIntent().getExtras();
+			String profinfo = extras.getString("jobid");
+			//seperateCaps(profinfo);
+			   
+			  String[] caparray = new String[3];
+			  caparray[0]="Capability 1";
+			  caparray[1]="Capability 2";
+			  caparray[2]="Capability 3";
+			  ArrayAdapter<String> spinnerArrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, caparray);
+			  capspin.setAdapter(spinnerArrayAdapter);	
+			  capspin.setBackgroundColor(Color.TRANSPARENT);
+			 
+	   	}
 	   
-	   public class ResponseReceiver extends BroadcastReceiver {
-	        public static final String ACTION_RESP = "com.staff.intent.action.MESSAGE_PROCESSED";
-	        @Override
-	        public void onReceive(Context context, Intent intent) {
-	        	
-	        	/*
-	        	 * RECIEVE EXTRAS FROM INTENT 
-	        	 */
-	        	
-	        	Bundle extras = intent.getExtras();
-
-	        	//Get & Set User Capabilities
-	        	if (extras.getString("profdetails")!=null) {
-		        	seperateCaps(extras.getString("profdetails")); 
-	        	}	        	
-	        }
 	        
-	    }
+	    
 	   private void seperateCaps(String responseBody) {
 			 Log.d("TAG", "IN PARSE RESPONSE FOR STAFF YOURSELF: "+responseBody);
 			 JSONObject cap; 
@@ -149,8 +135,12 @@ public class Proposal extends Activity{
 		}
 	private void populateSpinner(String title, String price, int i) {
 		  String[] caparray = new String[10];
-	      ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item, caparray);
-	      capspin.setAdapter(adapter);		
+		  caparray[0]="Capability 1";
+		  caparray[1]="Capability 2";
+		  caparray[2]="Capability 3";
+		  Spinner spinner = new Spinner(this);
+		  ArrayAdapter<String> spinnerArrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, caparray);
+		  spinner.setAdapter(spinnerArrayAdapter);	
 	}
 	private void sendProposal(String capabilities2, String rate2,
 			String email2, String subject2, String message2) {
