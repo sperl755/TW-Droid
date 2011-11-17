@@ -100,26 +100,14 @@ public class Proposal extends Activity{
 	     
 	       Bundle extras = getIntent().getExtras();
 	        String[] profinfo = extras.getStringArray("profinfo");
-	        Log.d("TAG","CAP ARRAY IS "+profinfo.length +" SHITS LONG");
 	        String[] caparray = new String[profinfo.length];
-	        //String[] caparray = new String[4];
 	        for (int i =0;i<profinfo.length;i++){
 	        	if(profinfo[i]!=null){
 	        	caparray[i]=profinfo[i];
 	        	} else {
-	        		caparray[i]="BANNANA";
+	        		caparray[i]="";
 	        	}
 	        }
-	        
-	        //caparray[0]=profinfo[0];
-	        //caparray[0]="TEST";
-	        //caparray[1]="TEST";
-	        //caparray[2]="TEST";
-	        //caparray[3]="TEST";
-
-
-	        //caparray[1]=profinfo[1];
-	        //caparray[2]=profinfo[2];
 
 			  ArrayAdapter<String> spinnerArrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, caparray);
 			  capspin.setAdapter(spinnerArrayAdapter);	

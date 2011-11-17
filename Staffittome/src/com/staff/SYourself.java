@@ -144,9 +144,13 @@ public class SYourself extends Activity {
 		      
 	   }
 	   private void startIntent(){
-		   Intent intent = new Intent(this, Proposal.class);
-   		intent.putExtra("profinfo", capstring);
-   		this.startActivity(intent);
+		   if (capstring[0]==null){
+			   Toast.makeText(getApplicationContext(), "Please wait, Capabilities are still loading", 0).show();
+		   } else {
+		   Intent intent =new Intent(this, Proposal.class);
+			   intent.putExtra("profinfo", capstring);
+	   		this.startActivity(intent);
+		   }
 	   }
 	   
 	   

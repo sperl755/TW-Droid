@@ -13,6 +13,10 @@ import android.widget.TextView;
 
 
 public class SearchTabMain extends TabActivity {
+	public static String[] jobs = new String[15];
+	public static String[] jobids = new String[15];
+	public static String[] companies = new String[15];
+	public static String[] distances = new String[15];
 
 	private TabHost mTabHost;
 

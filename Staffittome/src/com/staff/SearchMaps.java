@@ -95,6 +95,11 @@ public class SearchMaps extends MapActivity {
 	private String distance;
 	private GeoPoint currentCenter;
 	private String[] jobselections = {"All", "Part Time", "Full Time" };
+	private static String[] jobtitles = new String[15];
+	private static String[] jobids = new String[15];
+	private static String[] companies = new String[15];
+	private static String[] distances = new String[15];
+
 	 MyItemizedOverlay myItemizedOverlay;
 	 MyLocationOverlay myLocationOverlay;
 		List<Overlay> mapOverlays;
@@ -107,7 +112,6 @@ public class SearchMaps extends MapActivity {
 	       setContentView(R.layout.search);
 	       
 
-	       
 	       mapView = (MapView) findViewById(R.id.mapview);
 	       LinearLayout zoomLayout =(LinearLayout)findViewById(R.id.layout_zoom);  
 	       View zoomView = mapView.getZoomControls(); 
@@ -258,7 +262,12 @@ public class SearchMaps extends MapActivity {
             });
 	           
 	   
+	 
 	   }
+	  
+	   
+	  
+  
 	 public String getDistance(int lngspan){
 		 String span = null;
 		 double whatever = lngspan/1000000;
@@ -293,7 +302,34 @@ public class SearchMaps extends MapActivity {
 	  super.onPause();
 	  myLocationOverlay.disableMyLocation();
 	  myLocationOverlay.disableCompass();
+
+	  for (int i=0;i<jobtitles.length;i++){
+		  if (jobtitles[i]!=null){
+	  SearchTabMain.jobs[i] = jobtitles[i];
+		  } else 
+			  SearchTabMain.jobs[i]="";
+		  }
+	  for (int i=0;i<companies.length;i++){
+		  if (companies[i]!=null){
+	  SearchTabMain.companies[i] = companies[i];
+		  } else 
+			  SearchTabMain.companies[i]="";
+		  }
+	  for (int i=0;i<jobids.length;i++){
+		  if (jobids[i]!=null){
+	  SearchTabMain.jobids[i] = jobids[i];
+		  } else 
+			  SearchTabMain.jobids[i]="";
+		  }
+	  for (int i=0;i<distances.length;i++){
+		  if (distances[i]!=null){
+	  SearchTabMain.distances[i] = distances[i];
+		  } else 
+			  SearchTabMain.distances[i]="";
+		  }
+	 
 	 } 
+	 
 	  public static String search(String terms, String lng, String lat, String rad, Context c) {
 	    	SharedPreferences prefs= PreferenceManager.getDefaultSharedPreferences(c); 
 	        String key = prefs.getString("staffkey", null);
@@ -404,9 +440,11 @@ public class SearchMaps extends MapActivity {
 		  GeoPoint myPoint1 = new GeoPoint((int)(doublat * 1e6), (int)(doublng * 1e6));
 		  OverlayItem overlayItem = new OverlayItem(myPoint1, title+" at "+company,jobtype+" / "+industryname);
 		  itemizedOverlay.addOverlay(overlayItem);
-
 		  mapView.getOverlays().add(itemizedOverlay);	       
-
+		  jobtitles[i]=title;
+		  companies[i]=company;
+		  distances[i]=distance;
+		  jobids[i]=jobid;
 	       MapController mc = mapView.getController();
 	       //mc.animateTo(myPoint1);
 	  }
