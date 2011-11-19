@@ -266,63 +266,63 @@ public class ListJobs extends Activity {
 			if (i==0){
 				jobtitle1.setText(jobfeed[i]);
 				company1.setText(companyfeed[i]);
-				dist1.setText(distfeed[i]);
+				dist1.setText(distfeed[i]+"mi");
 			} else if (i==1) {
 				jobtitle2.setText(jobfeed[i]);
 				company2.setText(companyfeed[i]);
-				dist2.setText(distfeed[i]);
+				dist2.setText(distfeed[i]+"mi");
 			} else if (i==2) {
 				jobtitle3.setText(jobfeed[i]);
 				company3.setText(companyfeed[i]);
-				dist3.setText(distfeed[i]);
+				dist3.setText(distfeed[i]+"mi");
 			} else if (i==3) {
 				jobtitle4.setText(jobfeed[i]);
 				company4.setText(companyfeed[i]);
-				dist4.setText(distfeed[i]);
+				dist4.setText(distfeed[i]+"mi");
 			} else if (i==4) {
 				jobtitle5.setText(jobfeed[i]);
 				company5.setText(companyfeed[i]);
-				dist5.setText(distfeed[i]);
+				dist5.setText(distfeed[i]+"mi");
 			} else if (i==5) {
 				jobtitle6.setText(jobfeed[i]);
 				company6.setText(companyfeed[i]);
-				dist6.setText(distfeed[i]);
+				dist6.setText(distfeed[i]+"mi");
 			} else if (i==6) {
 				jobtitle7.setText(jobfeed[i]);
 				company7.setText(companyfeed[i]);
-				dist7.setText(distfeed[i]);
+				dist7.setText(distfeed[i]+"mi");
 			} else if (i==7) {
 				jobtitle8.setText(jobfeed[i]);
 				company8.setText(companyfeed[i]);
-				dist8.setText(distfeed[i]);
+				dist8.setText(distfeed[i]+"mi");
 			} else if (i==8) {
 				jobtitle9.setText(jobfeed[i]);
 				company9.setText(companyfeed[i]);
-				dist9.setText(distfeed[i]);
+				dist9.setText(distfeed[i]+"mi");
 			} else if (i==9) {
 				jobtitle10.setText(jobfeed[i]);
 				company10.setText(companyfeed[i]);
-				dist10.setText(distfeed[i]);
+				dist10.setText(distfeed[i]+"mi");
 			} else if (i==10) {
 				jobtitle11.setText(jobfeed[i]);
 				company11.setText(companyfeed[i]);
-				dist11.setText(distfeed[i]);
+				dist11.setText(distfeed[i]+"mi");
 			} else if (i==11) {
 				jobtitle12.setText(jobfeed[i]);
 				company12.setText(companyfeed[i]);
-				dist12.setText(distfeed[i]);
+				dist12.setText(distfeed[i]+"mi");
 			} else if (i==12) {
 				jobtitle13.setText(jobfeed[i]);
 				company13.setText(companyfeed[i]);
-				dist13.setText(distfeed[i]);
+				dist13.setText(distfeed[i]+"mi");
 			} else if (i==13) {
 				jobtitle14.setText(jobfeed[i]);
 				company14.setText(companyfeed[i]);
-				dist14.setText(distfeed[i]);
+				dist14.setText(distfeed[i]+"mi");
 			} else if (i==14) {
 				jobtitle15.setText(jobfeed[i]);
 				company15.setText(companyfeed[i]);
-				dist15.setText(distfeed[i]);
+				dist15.setText(distfeed[i]+"mi");
 			} else if (i==15) {
 			}
 			

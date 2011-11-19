@@ -10,14 +10,14 @@
             <LinearLayout android:id="@+id/linearLayout6" android:layout_height="match_parent" android:orientation="vertical" android:layout_width="match_parent">
                 <LinearLayout android:id="@+id/linearLayout4" android:layout_height="wrap_content" android:layout_width="match_parent">
                     <FrameLayout android:id="@+id/frameLayout2" android:layout_height="match_parent" android:layout_width="wrap_content">
-                        <ImageView android:src="@drawable/profile_picx" android:layout_height="100px"  android:layout_gravity="center_vertical|center_horizontal" android:layout_width="100px" android:id="@+id/userpic"></ImageView>
+                        <ImageView android:src="@drawable/profile_picx" android:layout_height="100px" android:layout_gravity="center_vertical|center_horizontal" android:layout_width="100px" android:id="@+id/userpic"></ImageView>
                         <ImageView android:src="@drawable/profile_pic_overlayx" android:id="@+id/imageView7" android:layout_height="wrap_content" android:layout_width="wrap_content"></ImageView>
                     </FrameLayout>
                     <LinearLayout android:id="@+id/linearLayout5" android:orientation="vertical" android:layout_height="match_parent" android:layout_width="120dp">
                         <TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:text="Loading..." android:paddingTop="10dp" android:textColor="#333333" android:id="@+id/uname"></TextView>
                         <FrameLayout android:id="@+id/frameLayout10" android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingTop="7dp">
                             <Button android:id="@id/connectionsButton" android:layout_gravity="center_vertical" android:layout_height="wrap_content" android:textColor="#999" android:text="...." android:background="@drawable/connections" android:gravity="center_vertical|right" android:layout_width="80dp" android:paddingRight="14dp"></Button>
-                            <ImageView android:layout_height="wrap_content" android:src="@drawable/connection_icon" android:layout_width="wrap_content" android:id="@+id/imageView1"  android:layout_gravity="center_vertical" android:paddingLeft="14dp"></ImageView>
+                            <ImageView android:layout_height="wrap_content" android:src="@drawable/connection_icon" android:layout_width="wrap_content" android:id="@+id/imageView1" android:layout_gravity="center_vertical" android:paddingLeft="14dp"></ImageView>
                         </FrameLayout>
                         <FrameLayout android:id="@+id/frameLayout9" android:layout_width="match_parent" android:layout_height="wrap_content"></FrameLayout>
                     </LinearLayout>
@@ -31,12 +31,12 @@
                     <FrameLayout android:id="@+id/frameLayout3" android:layout_height="match_parent" android:layout_gravity="center_horizontal|clip_horizontal" android:layout_width="match_parent">
                         <ImageView android:layout_gravity="center_horizontal|top" android:src="@drawable/module_header" android:id="@+id/imageView9" android:layout_height="wrap_content" android:layout_width="match_parent"></ImageView>
                         <TextView android:gravity="center_vertical" android:text="Build Your Network" android:textColor="#31486a" android:layout_height="match_parent" android:layout_width="wrap_content" android:paddingLeft="15dp" android:id="@+id/bldNetwork"></TextView>
-                        <ImageButton  android:layout_gravity="center_vertical|right" android:src="@drawable/shuffleselector" android:background="@drawable/buttonx" android:layout_height="wrap_content" android:layout_width="104px" android:layout_marginRight="20dp" android:id="@+id/Shuffle"></ImageButton>
+                        <ImageButton android:layout_gravity="center_vertical|right" android:src="@drawable/shuffleselector" android:background="@drawable/buttonx" android:layout_height="wrap_content" android:layout_width="104px" android:layout_marginRight="20dp" android:id="@+id/Shuffle"></ImageButton>
                     </FrameLayout>
                 </LinearLayout>
                 <LinearLayout android:id="@+id/linearLayout3" android:layout_height="wrap_content" android:layout_width="match_parent">
                     <FrameLayout android:id="@+id/frameLayout4" android:layout_height="wrap_content" android:layout_width="match_parent">
-                        <ImageView android:src="@drawable/module_row" android:adjustViewBounds="true" android:id="@+id/imageView10" android:layout_height="wrap_content" android:layout_width="fill_parent"></ImageView>
+                        <ImageView android:background="@drawable/module_row" android:adjustViewBounds="true" android:id="@+id/imageView10" android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_gravity="center_horizontal"></ImageView>
                         <ImageView android:paddingLeft="15dp" android:layout_gravity="center_vertical|center_horizontal|left" android:id="@+id/promoteMe1" android:layout_width="wrap_content" android:layout_height="wrap_content"></ImageView>
                         <ImageView android:paddingLeft="15dp" android:layout_gravity="center_vertical|center_horizontal|left" android:src="@drawable/small_pic_overlay" android:id="@+id/small_pic_overlay" android:layout_width="wrap_content" android:layout_height="wrap_content"></ImageView>
                         <TextView android:text="Loading..." android:id="@+id/promoteName1" android:textColor="#333333" android:layout_gravity="center_vertical" android:layout_height="match_parent" android:layout_width="wrap_content" android:paddingLeft="55dp"></TextView>
@@ -71,7 +71,7 @@
                         <TextView android:text="....." android:paddingTop="10dp" android:layout_gravity="center_vertical" android:textSize="10dp" android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/suggesJobComp1" android:paddingLeft="56dp"></TextView>
                         <TextView android:paddingRight="45dp" android:gravity="center_vertical" android:textAppearance="?android:attr/textAppearanceSmall" android:text="5.6 mi" android:layout_gravity="center_vertical|right" android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/jobDist1"></TextView>
                         <ImageButton android:src="@drawable/arrow" android:layout_gravity="center_vertical|right" android:background="@drawable/arrow" android:layout_marginRight="20dp" android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/disc1"></ImageButton>
-                        <ImageView android:layout_gravity="center_vertical" android:layout_height="wrap_content" android:layout_width="wrap_content"  android:layout_marginTop="9dp" android:layout_marginLeft="33dp" android:id="@+id/randDisc1"></ImageView>
+                        <ImageView android:layout_gravity="center_vertical" android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_marginTop="9dp" android:layout_marginLeft="33dp" android:id="@+id/randDisc1"></ImageView>
                     </FrameLayout>
                 </LinearLayout>
                 <LinearLayout android:id="@+id/LinearLayout05" android:layout_height="wrap_content" android:layout_width="match_parent">
@@ -106,7 +106,7 @@
                     <TextView android:text="....." android:paddingTop="10dp" android:layout_gravity="center_vertical" android:textSize="10dp" android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/suggesJobComp4" android:paddingLeft="56dp"></TextView>
                     <TextView android:paddingRight="45dp" android:textAppearance="?android:attr/textAppearanceSmall" android:text="8.5 mi" android:layout_gravity="center_vertical|right" android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/jobDist4"></TextView>
                     <ImageButton android:layout_gravity="center_vertical|right" android:src="@drawable/arrow" android:background="@drawable/arrow" android:layout_marginRight="20dp" android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/disc4"></ImageButton>
-                    <ImageView android:layout_gravity="center_vertical" android:layout_height="wrap_content" android:layout_width="wrap_content"  android:layout_marginTop="9dp" android:layout_marginLeft="33dp" android:id="@+id/randDisc4"></ImageView>
+                    <ImageView android:layout_gravity="center_vertical" android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_marginTop="9dp" android:layout_marginLeft="33dp" android:id="@+id/randDisc4"></ImageView>
                 </FrameLayout>
                 <LinearLayout android:id="@+id/LinearLayout04" android:orientation="vertical" android:layout_height="20px" android:layout_width="match_parent"></LinearLayout>
             </LinearLayout>
@@ -114,8 +114,9 @@
         <ImageView android:src="@drawable/header_shadowx" android:layout_height="20px" android:layout_gravity="top" android:id="@+id/imageView2" android:layout_width="wrap_content" android:scaleType="centerCrop"></ImageView>
         <ImageView android:layout_height="20px" android:id="@+id/ImageView01" android:layout_width="wrap_content" android:scaleType="centerCrop" android:layout_gravity="bottom" android:src="@drawable/footer_shadowx" android:paddingTop="0dp"></ImageView>
     </FrameLayout>
-   <!--  <Button android:layout_height="50px" android:text="Search" android:id="@+id/searchDash" android:layout_width="match_parent"></Button>
-    <Button android:layout_height="50px" android:text="Staff Yourself" android:id="@+id/staffYourself" android:layout_width="match_parent"></Button>
-    <Button android:layout_height="50px" android:text="Check-In" android:id="@+id/checkDash" android:layout_width="match_parent"></Button>-->
+   <!-- <Button android:layout_height="50px" android:text="Search" android:id="@+id/searchDash" android:layout_width="match_parent"></Button>
+<Button android:layout_height="50px" android:text="Staff Yourself" android:id="@+id/staffYourself" android:layout_width="match_parent"></Button>
+<Button android:layout_height="50px" android:text="Check-In" android:id="@+id/checkDash" android:layout_width="match_parent"></Button>-->
     
 </LinearLayout>
+

@@ -256,7 +256,7 @@
                         <ImageButton android:layout_gravity="center_vertical|right" android:background="@drawable/arrow" android:layout_marginRight="20dp" android:id="@+id/ImageButton02" android:layout_height="wrap_content" android:layout_width="wrap_content"></ImageButton>
                     </FrameLayout>
                 </LinearLayout>
-                <LinearLayout android:id="@+id/linearLayout1" android:layout_height="wrap_content" android:layout_width="match_parent">
+                <LinearLayout android:id="@+id/linearLayout1" android:layout_height="wrap_content" android:layout_width="match_parent" android:paddingBottom="60dp">
                     <LinearLayout android:id="@+id/LinearLayout01" android:layout_height="wrap_content" android:layout_width="match_parent">
                         <FrameLayout android:id="@+id/FrameLayout01" android:layout_height="match_parent" android:layout_width="match_parent">
                             <ImageView android:src="@drawable/module_rowx" android:id="@+id/ImageView01" android:layout_height="wrap_content" android:layout_width="match_parent"></ImageView>

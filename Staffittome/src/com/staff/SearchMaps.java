@@ -433,9 +433,13 @@ public class SearchMaps extends MapActivity {
 		  List<Overlay> mapOverlays;
 		  Drawable drawable;
 		  //MyItemizedOverlay itemizedOverlay;
+		  String dist = distance;
+		  Double dubdist = Double.parseDouble(dist);
+		  long num = (Math.round(dubdist));
+		  dist = Long.toString(num);
 		  
 		  drawable = c.getResources().getDrawable(R.drawable.map_marker);
-		  MyItemizedOverlay itemizedOverlay = new MyItemizedOverlay(drawable, mapView, jobid, distance);		  
+		  MyItemizedOverlay itemizedOverlay = new MyItemizedOverlay(drawable, mapView, jobid, dist);		  
 		  
 		  GeoPoint myPoint1 = new GeoPoint((int)(doublat * 1e6), (int)(doublng * 1e6));
 		  OverlayItem overlayItem = new OverlayItem(myPoint1, title+" at "+company,jobtype+" / "+industryname);
@@ -443,7 +447,7 @@ public class SearchMaps extends MapActivity {
 		  mapView.getOverlays().add(itemizedOverlay);	       
 		  jobtitles[i]=title;
 		  companies[i]=company;
-		  distances[i]=distance;
+		  distances[i]=dist;
 		  jobids[i]=jobid;
 	       MapController mc = mapView.getController();
 	       //mc.animateTo(myPoint1);
