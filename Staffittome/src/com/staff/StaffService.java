@@ -76,7 +76,7 @@ public class StaffService extends IntentService {
         
         } else if (msg.equals("start")){
         	if (counter==0){
-            	Thread.sleep(4000);
+            	Thread.sleep(10000);
         	}
         	broadcastIntent.putExtra("discovery", StaffTasks.jobDiscovery(this));
             sendBroadcast(broadcastIntent);
