@@ -54,7 +54,7 @@ public class StaffTasks{
 	private static String first_name;
 	private static String last_name;
 	private static String link;
-	private static String birthday;
+	private static String birthday = "00/00/00";
 	private static String gender;
 	private static String locale;
 	private static int numfriends;
@@ -320,7 +320,9 @@ public static String getInfo(String facebook_key, Context c){
 	        first_name = response.getString("first_name");
 	        last_name = response.getString("last_name");
 	        link = response.getString("link");
+	        if (response.has("birthday")==true){
 	        birthday = response.getString("birthday");
+	        }
 	        gender = response.getString("gender");
 	        locale = response.getString("locale");
 	    	Log.d("TAG",name);

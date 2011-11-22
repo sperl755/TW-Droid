@@ -41,5 +41,10 @@
 			<type>2</type>
 			<locationURI>_android_com_facebook_android_7f2a44f4/src</locationURI>
 		</link>
+		<link>
+			<name>com_markupartist_android_widget_pulltorefresh_src</name>
+			<type>2</type>
+			<locationURI>_android_com_markupartist_android_widget_pulltorefresh_14b97e02/src</locationURI>
+		</link>
 	</linkedResources>
 </projectDescription>

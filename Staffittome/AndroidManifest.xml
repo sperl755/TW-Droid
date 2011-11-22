@@ -34,6 +34,7 @@ android:screenOrientation="portrait" ></activity>
 		<activity android:name=".StaffToFriend" ></activity>
 		<activity android:name=".ListJobs" ></activity>
 		<activity android:name=".JobOptions" ></activity>
+		<activity android:name=".Sandbox" ></activity>
 		<activity android:name=".ManualTime" ></activity>
 		<activity android:name=".Proposal" android:theme="@android:style/Theme.NoTitleBar"
 android:windowSoftInputMode="adjustResize" android:screenOrientation="portrait" ></activity>

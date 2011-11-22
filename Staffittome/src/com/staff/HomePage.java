@@ -250,9 +250,7 @@ public class HomePage extends Activity {
 	        	 */
 	        	
 	        	Bundle extras = intent.getExtras();
-	        	//Get & Set User Profile Picture
-	        	Bitmap userpic = extras.getParcelable("userpic");
-	        	user_picture.setImageBitmap(userpic);
+	        	//Get & Set User Profile Picture                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
 	        	
 	        	//Get & Set User Connection #
 	        	if (extras.getString("connnum")!=null) {
