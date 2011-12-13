@@ -21,7 +21,7 @@
                         </FrameLayout>
                        
                         </LinearLayout>
-<FrameLayout android:layout_height="match_parent" android:id="@+id/frameLayout1" android:layout_width="wrap_content">
+					<FrameLayout android:layout_height="match_parent" android:id="@+id/frameLayout1" android:layout_width="wrap_content">
                         <ImageButton android:layout_height="wrap_content" android:background="@drawable/available_widgetx" android:id="@+id/availableOn" android:layout_width="wrap_content"></ImageButton>
                         <ImageButton android:background="@drawable/available_off" android:layout_height="wrap_content" android:id="@+id/availableOff" android:layout_width="wrap_content"></ImageButton>
                     </FrameLayout>
@@ -29,25 +29,25 @@
                 </LinearLayout>
                 <LinearLayout android:id="@+id/LinearLayout03" android:orientation="vertical" android:layout_height="15px" android:layout_width="match_parent"></LinearLayout>
                 <FrameLayout android:id="@+id/FrameLayout02" android:layout_height="match_parent" android:layout_gravity="center_horizontal|clip_horizontal" android:layout_width="match_parent">
-                    <ImageView android:layout_gravity="center_horizontal" android:src="@drawable/module_headerx" android:adjustViewBounds="true" android:id="@+id/ImageView02" android:layout_height="wrap_content" android:layout_width="wrap_content"></ImageView>
+                    <ImageView android:layout_gravity="center_horizontal" android:src="@drawable/module_header" android:adjustViewBounds="true" android:id="@+id/ImageView02" android:layout_height="wrap_content" android:layout_width="wrap_content"></ImageView>
                     <TextView android:gravity="center_vertical" android:text="Shayan Yassami's Summary" android:textColor="#31486a" android:layout_gravity="center_vertical" android:layout_height="match_parent" android:layout_width="wrap_content" android:paddingLeft="15dp" android:id="@+id/unameSummaryText"></TextView>
                     <LinearLayout android:id="@+id/linearLayout2" android:orientation="vertical" android:layout_height="match_parent" android:layout_width="match_parent"></LinearLayout>
                 </FrameLayout>
                 <LinearLayout android:id="@+id/linearLayout1" android:layout_height="wrap_content" android:layout_width="match_parent">
                     <FrameLayout android:id="@+id/frameLayout6" android:layout_height="match_parent" android:layout_width="match_parent">
-                        <ImageView android:src="@drawable/module_row_lastx" android:id="@+id/imageView13" android:layout_height="wrap_content" android:layout_width="match_parent"></ImageView>
+                        <ImageView  android:adjustViewBounds="true" android:src="@drawable/module_row_last" android:id="@+id/imageView13" android:layout_height="wrap_content" android:layout_width="match_parent"></ImageView>
                         <TextView android:text="Loading..." android:paddingTop="10dp" android:textColor="#666666" android:textSize="11dp" android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingLeft="20dp" android:id="@+id/unameSummaryValue"></TextView>
                     </FrameLayout>
                 </LinearLayout>
                 <LinearLayout android:id="@+id/LinearLayout01" android:orientation="vertical" android:layout_height="10px" android:layout_width="match_parent"></LinearLayout>
                 <FrameLayout android:id="@+id/FrameLayout01" android:layout_height="match_parent" android:layout_gravity="center_horizontal|clip_horizontal" android:layout_width="match_parent">
-                    <ImageView android:layout_gravity="center_horizontal" android:src="@drawable/module_headerx" android:adjustViewBounds="true" android:id="@+id/ImageView01" android:layout_height="wrap_content" android:layout_width="wrap_content"></ImageView>
+                    <ImageView android:layout_gravity="center_horizontal" android:src="@drawable/module_header" android:adjustViewBounds="true" android:id="@+id/ImageView01" android:layout_height="wrap_content" android:layout_width="wrap_content"></ImageView>
                     <TextView android:gravity="center_vertical" android:text="Shayan Yassami's Capabilities" android:textColor="#31486a" android:layout_gravity="center_vertical" android:layout_height="match_parent" android:layout_width="wrap_content" android:paddingLeft="15dp" android:id="@+id/unameJobSummaryText"></TextView>
                     <LinearLayout android:id="@+id/LinearLayout02" android:orientation="vertical" android:layout_height="match_parent" android:layout_width="match_parent"></LinearLayout>
                 </FrameLayout>
                 <LinearLayout android:id="@+id/LinearLayout04" android:layout_height="wrap_content" android:layout_width="match_parent">
                     <FrameLayout android:id="@+id/FrameLayout03" android:layout_height="match_parent" android:layout_width="match_parent">
-                        <ImageView android:src="@drawable/module_rowx" android:id="@+id/ImageView03" android:layout_height="wrap_content" android:layout_width="match_parent"></ImageView>
+                        <ImageView android:background="@drawable/module_row" android:adjustViewBounds="true" android:id="@+id/imageView10" android:layout_height="wrap_content" android:layout_width="fill_parent" android:layout_gravity="center_horizontal"></ImageView>
                         <TextView android:gravity="center_vertical" android:text="Loading..." android:textColor="#333333" android:layout_gravity="center_vertical" android:paddingBottom="20dp" android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingLeft="15dp" android:id="@+id/unameJobSkillJob1"></TextView>
                         <TextView android:text="Loading..." android:paddingTop="10dp" android:layout_gravity="center_vertical" android:textSize="10dp" android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingLeft="15dp" android:id="@+id/unameJobSkillRate1"></TextView>
                         <ImageButton android:layout_gravity="center_vertical|right" android:background="@drawable/arrow" android:layout_marginRight="20dp" android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/unameJobSkillJob1Button"></ImageButton>
@@ -55,7 +55,7 @@
                 </LinearLayout>
                 <LinearLayout android:id="@+id/LinearLayout05" android:layout_height="wrap_content" android:layout_width="match_parent">
                     <FrameLayout android:id="@+id/FrameLayout04" android:layout_height="match_parent" android:layout_width="match_parent">
-                        <ImageView android:src="@drawable/module_row_lastx" android:id="@+id/ImageView04" android:layout_height="wrap_content" android:layout_width="match_parent"></ImageView>
+                        <ImageView android:src="@drawable/module_row_last" android:id="@+id/ImageView04" android:layout_height="wrap_content" android:layout_width="match_parent"></ImageView>
                         <TextView android:gravity="center_vertical" android:text="Loading..." android:textColor="#333333" android:layout_gravity="center_vertical" android:paddingBottom="20dp" android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingLeft="15dp" android:id="@+id/unameJobSkillJob2"></TextView>
                         <TextView android:text="Loading..." android:paddingTop="10dp" android:layout_gravity="center_vertical" android:textSize="10dp" android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingLeft="15dp" android:id="@+id/unameJobSkillRate2"></TextView>
                         <ImageButton android:layout_gravity="center_vertical|right" android:background="@drawable/arrow" android:layout_marginRight="20dp" android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/unameJobSkillJob2Button"></ImageButton>
@@ -63,18 +63,18 @@
                 </LinearLayout>
                 <LinearLayout android:id="@+id/LinearLayout06" android:orientation="vertical" android:layout_height="10px" android:layout_width="match_parent"></LinearLayout>
                 <FrameLayout android:id="@+id/FrameLayout05" android:layout_height="match_parent" android:layout_gravity="center_horizontal|clip_horizontal" android:layout_width="match_parent">
-                    <ImageView android:layout_gravity="center_horizontal" android:src="@drawable/module_headerx" android:adjustViewBounds="true" android:id="@+id/ImageView05" android:layout_height="wrap_content" android:layout_width="wrap_content"></ImageView>
+                    <ImageView android:layout_gravity="center_horizontal" android:src="@drawable/module_header" android:adjustViewBounds="true" android:id="@+id/ImageView05" android:layout_height="wrap_content" android:layout_width="wrap_content"></ImageView>
                     <TextView android:gravity="center_vertical" android:text="Shayan Yassami's Experience" android:textColor="#31486a" android:layout_gravity="center_vertical" android:layout_height="match_parent" android:layout_width="wrap_content" android:paddingLeft="15dp" android:id="@+id/unameExperienceText"></TextView>
                     <LinearLayout android:id="@+id/LinearLayout07" android:orientation="vertical" android:layout_height="match_parent" android:layout_width="match_parent"></LinearLayout>
                 </FrameLayout>
                 <FrameLayout android:id="@+id/FrameLayout06" android:layout_height="match_parent" android:layout_width="match_parent">
-                    <ImageView android:src="@drawable/module_rowx" android:id="@+id/ImageView06" android:layout_height="wrap_content" android:layout_width="match_parent"></ImageView>
+                    <ImageView android:src="@drawable/module_row" android:id="@+id/ImageView06" android:layout_height="wrap_content" android:layout_width="match_parent"></ImageView>
                     <TextView android:gravity="center_vertical" android:text="Loading..." android:textColor="#333333" android:layout_gravity="center_vertical" android:paddingBottom="20dp" android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingLeft="15dp" android:id="@+id/unameJobExperience1"></TextView>
                     <TextView android:text="Loading..." android:paddingTop="10dp" android:layout_gravity="center_vertical" android:textSize="10dp" android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingLeft="15dp" android:id="@+id/unameJobExperienceCompany1"></TextView>
                     <ImageButton android:layout_gravity="center_vertical|right" android:background="@drawable/arrow" android:layout_marginRight="20dp" android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/unameJobExperience1Button"></ImageButton>
                 </FrameLayout>
                 <FrameLayout android:id="@+id/FrameLayout07" android:layout_height="match_parent" android:layout_width="match_parent">
-                    <ImageView android:src="@drawable/module_row_lastx" android:id="@+id/ImageView07" android:layout_height="wrap_content" android:layout_width="match_parent"></ImageView>
+                    <ImageView android:src="@drawable/module_row_last" android:id="@+id/ImageView07" android:layout_height="wrap_content" android:layout_width="match_parent"></ImageView>
                     <TextView android:gravity="center_vertical" android:text="Loading..." android:textColor="#333333" android:layout_gravity="center_vertical" android:paddingBottom="20dp" android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingLeft="15dp" android:id="@+id/unameJobExperience2"></TextView>
                     <TextView android:text="Loading..." android:paddingTop="10dp" android:layout_gravity="center_vertical" android:textSize="10dp" android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingLeft="15dp" android:id="@+id/unameJobExperienceCompany2"></TextView>
                     <ImageButton android:layout_gravity="center_vertical|right" android:background="@drawable/arrow" android:layout_marginRight="20dp" android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/unameJobExperience2Button"></ImageButton>
