@@ -2,16 +2,15 @@
 <LinearLayout
   xmlns:android="http://schemas.android.com/apk/res/android"
   android:orientation="vertical"
-  android:layout_width="match_parent"
   android:layout_height="match_parent"
-  android:background="@drawable/backgroundcolor" android:isScrollContainer="true">
+  android:background="@drawable/backgroundcolor" android:isScrollContainer="true" android:layout_width="match_parent">
     <FrameLayout android:id="@+id/frameLayout2" android:layout_width="match_parent" android:layout_height="match_parent">
         <ImageView android:src="@drawable/black_header_shadow" android:layout_height="wrap_content" android:id="@+id/ImageView03" android:layout_width="wrap_content" android:scaleType="centerCrop"></ImageView>
         <ScrollView android:id="@+id/scrollView2" android:layout_height="wrap_content" android:layout_width="match_parent">
             <LinearLayout android:id="@+id/linearLayout2" android:layout_height="match_parent" android:orientation="vertical" android:layout_width="match_parent" android:paddingTop="20dp">
                 <FrameLayout android:id="@+id/frameLayout1" android:layout_height="wrap_content" android:layout_width="match_parent"></FrameLayout>
                 <LinearLayout android:id="@+id/linearLayout1" android:layout_height="wrap_content" android:layout_width="match_parent">
-                    <FrameLayout android:id="@+id/frameLayout6" android:layout_height="match_parent" android:layout_width="match_parent">
+                    <FrameLayout android:id="@+id/frameLayout6" android:layout_height="match_parent" android:layout_width="match_parent" android:paddingLeft="10dp" android:paddingRight="10dp">
                         <ImageView android:src="@drawable/module_row_firstx" android:id="@+id/imageView13" android:layout_height="wrap_content" android:layout_width="match_parent"></ImageView>
                         <TextView android:gravity="center_vertical" android:text="Furher" android:textColor="#333333" android:layout_gravity="center_vertical" android:paddingBottom="20dp" android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingLeft="70dp" android:id="@+id/jobtitle1"></TextView>
                         <TextView android:text="at Apple Inc" android:paddingTop="10dp" android:layout_gravity="center_vertical" android:textSize="10dp" android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingLeft="70dp" android:id="@+id/company1"></TextView>
@@ -23,8 +22,8 @@
                 </LinearLayout>
                 <LinearLayout android:id="@+id/LinearLayout02" android:layout_height="wrap_content" android:layout_width="match_parent">
                     <LinearLayout android:id="@+id/LinearLayout03" android:layout_height="wrap_content" android:layout_width="match_parent">
-                        <FrameLayout android:id="@+id/FrameLayout03" android:layout_height="match_parent" android:layout_width="match_parent">
-                            <ImageView android:src="@drawable/module_rowx" android:id="@+id/ImageView02" android:layout_height="wrap_content" android:layout_width="match_parent"></ImageView>
+                        <FrameLayout android:paddingLeft="10dp" android:paddingRight="10dp" android:id="@+id/FrameLayout03" android:layout_height="match_parent" android:layout_width="match_parent">
+                        <ImageView android:background="@drawable/module_row" android:adjustViewBounds="true" android:id="@+id/imageView10" android:layout_height="wrap_content" android:layout_width="fill_parent" android:layout_gravity="center_horizontal"></ImageView>
                             <TextView android:gravity="center_vertical" android:text="Furher" android:textColor="#333333" android:layout_gravity="center_vertical" android:paddingBottom="20dp" android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingLeft="70dp" android:id="@+id/jobtitle2"></TextView>
                             <TextView android:text="at Apple Inc" android:paddingTop="10dp" android:layout_gravity="center_vertical" android:textSize="10dp" android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingLeft="70dp" android:id="@+id/company2"></TextView>
                             <TextView android:paddingRight="45dp" android:gravity="center_vertical" android:textAppearance="?android:attr/textAppearanceSmall" android:text="456 mi" android:layout_gravity="center_vertical|right" android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/dist2"></TextView>
@@ -36,8 +35,8 @@
                 </LinearLayout>
                 <LinearLayout android:id="@+id/LinearLayout11" android:layout_height="wrap_content" android:layout_width="match_parent">
                     <LinearLayout android:id="@+id/LinearLayout10" android:layout_height="wrap_content" android:layout_width="match_parent">
-                        <FrameLayout android:id="@+id/FrameLayout09" android:layout_height="match_parent" android:layout_width="match_parent">
-                            <ImageView android:src="@drawable/module_rowx" android:id="@+id/ImageView10" android:layout_height="wrap_content" android:layout_width="match_parent"></ImageView>
+                        <FrameLayout android:paddingLeft="10dp" android:paddingRight="10dp" android:id="@+id/FrameLayout09" android:layout_height="match_parent" android:layout_width="match_parent">
+                        <ImageView android:background="@drawable/module_row" android:adjustViewBounds="true" android:id="@+id/imageView10" android:layout_height="wrap_content" android:layout_width="fill_parent" android:layout_gravity="center_horizontal"></ImageView>
                             <TextView android:gravity="center_vertical" android:text="Furher" android:textColor="#333333" android:layout_gravity="center_vertical" android:paddingBottom="20dp" android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingLeft="70dp" android:id="@+id/jobtitle3"></TextView>
                             <TextView android:text="at Apple Inc" android:paddingTop="10dp" android:layout_gravity="center_vertical" android:textSize="10dp" android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingLeft="70dp" android:id="@+id/company3"></TextView>
                             <TextView android:paddingRight="45dp" android:gravity="center_vertical" android:textAppearance="?android:attr/textAppearanceSmall" android:text="456 mi" android:layout_gravity="center_vertical|right" android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/dist3"></TextView>
@@ -46,8 +45,8 @@
                             <ImageView android:layout_gravity="center_vertical|center_horizontal|clip_horizontal|left" android:layout_height="wrap_content" android:paddingLeft="15dp" android:layout_width="wrap_content" android:src="@drawable/small_pic_overlay" android:id="@+id/ImageView14"></ImageView>
                         </FrameLayout>
                     </LinearLayout>
-                    <FrameLayout android:id="@+id/FrameLayout10" android:layout_height="match_parent" android:layout_width="match_parent">
-                        <ImageView android:src="@drawable/module_rowx" android:id="@+id/ImageView11" android:layout_height="wrap_content" android:layout_width="match_parent"></ImageView>
+                    <FrameLayout android:paddingLeft="10dp" android:paddingRight="10dp"  android:id="@+id/FrameLayout10" android:layout_height="match_parent" android:layout_width="match_parent">
+                        <ImageView android:background="@drawable/module_row" android:adjustViewBounds="true" android:id="@+id/imageView10" android:layout_height="wrap_content" android:layout_width="fill_parent" android:layout_gravity="center_horizontal"></ImageView>
                         <TextView android:id="@+id/TextView30" android:gravity="center_vertical" android:text="Furher" android:textColor="#333333" android:layout_gravity="center_vertical" android:paddingBottom="20dp" android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingLeft="70dp"></TextView>
                         <TextView android:id="@+id/TextView28" android:text="at Apple Inc" android:paddingTop="10dp" android:layout_gravity="center_vertical" android:textSize="10dp" android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingLeft="70dp"></TextView>
                         <TextView android:paddingRight="45dp" android:id="@+id/TextView26" android:gravity="center_vertical" android:textAppearance="?android:attr/textAppearanceSmall" android:text="456 mi" android:layout_gravity="center_vertical|right" android:layout_height="wrap_content" android:layout_width="wrap_content"></TextView>
@@ -56,8 +55,8 @@
                 </LinearLayout>
                 <LinearLayout android:id="@+id/LinearLayout09" android:layout_height="wrap_content" android:layout_width="match_parent">
                     <LinearLayout android:id="@+id/LinearLayout08" android:layout_height="wrap_content" android:layout_width="match_parent">
-                        <FrameLayout android:id="@+id/FrameLayout07" android:layout_height="match_parent" android:layout_width="match_parent">
-                            <ImageView android:src="@drawable/module_rowx" android:id="@+id/ImageView08" android:layout_height="wrap_content" android:layout_width="match_parent"></ImageView>
+                        <FrameLayout android:paddingLeft="10dp" android:paddingRight="10dp" android:id="@+id/FrameLayout07" android:layout_height="match_parent" android:layout_width="match_parent">
+                        <ImageView android:background="@drawable/module_row" android:adjustViewBounds="true" android:id="@+id/imageView10" android:layout_height="wrap_content" android:layout_width="fill_parent" android:layout_gravity="center_horizontal"></ImageView>
                             <TextView android:gravity="center_vertical" android:text="Furher" android:textColor="#333333" android:layout_gravity="center_vertical" android:paddingBottom="20dp" android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingLeft="70dp" android:id="@+id/jobtitle4"></TextView>
                             <TextView android:text="at Apple Inc" android:paddingTop="10dp" android:layout_gravity="center_vertical" android:textSize="10dp" android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingLeft="70dp" android:id="@+id/company4"></TextView>
                             <TextView android:paddingRight="45dp" android:gravity="center_vertical" android:textAppearance="?android:attr/textAppearanceSmall" android:text="456 mi" android:layout_gravity="center_vertical|right" android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/dist4"></TextView>
@@ -66,8 +65,8 @@
                             <ImageView android:layout_gravity="center_vertical|center_horizontal|clip_horizontal|left" android:layout_height="wrap_content" android:paddingLeft="15dp" android:layout_width="wrap_content" android:src="@drawable/small_pic_overlay" android:id="@+id/ImageView16"></ImageView>
                         </FrameLayout>
                     </LinearLayout>
-                    <FrameLayout android:id="@+id/FrameLayout08" android:layout_height="match_parent" android:layout_width="match_parent">
-                        <ImageView android:src="@drawable/module_rowx" android:id="@+id/ImageView09" android:layout_height="wrap_content" android:layout_width="match_parent"></ImageView>
+                    <FrameLayout android:paddingLeft="10dp" android:paddingRight="10dp" android:id="@+id/FrameLayout08" android:layout_height="match_parent" android:layout_width="match_parent">
+                        <ImageView android:background="@drawable/module_row" android:adjustViewBounds="true" android:id="@+id/imageView10" android:layout_height="wrap_content" android:layout_width="fill_parent" android:layout_gravity="center_horizontal"></ImageView>
                         <TextView android:id="@+id/TextView24" android:gravity="center_vertical" android:text="Furher" android:textColor="#333333" android:layout_gravity="center_vertical" android:paddingBottom="20dp" android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingLeft="70dp"></TextView>
                         <TextView android:id="@+id/TextView22" android:text="at Apple Inc" android:paddingTop="10dp" android:layout_gravity="center_vertical" android:textSize="10dp" android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingLeft="70dp"></TextView>
                         <TextView android:paddingRight="45dp" android:id="@+id/TextView20" android:gravity="center_vertical" android:textAppearance="?android:attr/textAppearanceSmall" android:text="456 mi" android:layout_gravity="center_vertical|right" android:layout_height="wrap_content" android:layout_width="wrap_content"></TextView>
@@ -75,8 +74,8 @@
                     </FrameLayout>
                 </LinearLayout>
                 <LinearLayout android:id="@+id/linearLayout1" android:layout_height="wrap_content" android:layout_width="match_parent">
-                    <FrameLayout android:id="@+id/frameLayout6" android:layout_height="match_parent" android:layout_width="match_parent">
-                        <ImageView android:src="@drawable/module_rowx" android:id="@+id/imageView13" android:layout_height="wrap_content" android:layout_width="match_parent"></ImageView>
+                    <FrameLayout android:paddingLeft="10dp" android:paddingRight="10dp" android:id="@+id/frameLayout6" android:layout_height="match_parent" android:layout_width="match_parent">
+                        <ImageView android:background="@drawable/module_row" android:adjustViewBounds="true" android:id="@+id/imageView10" android:layout_height="wrap_content" android:layout_width="fill_parent" android:layout_gravity="center_horizontal"></ImageView>
                         <TextView android:gravity="center_vertical" android:text="Furher" android:textColor="#333333" android:layout_gravity="center_vertical" android:paddingBottom="20dp" android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingLeft="70dp" android:id="@+id/jobtitle5"></TextView>
                         <TextView android:text="at Apple Inc" android:paddingTop="10dp" android:layout_gravity="center_vertical" android:textSize="10dp" android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingLeft="70dp" android:id="@+id/company5"></TextView>
                         <TextView android:paddingRight="45dp" android:gravity="center_vertical" android:textAppearance="?android:attr/textAppearanceSmall" android:text="456 mi" android:layout_gravity="center_vertical|right" android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/dist5"></TextView>
@@ -86,8 +85,8 @@
                     </FrameLayout>
                 </LinearLayout>
                 <LinearLayout android:id="@+id/linearLayout1" android:layout_height="wrap_content" android:layout_width="match_parent">
-                    <FrameLayout android:id="@+id/frameLayout6" android:layout_height="match_parent" android:layout_width="match_parent">
-                        <ImageView android:src="@drawable/module_rowx" android:id="@+id/imageView13" android:layout_height="wrap_content" android:layout_width="match_parent"></ImageView>
+                    <FrameLayout android:paddingLeft="10dp" android:paddingRight="10dp" android:id="@+id/frameLayout6" android:layout_height="match_parent" android:layout_width="match_parent">
+                        <ImageView android:background="@drawable/module_row" android:adjustViewBounds="true" android:id="@+id/imageView10" android:layout_height="wrap_content" android:layout_width="fill_parent" android:layout_gravity="center_horizontal"></ImageView>
                         <TextView android:gravity="center_vertical" android:text="Furher" android:textColor="#333333" android:layout_gravity="center_vertical" android:paddingBottom="20dp" android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingLeft="70dp" android:id="@+id/jobtitle6"></TextView>
                         <TextView android:text="at Apple Inc" android:paddingTop="10dp" android:layout_gravity="center_vertical" android:textSize="10dp" android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingLeft="70dp" android:id="@+id/company6"></TextView>
                         <TextView android:paddingRight="45dp" android:gravity="center_vertical" android:textAppearance="?android:attr/textAppearanceSmall" android:text="456 mi" android:layout_gravity="center_vertical|right" android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/dist6"></TextView>
@@ -98,8 +97,8 @@
                 </LinearLayout>
                 <LinearLayout android:id="@+id/LinearLayout06" android:layout_height="wrap_content" android:layout_width="match_parent">
                     <LinearLayout android:id="@+id/LinearLayout07" android:layout_height="wrap_content" android:layout_width="match_parent">
-                        <FrameLayout android:id="@+id/FrameLayout06" android:layout_height="match_parent" android:layout_width="match_parent">
-                            <ImageView android:src="@drawable/module_rowx" android:id="@+id/ImageView06" android:layout_height="wrap_content" android:layout_width="match_parent"></ImageView>
+                        <FrameLayout android:paddingLeft="10dp" android:paddingRight="10dp" android:id="@+id/FrameLayout06" android:layout_height="match_parent" android:layout_width="match_parent">
+                        <ImageView android:background="@drawable/module_row" android:adjustViewBounds="true" android:id="@+id/imageView10" android:layout_height="wrap_content" android:layout_width="fill_parent" android:layout_gravity="center_horizontal"></ImageView>
                             <TextView android:gravity="center_vertical" android:text="Furher" android:textColor="#333333" android:layout_gravity="center_vertical" android:paddingBottom="20dp" android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingLeft="70dp" android:id="@+id/jobtitle7"></TextView>
                             <TextView android:text="at Apple Inc" android:paddingTop="10dp" android:layout_gravity="center_vertical" android:textSize="10dp" android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingLeft="70dp" android:id="@+id/company7"></TextView>
                             <TextView android:paddingRight="45dp" android:gravity="center_vertical" android:textAppearance="?android:attr/textAppearanceSmall" android:text="456 mi" android:layout_gravity="center_vertical|right" android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/dist7"></TextView>
@@ -108,8 +107,8 @@
                             <ImageView android:layout_gravity="center_vertical|center_horizontal|clip_horizontal|left" android:layout_height="wrap_content" android:paddingLeft="15dp" android:layout_width="wrap_content" android:src="@drawable/small_pic_overlay" android:id="@+id/ImageView22"></ImageView>
                         </FrameLayout>
                     </LinearLayout>
-                    <FrameLayout android:id="@+id/FrameLayout05" android:layout_height="match_parent" android:layout_width="match_parent">
-                        <ImageView android:src="@drawable/module_rowx" android:id="@+id/ImageView07" android:layout_height="wrap_content" android:layout_width="match_parent"></ImageView>
+                    <FrameLayout android:paddingLeft="10dp" android:paddingRight="10dp" android:id="@+id/FrameLayout05" android:layout_height="match_parent" android:layout_width="match_parent">
+                        <ImageView android:background="@drawable/module_row" android:adjustViewBounds="true" android:id="@+id/imageView10" android:layout_height="wrap_content" android:layout_width="fill_parent" android:layout_gravity="center_horizontal"></ImageView>
                         <TextView android:id="@+id/TextView13" android:gravity="center_vertical" android:text="Furher" android:textColor="#333333" android:layout_gravity="center_vertical" android:paddingBottom="20dp" android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingLeft="70dp"></TextView>
                         <TextView android:id="@+id/TextView14" android:text="at Apple Inc" android:paddingTop="10dp" android:layout_gravity="center_vertical" android:textSize="10dp" android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingLeft="70dp"></TextView>
                         <TextView android:paddingRight="45dp" android:id="@+id/TextView16" android:gravity="center_vertical" android:textAppearance="?android:attr/textAppearanceSmall" android:text="456 mi" android:layout_gravity="center_vertical|right" android:layout_height="wrap_content" android:layout_width="wrap_content"></TextView>
@@ -118,8 +117,8 @@
                 </LinearLayout>
                 <LinearLayout android:id="@+id/LinearLayout04" android:layout_height="wrap_content" android:layout_width="match_parent">
                     <LinearLayout android:id="@+id/LinearLayout05" android:layout_height="wrap_content" android:layout_width="match_parent">
-                        <FrameLayout android:id="@+id/FrameLayout04" android:layout_height="match_parent" android:layout_width="match_parent">
-                            <ImageView android:src="@drawable/module_rowx" android:id="@+id/ImageView04" android:layout_height="wrap_content" android:layout_width="match_parent"></ImageView>
+                        <FrameLayout android:paddingLeft="10dp" android:paddingRight="10dp" android:id="@+id/FrameLayout04" android:layout_height="match_parent" android:layout_width="match_parent">
+                        <ImageView android:background="@drawable/module_row" android:adjustViewBounds="true" android:id="@+id/imageView10" android:layout_height="wrap_content" android:layout_width="fill_parent" android:layout_gravity="center_horizontal"></ImageView>
                             <TextView android:gravity="center_vertical" android:text="Furher" android:textColor="#333333" android:layout_gravity="center_vertical" android:paddingBottom="20dp" android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingLeft="70dp" android:id="@+id/jobtitle8"></TextView>
                             <TextView android:text="at Apple Inc" android:paddingTop="10dp" android:layout_gravity="center_vertical" android:textSize="10dp" android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingLeft="70dp" android:id="@+id/company8"></TextView>
                             <TextView android:paddingRight="45dp" android:gravity="center_vertical" android:textAppearance="?android:attr/textAppearanceSmall" android:text="456 mi" android:layout_gravity="center_vertical|right" android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/dist8"></TextView>
@@ -128,8 +127,8 @@
                             <ImageView android:layout_gravity="center_vertical|center_horizontal|clip_horizontal|left" android:layout_height="wrap_content" android:paddingLeft="15dp" android:layout_width="wrap_content" android:src="@drawable/small_pic_overlay" android:id="@+id/ImageView24"></ImageView>
                         </FrameLayout>
                     </LinearLayout>
-                    <FrameLayout android:id="@+id/FrameLayout02" android:layout_height="match_parent" android:layout_width="match_parent">
-                        <ImageView android:src="@drawable/module_rowx" android:id="@+id/ImageView05" android:layout_height="wrap_content" android:layout_width="match_parent"></ImageView>
+                    <FrameLayout  android:paddingLeft="10dp" android:paddingRight="10dp" android:id="@+id/FrameLayout02" android:layout_height="match_parent" android:layout_width="match_parent">
+                        <ImageView android:background="@drawable/module_row" android:adjustViewBounds="true" android:id="@+id/imageView10" android:layout_height="wrap_content" android:layout_width="fill_parent" android:layout_gravity="center_horizontal"></ImageView>
                         <TextView android:id="@+id/TextView04" android:gravity="center_vertical" android:text="Furher" android:textColor="#333333" android:layout_gravity="center_vertical" android:paddingBottom="20dp" android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingLeft="70dp"></TextView>
                         <TextView android:id="@+id/TextView05" android:text="at Apple Inc" android:paddingTop="10dp" android:layout_gravity="center_vertical" android:textSize="10dp" android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingLeft="70dp"></TextView>
                         <TextView android:paddingRight="45dp" android:id="@+id/TextView10" android:gravity="center_vertical" android:textAppearance="?android:attr/textAppearanceSmall" android:text="456 mi" android:layout_gravity="center_vertical|right" android:layout_height="wrap_content" android:layout_width="wrap_content"></TextView>
@@ -138,8 +137,8 @@
                 </LinearLayout>
                 <LinearLayout android:id="@+id/LinearLayout04" android:layout_height="wrap_content" android:layout_width="match_parent">
                     <LinearLayout android:id="@+id/LinearLayout05" android:layout_height="wrap_content" android:layout_width="match_parent">
-                        <FrameLayout android:id="@+id/FrameLayout04" android:layout_height="match_parent" android:layout_width="match_parent">
-                            <ImageView android:src="@drawable/module_rowx" android:id="@+id/ImageView04" android:layout_height="wrap_content" android:layout_width="match_parent"></ImageView>
+                        <FrameLayout android:paddingLeft="10dp" android:paddingRight="10dp" android:id="@+id/FrameLayout04" android:layout_height="match_parent" android:layout_width="match_parent">
+                        <ImageView android:background="@drawable/module_row" android:adjustViewBounds="true" android:id="@+id/imageView10" android:layout_height="wrap_content" android:layout_width="fill_parent" android:layout_gravity="center_horizontal"></ImageView>
                             <TextView android:gravity="center_vertical" android:text="Furher" android:textColor="#333333" android:layout_gravity="center_vertical" android:paddingBottom="20dp" android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingLeft="70dp" android:id="@+id/jobtitle9"></TextView>
                             <TextView android:text="at Apple Inc" android:paddingTop="10dp" android:layout_gravity="center_vertical" android:textSize="10dp" android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingLeft="70dp" android:id="@+id/company9"></TextView>
                             <TextView android:paddingRight="45dp" android:gravity="center_vertical" android:textAppearance="?android:attr/textAppearanceSmall" android:text="456 mi" android:layout_gravity="center_vertical|right" android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/dist9"></TextView>
@@ -148,8 +147,8 @@
                             <ImageView android:layout_gravity="center_vertical|center_horizontal|clip_horizontal|left" android:layout_height="wrap_content" android:paddingLeft="15dp" android:layout_width="wrap_content" android:src="@drawable/small_pic_overlay" android:id="@+id/ImageView24"></ImageView>
                         </FrameLayout>
                     </LinearLayout>
-                    <FrameLayout android:id="@+id/FrameLayout02" android:layout_height="match_parent" android:layout_width="match_parent">
-                        <ImageView android:src="@drawable/module_rowx" android:id="@+id/ImageView05" android:layout_height="wrap_content" android:layout_width="match_parent"></ImageView>
+                    <FrameLayout android:paddingLeft="10dp" android:paddingRight="10dp" android:id="@+id/FrameLayout02" android:layout_height="match_parent" android:layout_width="match_parent">
+                        <ImageView android:background="@drawable/module_row" android:adjustViewBounds="true" android:id="@+id/imageView10" android:layout_height="wrap_content" android:layout_width="fill_parent" android:layout_gravity="center_horizontal"></ImageView>
                         <TextView android:id="@+id/TextView04" android:gravity="center_vertical" android:text="Furher" android:textColor="#333333" android:layout_gravity="center_vertical" android:paddingBottom="20dp" android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingLeft="70dp"></TextView>
                         <TextView android:id="@+id/TextView05" android:text="at Apple Inc" android:paddingTop="10dp" android:layout_gravity="center_vertical" android:textSize="10dp" android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingLeft="70dp"></TextView>
                         <TextView android:paddingRight="45dp" android:id="@+id/TextView10" android:gravity="center_vertical" android:textAppearance="?android:attr/textAppearanceSmall" android:text="456 mi" android:layout_gravity="center_vertical|right" android:layout_height="wrap_content" android:layout_width="wrap_content"></TextView>
@@ -158,8 +157,8 @@
                 </LinearLayout>
                 <LinearLayout android:id="@+id/LinearLayout04" android:layout_height="wrap_content" android:layout_width="match_parent">
                     <LinearLayout android:id="@+id/LinearLayout05" android:layout_height="wrap_content" android:layout_width="match_parent">
-                        <FrameLayout android:id="@+id/FrameLayout04" android:layout_height="match_parent" android:layout_width="match_parent">
-                            <ImageView android:src="@drawable/module_rowx" android:id="@+id/ImageView04" android:layout_height="wrap_content" android:layout_width="match_parent"></ImageView>
+                        <FrameLayout android:paddingLeft="10dp" android:paddingRight="10dp" android:id="@+id/FrameLayout04" android:layout_height="match_parent" android:layout_width="match_parent">
+                        <ImageView android:background="@drawable/module_row" android:adjustViewBounds="true" android:id="@+id/imageView10" android:layout_height="wrap_content" android:layout_width="fill_parent" android:layout_gravity="center_horizontal"></ImageView>
                             <TextView android:gravity="center_vertical" android:text="Furher" android:textColor="#333333" android:layout_gravity="center_vertical" android:paddingBottom="20dp" android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingLeft="70dp" android:id="@+id/jobtitle10"></TextView>
                             <TextView android:text="at Apple Inc" android:paddingTop="10dp" android:layout_gravity="center_vertical" android:textSize="10dp" android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingLeft="70dp" android:id="@+id/company10"></TextView>
                             <TextView android:paddingRight="45dp" android:gravity="center_vertical" android:textAppearance="?android:attr/textAppearanceSmall" android:text="456 mi" android:layout_gravity="center_vertical|right" android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/dist10"></TextView>
@@ -168,8 +167,8 @@
                             <ImageView android:layout_gravity="center_vertical|center_horizontal|clip_horizontal|left" android:layout_height="wrap_content" android:paddingLeft="15dp" android:layout_width="wrap_content" android:src="@drawable/small_pic_overlay" android:id="@+id/ImageView24"></ImageView>
                         </FrameLayout>
                     </LinearLayout>
-                    <FrameLayout android:id="@+id/FrameLayout02" android:layout_height="match_parent" android:layout_width="match_parent">
-                        <ImageView android:src="@drawable/module_rowx" android:id="@+id/ImageView05" android:layout_height="wrap_content" android:layout_width="match_parent"></ImageView>
+                    <FrameLayout android:paddingLeft="10dp" android:paddingRight="10dp" android:id="@+id/FrameLayout02" android:layout_height="match_parent" android:layout_width="match_parent">
+                        <ImageView android:background="@drawable/module_row" android:adjustViewBounds="true" android:id="@+id/imageView10" android:layout_height="wrap_content" android:layout_width="fill_parent" android:layout_gravity="center_horizontal"></ImageView>
                         <TextView android:id="@+id/TextView04" android:gravity="center_vertical" android:text="Furher" android:textColor="#333333" android:layout_gravity="center_vertical" android:paddingBottom="20dp" android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingLeft="70dp"></TextView>
                         <TextView android:id="@+id/TextView05" android:text="at Apple Inc" android:paddingTop="10dp" android:layout_gravity="center_vertical" android:textSize="10dp" android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingLeft="70dp"></TextView>
                         <TextView android:paddingRight="45dp" android:id="@+id/TextView10" android:gravity="center_vertical" android:textAppearance="?android:attr/textAppearanceSmall" android:text="456 mi" android:layout_gravity="center_vertical|right" android:layout_height="wrap_content" android:layout_width="wrap_content"></TextView>
@@ -178,8 +177,8 @@
                 </LinearLayout>
                 <LinearLayout android:id="@+id/LinearLayout04" android:layout_height="wrap_content" android:layout_width="match_parent">
                     <LinearLayout android:id="@+id/LinearLayout05" android:layout_height="wrap_content" android:layout_width="match_parent">
-                        <FrameLayout android:id="@+id/FrameLayout04" android:layout_height="match_parent" android:layout_width="match_parent">
-                            <ImageView android:src="@drawable/module_rowx" android:id="@+id/ImageView04" android:layout_height="wrap_content" android:layout_width="match_parent"></ImageView>
+                        <FrameLayout android:paddingLeft="10dp" android:paddingRight="10dp" android:id="@+id/FrameLayout04" android:layout_height="match_parent" android:layout_width="match_parent">
+                        <ImageView android:background="@drawable/module_row" android:adjustViewBounds="true" android:id="@+id/imageView10" android:layout_height="wrap_content" android:layout_width="fill_parent" android:layout_gravity="center_horizontal"></ImageView>
                             <TextView android:gravity="center_vertical" android:text="Furher" android:textColor="#333333" android:layout_gravity="center_vertical" android:paddingBottom="20dp" android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingLeft="70dp" android:id="@+id/jobtitle11"></TextView>
                             <TextView android:text="at Apple Inc" android:paddingTop="10dp" android:layout_gravity="center_vertical" android:textSize="10dp" android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingLeft="70dp" android:id="@+id/company11"></TextView>
                             <TextView android:paddingRight="45dp" android:gravity="center_vertical" android:textAppearance="?android:attr/textAppearanceSmall" android:text="456 mi" android:layout_gravity="center_vertical|right" android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/dist11"></TextView>
@@ -188,8 +187,8 @@
                             <ImageView android:layout_gravity="center_vertical|center_horizontal|clip_horizontal|left" android:layout_height="wrap_content" android:paddingLeft="15dp" android:layout_width="wrap_content" android:src="@drawable/small_pic_overlay" android:id="@+id/ImageView24"></ImageView>
                         </FrameLayout>
                     </LinearLayout>
-                    <FrameLayout android:id="@+id/FrameLayout02" android:layout_height="match_parent" android:layout_width="match_parent">
-                        <ImageView android:src="@drawable/module_rowx" android:id="@+id/ImageView05" android:layout_height="wrap_content" android:layout_width="match_parent"></ImageView>
+                    <FrameLayout android:paddingLeft="10dp" android:paddingRight="10dp" android:id="@+id/FrameLayout02" android:layout_height="match_parent" android:layout_width="match_parent">
+                        <ImageView android:background="@drawable/module_row" android:adjustViewBounds="true" android:id="@+id/imageView10" android:layout_height="wrap_content" android:layout_width="fill_parent" android:layout_gravity="center_horizontal"></ImageView>
                         <TextView android:id="@+id/TextView04" android:gravity="center_vertical" android:text="Furher" android:textColor="#333333" android:layout_gravity="center_vertical" android:paddingBottom="20dp" android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingLeft="70dp"></TextView>
                         <TextView android:id="@+id/TextView05" android:text="at Apple Inc" android:paddingTop="10dp" android:layout_gravity="center_vertical" android:textSize="10dp" android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingLeft="70dp"></TextView>
                         <TextView android:paddingRight="45dp" android:id="@+id/TextView10" android:gravity="center_vertical" android:textAppearance="?android:attr/textAppearanceSmall" android:text="456 mi" android:layout_gravity="center_vertical|right" android:layout_height="wrap_content" android:layout_width="wrap_content"></TextView>
@@ -198,8 +197,8 @@
                 </LinearLayout>
                 <LinearLayout android:id="@+id/LinearLayout04" android:layout_height="wrap_content" android:layout_width="match_parent">
                     <LinearLayout android:id="@+id/LinearLayout05" android:layout_height="wrap_content" android:layout_width="match_parent">
-                        <FrameLayout android:id="@+id/FrameLayout04" android:layout_height="match_parent" android:layout_width="match_parent">
-                            <ImageView android:src="@drawable/module_rowx" android:id="@+id/ImageView04" android:layout_height="wrap_content" android:layout_width="match_parent"></ImageView>
+                        <FrameLayout android:paddingLeft="10dp" android:paddingRight="10dp" android:id="@+id/FrameLayout04" android:layout_height="match_parent" android:layout_width="match_parent">
+                        <ImageView android:background="@drawable/module_row" android:adjustViewBounds="true" android:id="@+id/imageView10" android:layout_height="wrap_content" android:layout_width="fill_parent" android:layout_gravity="center_horizontal"></ImageView>
                             <TextView android:gravity="center_vertical" android:text="Furher" android:textColor="#333333" android:layout_gravity="center_vertical" android:paddingBottom="20dp" android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingLeft="70dp" android:id="@+id/jobtitle12"></TextView>
                             <TextView android:text="at Apple Inc" android:paddingTop="10dp" android:layout_gravity="center_vertical" android:textSize="10dp" android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingLeft="70dp" android:id="@+id/company12"></TextView>
                             <TextView android:paddingRight="45dp" android:gravity="center_vertical" android:textAppearance="?android:attr/textAppearanceSmall" android:text="456 mi" android:layout_gravity="center_vertical|right" android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/dist12"></TextView>
@@ -208,8 +207,8 @@
                             <ImageView android:layout_gravity="center_vertical|center_horizontal|clip_horizontal|left" android:layout_height="wrap_content" android:paddingLeft="15dp" android:layout_width="wrap_content" android:src="@drawable/small_pic_overlay" android:id="@+id/ImageView24"></ImageView>
                         </FrameLayout>
                     </LinearLayout>
-                    <FrameLayout android:id="@+id/FrameLayout02" android:layout_height="match_parent" android:layout_width="match_parent">
-                        <ImageView android:src="@drawable/module_rowx" android:id="@+id/ImageView05" android:layout_height="wrap_content" android:layout_width="match_parent"></ImageView>
+                    <FrameLayout android:paddingLeft="10dp" android:paddingRight="10dp" android:id="@+id/FrameLayout02" android:layout_height="match_parent" android:layout_width="match_parent">
+                        <ImageView android:background="@drawable/module_row" android:adjustViewBounds="true" android:id="@+id/imageView10" android:layout_height="wrap_content" android:layout_width="fill_parent" android:layout_gravity="center_horizontal"></ImageView>
                         <TextView android:id="@+id/TextView04" android:gravity="center_vertical" android:text="Furher" android:textColor="#333333" android:layout_gravity="center_vertical" android:paddingBottom="20dp" android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingLeft="70dp"></TextView>
                         <TextView android:id="@+id/TextView05" android:text="at Apple Inc" android:paddingTop="10dp" android:layout_gravity="center_vertical" android:textSize="10dp" android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingLeft="70dp"></TextView>
                         <TextView android:paddingRight="45dp" android:id="@+id/TextView10" android:gravity="center_vertical" android:textAppearance="?android:attr/textAppearanceSmall" android:text="456 mi" android:layout_gravity="center_vertical|right" android:layout_height="wrap_content" android:layout_width="wrap_content"></TextView>
@@ -218,8 +217,8 @@
                 </LinearLayout>
                 <LinearLayout android:id="@+id/LinearLayout04" android:layout_height="wrap_content" android:layout_width="match_parent">
                     <LinearLayout android:id="@+id/LinearLayout05" android:layout_height="wrap_content" android:layout_width="match_parent">
-                        <FrameLayout android:id="@+id/FrameLayout04" android:layout_height="match_parent" android:layout_width="match_parent">
-                            <ImageView android:src="@drawable/module_rowx" android:id="@+id/ImageView04" android:layout_height="wrap_content" android:layout_width="match_parent"></ImageView>
+                        <FrameLayout android:paddingLeft="10dp" android:paddingRight="10dp" android:id="@+id/FrameLayout04" android:layout_height="match_parent" android:layout_width="match_parent">
+                        <ImageView android:background="@drawable/module_row" android:adjustViewBounds="true" android:id="@+id/imageView10" android:layout_height="wrap_content" android:layout_width="fill_parent" android:layout_gravity="center_horizontal"></ImageView>
                             <TextView android:gravity="center_vertical" android:text="Furher" android:textColor="#333333" android:layout_gravity="center_vertical" android:paddingBottom="20dp" android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingLeft="70dp" android:id="@+id/jobtitle13"></TextView>
                             <TextView android:text="at Apple Inc" android:paddingTop="10dp" android:layout_gravity="center_vertical" android:textSize="10dp" android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingLeft="70dp" android:id="@+id/company13"></TextView>
                             <TextView android:paddingRight="45dp" android:gravity="center_vertical" android:textAppearance="?android:attr/textAppearanceSmall" android:text="456 mi" android:layout_gravity="center_vertical|right" android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/dist13"></TextView>
@@ -228,8 +227,8 @@
                             <ImageView android:layout_gravity="center_vertical|center_horizontal|clip_horizontal|left" android:layout_height="wrap_content" android:paddingLeft="15dp" android:layout_width="wrap_content" android:src="@drawable/small_pic_overlay" android:id="@+id/ImageView24"></ImageView>
                         </FrameLayout>
                     </LinearLayout>
-                    <FrameLayout android:id="@+id/FrameLayout02" android:layout_height="match_parent" android:layout_width="match_parent">
-                        <ImageView android:src="@drawable/module_rowx" android:id="@+id/ImageView05" android:layout_height="wrap_content" android:layout_width="match_parent"></ImageView>
+                    <FrameLayout android:paddingLeft="10dp" android:paddingRight="10dp" android:id="@+id/FrameLayout02" android:layout_height="match_parent" android:layout_width="match_parent">
+                        <ImageView android:background="@drawable/module_row" android:adjustViewBounds="true" android:id="@+id/imageView10" android:layout_height="wrap_content" android:layout_width="fill_parent" android:layout_gravity="center_horizontal"></ImageView>
                         <TextView android:id="@+id/TextView04" android:gravity="center_vertical" android:text="Furher" android:textColor="#333333" android:layout_gravity="center_vertical" android:paddingBottom="20dp" android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingLeft="70dp"></TextView>
                         <TextView android:id="@+id/TextView05" android:text="at Apple Inc" android:paddingTop="10dp" android:layout_gravity="center_vertical" android:textSize="10dp" android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingLeft="70dp"></TextView>
                         <TextView android:paddingRight="45dp" android:id="@+id/TextView10" android:gravity="center_vertical" android:textAppearance="?android:attr/textAppearanceSmall" android:text="456 mi" android:layout_gravity="center_vertical|right" android:layout_height="wrap_content" android:layout_width="wrap_content"></TextView>
@@ -238,8 +237,8 @@
                 </LinearLayout>
                 <LinearLayout android:id="@+id/LinearLayout04" android:layout_height="wrap_content" android:layout_width="match_parent">
                     <LinearLayout android:id="@+id/LinearLayout05" android:layout_height="wrap_content" android:layout_width="match_parent">
-                        <FrameLayout android:id="@+id/FrameLayout04" android:layout_height="match_parent" android:layout_width="match_parent">
-                            <ImageView android:src="@drawable/module_rowx" android:id="@+id/ImageView04" android:layout_height="wrap_content" android:layout_width="match_parent"></ImageView>
+                        <FrameLayout android:paddingLeft="10dp" android:paddingRight="10dp" android:id="@+id/FrameLayout04" android:layout_height="match_parent" android:layout_width="match_parent">
+                        <ImageView android:background="@drawable/module_row" android:adjustViewBounds="true" android:id="@+id/imageView10" android:layout_height="wrap_content" android:layout_width="fill_parent" android:layout_gravity="center_horizontal"></ImageView>
                             <TextView android:gravity="center_vertical" android:text="Furher" android:textColor="#333333" android:layout_gravity="center_vertical" android:paddingBottom="20dp" android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingLeft="70dp" android:id="@+id/jobtitle14"></TextView>
                             <TextView android:text="at Apple Inc" android:paddingTop="10dp" android:layout_gravity="center_vertical" android:textSize="10dp" android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingLeft="70dp" android:id="@+id/company14"></TextView>
                             <TextView android:paddingRight="45dp" android:gravity="center_vertical" android:textAppearance="?android:attr/textAppearanceSmall" android:text="456 mi" android:layout_gravity="center_vertical|right" android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/dist14"></TextView>
@@ -248,8 +247,8 @@
                             <ImageView android:layout_gravity="center_vertical|center_horizontal|clip_horizontal|left" android:layout_height="wrap_content" android:paddingLeft="15dp" android:layout_width="wrap_content" android:src="@drawable/small_pic_overlay" android:id="@+id/ImageView24"></ImageView>
                         </FrameLayout>
                     </LinearLayout>
-                    <FrameLayout android:id="@+id/FrameLayout02" android:layout_height="match_parent" android:layout_width="match_parent">
-                        <ImageView android:src="@drawable/module_rowx" android:id="@+id/ImageView05" android:layout_height="wrap_content" android:layout_width="match_parent"></ImageView>
+                    <FrameLayout  android:paddingLeft="10dp" android:paddingRight="10dp" android:id="@+id/FrameLayout02" android:layout_height="match_parent" android:layout_width="match_parent">
+                        <ImageView android:background="@drawable/module_row" android:adjustViewBounds="true" android:id="@+id/imageView10" android:layout_height="wrap_content" android:layout_width="fill_parent" android:layout_gravity="center_horizontal"></ImageView>
                         <TextView android:id="@+id/TextView04" android:gravity="center_vertical" android:text="Furher" android:textColor="#333333" android:layout_gravity="center_vertical" android:paddingBottom="20dp" android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingLeft="70dp"></TextView>
                         <TextView android:id="@+id/TextView05" android:text="at Apple Inc" android:paddingTop="10dp" android:layout_gravity="center_vertical" android:textSize="10dp" android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingLeft="70dp"></TextView>
                         <TextView android:paddingRight="45dp" android:id="@+id/TextView10" android:gravity="center_vertical" android:textAppearance="?android:attr/textAppearanceSmall" android:text="456 mi" android:layout_gravity="center_vertical|right" android:layout_height="wrap_content" android:layout_width="wrap_content"></TextView>
@@ -258,8 +257,8 @@
                 </LinearLayout>
                 <LinearLayout android:id="@+id/linearLayout1" android:layout_height="wrap_content" android:layout_width="match_parent" android:paddingBottom="60dp">
                     <LinearLayout android:id="@+id/LinearLayout01" android:layout_height="wrap_content" android:layout_width="match_parent">
-                        <FrameLayout android:id="@+id/FrameLayout01" android:layout_height="match_parent" android:layout_width="match_parent">
-                            <ImageView android:src="@drawable/module_rowx" android:id="@+id/ImageView01" android:layout_height="wrap_content" android:layout_width="match_parent"></ImageView>
+                        <FrameLayout android:paddingLeft="10dp" android:paddingRight="10dp" android:id="@+id/FrameLayout01" android:layout_height="match_parent" android:layout_width="match_parent">
+                        <ImageView android:background="@drawable/module_row" android:adjustViewBounds="true" android:id="@+id/imageView10" android:layout_height="wrap_content" android:layout_width="fill_parent" android:layout_gravity="center_horizontal"></ImageView>
                             <TextView android:gravity="center_vertical" android:text="Furher" android:textColor="#333333" android:layout_gravity="center_vertical" android:paddingBottom="20dp" android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingLeft="70dp" android:id="@+id/jobtitle15"></TextView>
                             <TextView android:text="at Apple Inc" android:paddingTop="10dp" android:layout_gravity="center_vertical" android:textSize="10dp" android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingLeft="70dp" android:id="@+id/company15"></TextView>
                             <TextView android:paddingRight="45dp" android:gravity="center_vertical" android:textAppearance="?android:attr/textAppearanceSmall" android:text="456 mi" android:layout_gravity="center_vertical|right" android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/dist15"></TextView>
@@ -268,8 +267,8 @@
                             <ImageView android:layout_gravity="center_vertical|center_horizontal|clip_horizontal|left" android:layout_height="wrap_content" android:paddingLeft="15dp" android:layout_width="wrap_content" android:src="@drawable/small_pic_overlay" android:id="@+id/ImageView26"></ImageView>
                         </FrameLayout>
                     </LinearLayout>
-                    <FrameLayout android:id="@+id/frameLayout6" android:layout_height="match_parent" android:layout_width="match_parent">
-                        <ImageView android:src="@drawable/module_row_lastx" android:id="@+id/imageView13" android:layout_height="wrap_content" android:layout_width="match_parent"></ImageView>
+                    <FrameLayout  android:paddingLeft="10dp" android:paddingRight="10dp" android:id="@+id/frameLayout6" android:layout_height="match_parent" android:layout_width="match_parent">
+                        <ImageView android:background="@drawable/module_row_last" android:adjustViewBounds="true" android:id="@+id/imageView10" android:layout_height="wrap_content" android:layout_width="fill_parent" android:layout_gravity="center_horizontal"></ImageView>
                         <TextView android:id="@+id/textView4" android:gravity="center_vertical" android:text="Furher" android:textColor="#333333" android:layout_gravity="center_vertical" android:paddingBottom="20dp" android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingLeft="70dp"></TextView>
                         <TextView android:id="@+id/textView6" android:text="at Apple Inc" android:paddingTop="10dp" android:layout_gravity="center_vertical" android:textSize="10dp" android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingLeft="70dp"></TextView>
                         <TextView android:paddingRight="45dp" android:id="@+id/textView8" android:gravity="center_vertical" android:textAppearance="?android:attr/textAppearanceSmall" android:text="456 mi" android:layout_gravity="center_vertical|right" android:layout_height="wrap_content" android:layout_width="wrap_content"></TextView>

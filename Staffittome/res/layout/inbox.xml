@@ -14,42 +14,42 @@
     <FrameLayout android:id="@+id/frameLayout8" android:layout_width="match_parent" android:layout_height="match_parent">
         <ScrollView android:id="@+id/scrollView1" android:layout_height="match_parent" android:layout_width="match_parent">
             <LinearLayout android:layout_height="match_parent" android:layout_width="match_parent" android:id="@+id/linearLayout1" android:paddingTop="10dp" android:orientation="vertical">
-                <FrameLayout android:layout_height="match_parent" android:id="@+id/frameLayout2" android:layout_width="match_parent">
-                    <ImageView android:src="@drawable/module_headerx" android:layout_height="wrap_content" android:id="@+id/imageView4" android:layout_width="match_parent"></ImageView>
+                <FrameLayout android:layout_height="match_parent" android:id="@+id/frameLayout2" android:layout_width="match_parent" android:paddingLeft="10dp" android:paddingRight="10dp">
+                        <ImageView android:background="@drawable/module_header" android:adjustViewBounds="true" android:id="@+id/imageView10" android:layout_height="wrap_content" android:layout_width="fill_parent" android:layout_gravity="center_horizontal"></ImageView>
                     <TextView android:text="Notifications  /  Inbox" android:textColor="#31486a" android:layout_gravity="center_vertical" android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingLeft="15dp" android:id="@+id/notificationsinbox"></TextView>
                 </FrameLayout>
-                <FrameLayout android:layout_height="match_parent" android:layout_width="match_parent" android:id="@+id/messagelayout1">
-                    <ImageView android:src="@drawable/module_rowx" android:layout_height="wrap_content" android:id="@+id/ImageView06" android:layout_width="match_parent"></ImageView>
+                <FrameLayout android:layout_height="match_parent" android:layout_width="match_parent" android:id="@+id/messagelayout1" android:paddingLeft="10dp" android:paddingRight="10dp">
+                        <ImageView android:background="@drawable/module_row" android:adjustViewBounds="true" android:id="@+id/imageView10" android:layout_height="wrap_content" android:layout_width="fill_parent" android:layout_gravity="center_horizontal"></ImageView>
                     <TextView android:text="Loading....." android:textColor="#666666" android:textSize="11dp" android:layout_height="wrap_content" android:paddingTop="10dp" android:layout_width="wrap_content" android:paddingLeft="20dp" android:layout_marginRight="30dp" android:id="@+id/messagedesc1"></TextView>
                     <Button android:background="@drawable/arrow" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center_vertical|right" android:layout_marginRight="20dp" android:id="@+id/messageButton1"></Button>
                 </FrameLayout>
-                <FrameLayout android:layout_height="match_parent" android:layout_width="match_parent" android:id="@+id/messagelayout2">
-                    <ImageView android:src="@drawable/module_rowx" android:layout_height="wrap_content" android:id="@+id/ImageView06" android:layout_width="match_parent"></ImageView>
+                <FrameLayout android:layout_height="match_parent" android:layout_width="match_parent" android:id="@+id/messagelayout2" android:paddingLeft="10dp" android:paddingRight="10dp">
+                        <ImageView android:background="@drawable/module_row" android:adjustViewBounds="true" android:id="@+id/imageView10" android:layout_height="wrap_content" android:layout_width="fill_parent" android:layout_gravity="center_horizontal"></ImageView>
                     <TextView android:text="Loading....." android:textColor="#666666" android:textSize="11dp" android:layout_height="wrap_content" android:paddingTop="10dp" android:layout_width="wrap_content" android:paddingLeft="20dp" android:layout_marginRight="30dp" android:id="@+id/messagedesc2"></TextView>
                     <Button android:background="@drawable/arrow" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center_vertical|right" android:layout_marginRight="20dp" android:id="@+id/messageButton2"></Button>
                 </FrameLayout>
-                <FrameLayout android:layout_height="match_parent" android:layout_width="match_parent" android:id="@+id/messagelayout3">
-                    <ImageView android:src="@drawable/module_rowx" android:layout_height="wrap_content" android:id="@+id/ImageView06" android:layout_width="match_parent"></ImageView>
+                <FrameLayout android:layout_height="match_parent" android:layout_width="match_parent" android:id="@+id/messagelayout3" android:paddingLeft="10dp" android:paddingRight="10dp">
+                        <ImageView android:background="@drawable/module_row" android:adjustViewBounds="true" android:id="@+id/imageView10" android:layout_height="wrap_content" android:layout_width="fill_parent" android:layout_gravity="center_horizontal"></ImageView>
                     <TextView android:text="Loading....." android:textColor="#666666" android:textSize="11dp" android:layout_height="wrap_content" android:paddingTop="10dp" android:layout_width="wrap_content" android:paddingLeft="20dp" android:layout_marginRight="30dp" android:id="@+id/messagedesc3"></TextView>
                     <Button android:background="@drawable/arrow" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center_vertical|right" android:layout_marginRight="20dp" android:id="@+id/messageButton3"></Button>
                 </FrameLayout>
-                <FrameLayout android:layout_height="match_parent" android:layout_width="match_parent" android:id="@+id/messagelayout4">
-                    <ImageView android:src="@drawable/module_rowx" android:layout_height="wrap_content" android:id="@+id/ImageView06" android:layout_width="match_parent"></ImageView>
+                <FrameLayout android:layout_height="match_parent" android:layout_width="match_parent" android:id="@+id/messagelayout4" android:paddingLeft="10dp" android:paddingRight="10dp">
+                        <ImageView android:background="@drawable/module_row" android:adjustViewBounds="true" android:id="@+id/imageView10" android:layout_height="wrap_content" android:layout_width="fill_parent" android:layout_gravity="center_horizontal"></ImageView>
                     <TextView android:text="Loading....." android:textColor="#666666" android:textSize="11dp" android:layout_height="wrap_content" android:paddingTop="10dp" android:layout_width="wrap_content" android:paddingLeft="20dp" android:layout_marginRight="30dp" android:id="@+id/messagedesc4"></TextView>
                     <Button android:background="@drawable/arrow" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center_vertical|right" android:layout_marginRight="20dp" android:id="@+id/messageButton4"></Button>
                 </FrameLayout>
-                <FrameLayout android:layout_height="match_parent" android:layout_width="match_parent" android:id="@+id/messagelayout5">
-                    <ImageView android:src="@drawable/module_rowx" android:layout_height="wrap_content" android:id="@+id/ImageView06" android:layout_width="match_parent"></ImageView>
+                <FrameLayout android:layout_height="match_parent" android:layout_width="match_parent" android:id="@+id/messagelayout5" android:paddingLeft="10dp" android:paddingRight="10dp">
+                        <ImageView android:background="@drawable/module_row" android:adjustViewBounds="true" android:id="@+id/imageView10" android:layout_height="wrap_content" android:layout_width="fill_parent" android:layout_gravity="center_horizontal"></ImageView>
                     <TextView android:text="Loading....." android:textColor="#666666" android:textSize="11dp" android:layout_height="wrap_content" android:paddingTop="10dp" android:layout_width="wrap_content" android:paddingLeft="20dp" android:layout_marginRight="30dp" android:id="@+id/messagedesc5"></TextView>
                     <Button android:background="@drawable/arrow" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center_vertical|right" android:layout_marginRight="20dp" android:id="@+id/messageButton5"></Button>
                 </FrameLayout>
-                <FrameLayout android:layout_height="match_parent" android:layout_width="match_parent" android:id="@+id/messagelayout6">
-                    <ImageView android:src="@drawable/module_rowx" android:layout_height="wrap_content" android:id="@+id/ImageView06" android:layout_width="match_parent"></ImageView>
+                <FrameLayout android:layout_height="match_parent" android:layout_width="match_parent" android:id="@+id/messagelayout6" android:paddingLeft="10dp" android:paddingRight="10dp">
+                        <ImageView android:background="@drawable/module_row" android:adjustViewBounds="true" android:id="@+id/imageView10" android:layout_height="wrap_content" android:layout_width="fill_parent" android:layout_gravity="center_horizontal"></ImageView>
                     <TextView android:text="Loading....." android:textColor="#666666" android:textSize="11dp" android:layout_height="wrap_content" android:paddingTop="10dp" android:layout_width="wrap_content" android:paddingLeft="20dp" android:layout_marginRight="30dp" android:id="@+id/messagedesc6"></TextView>
                     <Button android:background="@drawable/arrow" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center_vertical|right" android:layout_marginRight="20dp" android:id="@+id/messageButton6"></Button>
                 </FrameLayout>
-                <FrameLayout android:layout_height="match_parent" android:layout_width="match_parent" android:paddingBottom="20dp" android:id="@+id/messagelayout7">
-                    <ImageView android:src="@drawable/module_row_lastx" android:layout_height="wrap_content" android:id="@+id/ImageView06" android:layout_width="match_parent"></ImageView>
+                <FrameLayout android:layout_height="match_parent" android:layout_width="match_parent" android:paddingBottom="20dp" android:id="@+id/messagelayout7" android:paddingLeft="10dp" android:paddingRight="10dp">
+                        <ImageView android:background="@drawable/module_row_last" android:adjustViewBounds="true" android:id="@+id/imageView10" android:layout_height="wrap_content" android:layout_width="fill_parent" android:layout_gravity="center_horizontal"></ImageView>
                     <TextView android:text="Loading....." android:textColor="#666666" android:textSize="11dp" android:layout_height="wrap_content" android:paddingTop="10dp" android:layout_width="wrap_content" android:paddingLeft="20dp" android:layout_marginRight="30dp" android:id="@+id/messagedesc7"></TextView>
                     <Button android:background="@drawable/arrow" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center_vertical|right" android:layout_marginRight="20dp" android:id="@+id/messageButton7"></Button>
                 </FrameLayout>
