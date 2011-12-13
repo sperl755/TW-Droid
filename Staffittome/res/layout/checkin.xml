@@ -9,23 +9,24 @@
                        <ImageView android:layout_gravity="top" android:src="@drawable/header_shadowx" android:id="@+id/imageView2" android:layout_height="20px" android:scaleType="centerCrop" android:layout_width="wrap_content"></ImageView>
                        <ScrollView android:id="@+id/scrollView1" android:layout_height="match_parent" android:layout_width="match_parent">
                            <LinearLayout android:id="@+id/linearLayout6" android:layout_height="match_parent" android:orientation="vertical" android:layout_width="match_parent">
-                               <LinearLayout android:id="@+id/linearLayout4" android:layout_height="wrap_content" android:layout_width="match_parent">
-                                     <FrameLayout android:id="@+id/frameLayout2" android:layout_height="match_parent" android:layout_width="wrap_content">
-                  					      <ImageView android:src="@drawable/profile_picx" android:layout_height="100px"  android:layout_gravity="center_vertical|center_horizontal" android:layout_width="100px" android:id="@+id/userpic"></ImageView>
-               					         <ImageView android:src="@drawable/profile_pic_overlayx" android:id="@+id/imageView7" android:layout_height="wrap_content" android:layout_width="wrap_content"></ImageView>
-                 				   </FrameLayout>
-                                   <LinearLayout android:id="@+id/linearLayout5" android:orientation="vertical" android:layout_height="match_parent" android:layout_width="120dp">
-                                       <TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:text="Shayan Yassami" android:paddingTop="10dp" android:textColor="#333333" android:id="@+id/uname"></TextView>
-  									<FrameLayout android:id="@+id/frameLayout10" android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingTop="7dp">
-                          			  <Button android:id="@+id/connectionsButton" android:layout_gravity="center_vertical" android:layout_height="wrap_content" android:textColor="#999" android:text="7777" android:background="@drawable/connections" android:gravity="center_vertical|right" android:layout_width="80dp" android:paddingRight="14dp"></Button>
-                         		   <ImageView android:layout_height="wrap_content" android:src="@drawable/connection_icon" android:layout_width="wrap_content" android:id="@+id/imageView1"  android:layout_gravity="center_vertical" android:paddingLeft="14dp"></ImageView>
-                      			  </FrameLayout>
-                                   </LinearLayout>
-										<FrameLayout android:layout_height="match_parent" android:id="@+id/frameLayout1" android:layout_width="wrap_content">
-      			 	                 <ImageButton android:layout_height="wrap_content" android:background="@drawable/available_widgetx" android:id="@+id/availableOn" android:layout_width="wrap_content"></ImageButton>
-    			   	                 <ImageButton android:background="@drawable/available_off" android:layout_height="wrap_content" android:id="@+id/availableOff" android:layout_width="wrap_content"></ImageButton>
-   				                 </FrameLayout>
-                               </LinearLayout>
+                               <FrameLayout android:id="@+id/FrameLayout1" android:layout_height="wrap_content" android:layout_width="match_parent" android:paddingTop="15dp">
+                    <FrameLayout android:id="@+id/frameLayout2" android:layout_height="match_parent" android:layout_width="wrap_content" android:paddingLeft="10dp">
+                        <ImageView android:src="@drawable/profile_picx" android:layout_height="66dp" android:layout_gravity="center_vertical|center_horizontal" android:layout_width="66dp" android:id="@+id/userpic"></ImageView>
+                        <ImageView android:src="@drawable/profile_pic_overlayx" android:id="@+id/imageView7" android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_gravity="center_vertical|center_horizontal"></ImageView>
+                    </FrameLayout>
+                    <LinearLayout android:id="@+id/linearLayout5" android:orientation="vertical" android:layout_height="match_parent" android:layout_gravity="center" android:layout_width="wrap_content" android:paddingRight="40dp">
+                        <TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:text="Loading..." android:paddingTop="10dp" android:textColor="#333333" android:id="@+id/uname"></TextView>
+                        <FrameLayout android:id="@+id/frameLayout10" android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingTop="7dp">
+                            <Button android:id="@+id/connectionsButton" android:layout_gravity="center_vertical" android:layout_height="wrap_content" android:textColor="#999" android:text="...." android:background="@drawable/connections" android:gravity="center_vertical|right" android:layout_width="80dp" android:paddingRight="14dp"></Button>
+                            <ImageView android:layout_height="wrap_content" android:src="@drawable/connection_icon" android:layout_width="wrap_content" android:id="@+id/imageView1" android:layout_gravity="center_vertical" android:paddingLeft="14dp"></ImageView>
+                        </FrameLayout>
+                        <FrameLayout android:id="@+id/frameLayout9" android:layout_width="match_parent" android:layout_height="wrap_content"></FrameLayout>
+                    </LinearLayout>
+                    <FrameLayout android:layout_height="match_parent" android:id="@+id/frameLayout1" android:layout_width="wrap_content" android:layout_gravity="right" android:paddingRight="11dp">
+                        <ImageButton android:layout_height="wrap_content" android:background="@drawable/available_widgetx" android:id="@+id/availableOn" android:layout_width="wrap_content"></ImageButton>
+                        <ImageButton android:background="@drawable/available_off" android:layout_height="wrap_content" android:id="@+id/availableOff" android:layout_width="wrap_content" android:layout_gravity="right"></ImageButton>
+                    </FrameLayout>
+                </FrameLayout>
                                <LinearLayout android:id="@+id/LinearLayout03" android:orientation="vertical" android:layout_height="15px" android:layout_width="match_parent"></LinearLayout>
                                <LinearLayout android:id="@+id/LinearLayout01" android:layout_height="wrap_content" android:layout_width="match_parent">
                                    <FrameLayout android:id="@+id/FrameLayout02" android:layout_height="match_parent" android:layout_gravity="center_horizontal|clip_horizontal" android:layout_width="match_parent">
