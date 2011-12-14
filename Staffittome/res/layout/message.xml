@@ -15,8 +15,8 @@
         <ScrollView android:layout_width="match_parent" android:layout_height="match_parent" android:id="@+id/scrollView1">
             <LinearLayout android:layout_height="match_parent" android:id="@+id/linearLayout1" android:layout_width="match_parent" android:orientation="vertical">
                 <LinearLayout android:id="@+id/frameLayout8" android:layout_width="match_parent" android:paddingTop="10px" android:layout_height="wrap_content">
-                    <FrameLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:id="@+id/frameLayout2">
-                        <ImageView android:id="@+id/imageView4" android:src="@drawable/module_headerx" android:layout_width="match_parent" android:layout_height="wrap_content"></ImageView>
+                    <FrameLayout android:paddingLeft="10dp" android:paddingRight="10dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:id="@+id/frameLayout2">
+                        <ImageView android:background="@drawable/module_header" android:adjustViewBounds="true" android:id="@+id/imageView10" android:layout_height="wrap_content" android:layout_width="fill_parent" android:layout_gravity="center_horizontal"></ImageView>
                         <TextView android:paddingLeft="15dp" android:textColor="#31486a" android:text="Subject goes here" android:layout_width="wrap_content" android:layout_gravity="center_vertical" android:layout_height="wrap_content" android:id="@+id/messageSubject"></TextView>
                         <Button android:background="@drawable/gaybutton" android:layout_marginRight="15dp" android:textColor="#7b95c4" android:layout_width="wrap_content" android:layout_gravity="center_vertical|right" android:layout_height="wrap_content" android:text="Dali Zheng" android:id="@+id/recipiantButton"></Button>
                     </FrameLayout>
@@ -24,19 +24,19 @@
                     <ImageView android:id="@+id/ImageView01" android:layout_width="wrap_content" android:layout_height="20px" android:src="@drawable/footer_shadowx" android:layout_gravity="bottom" android:paddingTop="0dp" android:scaleType="centerCrop"></ImageView>
                 </LinearLayout>
                 <LinearLayout android:id="@+id/LinearLayout01" android:layout_width="match_parent" android:layout_height="wrap_content">
-                    <FrameLayout android:layout_width="match_parent" android:layout_height="match_parent" android:id="@+id/FrameLayout01">
-                        <ImageView android:id="@+id/ImageView03" android:src="@drawable/module_row_lastx" android:layout_width="match_parent" android:layout_height="wrap_content"></ImageView>
+                    <FrameLayout android:paddingLeft="10dp" android:paddingRight="10dp" android:layout_width="match_parent" android:layout_height="match_parent" android:id="@+id/FrameLayout01">
+                        <ImageView android:background="@drawable/module_row_last" android:adjustViewBounds="true" android:id="@+id/imageView10" android:layout_height="wrap_content" android:layout_width="fill_parent" android:layout_gravity="center_horizontal"></ImageView>
                         <TextView android:paddingLeft="70dp" android:textColor="#333333" android:paddingBottom="22dp" android:text="Dali Zheng" android:gravity="center_vertical" android:layout_width="wrap_content" android:layout_gravity="center_vertical" android:layout_height="wrap_content" android:id="@+id/senderid"></TextView>
                         <TextView android:paddingLeft="70dp" android:textColor="#666" android:layout_marginRight="25dp" android:paddingTop="10dp" android:text="Herp Derp everyone! thats what i want " android:layout_width="wrap_content" android:layout_gravity="center_vertical" android:layout_height="wrap_content" android:textSize="12dp" android:id="@+id/recipientMessage1"></TextView>
                     </FrameLayout>
                 </LinearLayout>
                 <LinearLayout android:id="@+id/linearLayout2" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_gravity="bottom">
-                    <FrameLayout android:layout_width="match_parent" android:layout_height="match_parent" android:id="@+id/frameLayout2">
-                        <ImageView android:id="@+id/imageView4" android:src="@drawable/module_headerx" android:layout_width="match_parent" android:layout_height="wrap_content" android:paddingTop="10px"></ImageView>
+                    <FrameLayout android:paddingLeft="10dp" android:paddingRight="10dp" android:layout_width="match_parent" android:layout_height="match_parent" android:id="@+id/frameLayout2">
+                        <ImageView android:background="@drawable/module_header" android:adjustViewBounds="true" android:id="@+id/imageView10" android:layout_height="wrap_content" android:layout_width="fill_parent" android:layout_gravity="center_horizontal"></ImageView>
                         <TextView android:paddingLeft="15dp" android:textColor="#31486a" android:id="@+id/notificationsinbox" android:text="Respond to Message" android:layout_width="wrap_content" android:layout_gravity="center_vertical" android:layout_height="wrap_content"></TextView>
                     </FrameLayout>
-                    <FrameLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:id="@+id/frameLayout3" android:paddingBottom="10dp">
-                        <ImageView android:id="@+id/imageView6" android:src="@drawable/input_bg" android:layout_width="match_parent" android:layout_height="wrap_content"></ImageView>
+                    <FrameLayout  android:paddingLeft="10dp" android:paddingRight="10dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:id="@+id/frameLayout3" android:paddingBottom="10dp">
+                        <ImageView android:background="@drawable/input_bg" android:adjustViewBounds="true" android:id="@+id/imageView10" android:layout_height="wrap_content" android:layout_width="fill_parent" android:layout_gravity="center_horizontal"></ImageView>
                         <EditText android:lines="3" android:maxLines="3" android:maxHeight="135px" android:maxWidth="419px" android:layout_width="wrap_content" android:background="@drawable/input_box" android:layout_height="135px" android:layout_marginTop="10dp" android:layout_gravity="center_horizontal|top" android:paddingLeft="10px" android:id="@+id/messageBox">
                             <requestFocus></requestFocus>
                         </EditText>

@@ -29,6 +29,7 @@ import com.staff.CheckIn.ResponseReceiver;
 
 import android.R.drawable;
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -42,13 +43,16 @@ import android.graphics.drawable.Drawable;
 import android.location.Location;
 import android.location.LocationManager;
 import android.os.Bundle;
+import android.os.Handler;
 import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ImageView.ScaleType;
@@ -131,13 +135,60 @@ public class DashboardActivity extends Activity {
 	private Drawable r3;
 	private Drawable r4;
     private static ResponseReceiver receiver;
-
+    private ProgressDialog progDailog;
+    private FrameLayout framedash;
+    private static final int PROGRESS = 0x1;
+    private Handler mHandler = new Handler();
+    private ProgressBar mProgress;
+    private int mProgressStatus = 0;
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 	  super.onCreate(savedInstanceState);
       setContentView(R.layout.dashboard);
       Log.d("TAG", "BEFORE LOCATION MANAGER");
+      
+      /*
+      progDailog = ProgressDialog.show(this, "Loading",
+              "Dashboard Information Only", true);
+      new Thread() {
+          public void run() {
+              try {
+            	  while (jobid4==null) {
+            	  }
+              } catch (Exception e) {
+              }
+              progDailog.dismiss();
+          }
+      }.start();
+      */
+
+      framedash = (FrameLayout)this.findViewById(R.id.dashframe);
+      mProgress = (ProgressBar) findViewById(R.id.dashProg);
+      //framedash.setVisibility(View.INVISIBLE);
+
+      // Start lengthy operation in a background thread
+      new Thread(new Runnable() {
+          public void run() {
+              while (mProgressStatus < 100) {
+                  mProgressStatus = doWork();
+
+                  // Update the progress bar
+                  mHandler.post(new Runnable() {
+                      public void run() {
+                          mProgress.setProgress(mProgressStatus);
+                      }
+                  });
+              }
+          }
+
+		private int doWork() {
+			int counter = 101;
+			return counter;
+		}
+      }).start();
+      
+   
       
       /*
        * STARTING SERVICE TO GET STUFF

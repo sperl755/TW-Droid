@@ -59,7 +59,6 @@ public class Message extends Activity {
 		   public void onCreate(Bundle savedInstanceState) {
 		       super.onCreate(savedInstanceState);
 		       setContentView(R.layout.message);
-		       
 		       /*
 		        * GETTING AND SETTING VIEWS ETC
 		        */

@@ -5,7 +5,19 @@
   android:layout_width="match_parent"
   android:layout_height="match_parent"
   android:background="@drawable/backgroundcolor" android:isScrollContainer="true">
-    <FrameLayout android:id="@+id/frameLayout8" android:layout_width="match_parent" android:layout_height="match_parent">
+
+     <ProgressBar
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         style="@android:style/Widget.ProgressBar.Small"
+         android:layout_marginRight="5dp"
+         android:id="@+id/dashProg"
+          />
+     <TextView
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:text="Loading" />
+    <FrameLayout android:id="@+id/dashframe" android:layout_width="match_parent" android:layout_height="match_parent">
         <ScrollView android:id="@+id/scrollView1" android:layout_height="match_parent" android:layout_gravity="center_horizontal" android:layout_width="match_parent">
             <LinearLayout android:id="@+id/linearLayout6" android:layout_height="match_parent" android:orientation="vertical" android:layout_width="match_parent">
                 <FrameLayout android:id="@+id/FrameLayout1" android:layout_height="wrap_content" android:layout_width="match_parent" android:paddingTop="15dp">
