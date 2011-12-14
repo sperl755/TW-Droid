@@ -52,6 +52,7 @@ import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -138,10 +139,13 @@ public class DashboardActivity extends Activity {
     private ProgressDialog progDailog;
     private FrameLayout framedash;
     private static final int PROGRESS = 0x1;
-    private Handler mHandler = new Handler();
+    private final Handler uiHandler=new Handler();
+    private boolean isUpdateRequired=false;
     private ProgressBar mProgress;
     private int mProgressStatus = 0;
+    private LinearLayout dashproglin;
 	
+    
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 	  super.onCreate(savedInstanceState);
@@ -162,33 +166,40 @@ public class DashboardActivity extends Activity {
           }
       }.start();
       */
-
+      dashproglin = (LinearLayout)this.findViewById(R.id.dashproglin);
       framedash = (FrameLayout)this.findViewById(R.id.dashframe);
       mProgress = (ProgressBar) findViewById(R.id.dashProg);
-      //framedash.setVisibility(View.INVISIBLE);
-
-      // Start lengthy operation in a background thread
-      new Thread(new Runnable() {
-          public void run() {
-              while (mProgressStatus < 100) {
-                  mProgressStatus = doWork();
-
-                  // Update the progress bar
-                  mHandler.post(new Runnable() {
-                      public void run() {
-                          mProgress.setProgress(mProgressStatus);
-                      }
-                  });
-              }
-          }
-
-		private int doWork() {
-			int counter = 101;
-			return counter;
-		}
-      }).start();
+      framedash.setVisibility(View.INVISIBLE);
       
-   
+      try{
+          new Thread(){
+              public void run() {
+                  initializeApp();
+                  uiHandler.post( new Runnable(){
+                      @Override
+                      public void run() {
+                          if(isUpdateRequired){
+                              //TODO:
+                          }else{
+                        	  dashproglin.setVisibility(View.GONE);
+                              framedash.setVisibility(View.VISIBLE);
+                          }
+                      }
+                  } );
+              }
+              public void initializeApp(){
+            	  while (jobid4==null) {
+            		  try {
+						sleep(1);
+					} catch (InterruptedException e) {
+						e.printStackTrace();
+					}
+            	  }
+              }
+      }.start();
+      }catch (Exception e) {}
+  
+
       
       /*
        * STARTING SERVICE TO GET STUFF
