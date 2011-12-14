@@ -40,13 +40,17 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.os.Handler;
 import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.ImageView.ScaleType;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -98,6 +102,15 @@ public class HomePage extends Activity {
 	private ImageButton unameJobExpereince2Button;
 	private String profdetails;
     private ResponseReceiver receiver;
+    private ProgressDialog progDailog;
+    private FrameLayout frameprof;
+    private static final int PROGRESS = 0x1;
+    private final Handler uiHandler=new Handler();
+    private boolean isUpdateRequired=false;
+    private ProgressBar mProgress;
+    private int mProgressStatus = 0;
+    private LinearLayout profproglin;
+    private String done;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -162,11 +175,48 @@ public class HomePage extends Activity {
   	    unameJobSummaryText.setText(name+"'s Capabilities");
   	    unameExperienceText.setText(name+"'s Experience");
         /*
-         * GETTING PROFILE INFORMATION
+         * Stuff From Tab
+         * 
          */
+  	    
+	    profproglin = (LinearLayout)this.findViewById(R.id.profproglin);//
+	      frameprof = (FrameLayout)this.findViewById(R.id.profframe);
+	      mProgress = (ProgressBar) findViewById(R.id.profprog);
+	      frameprof.setVisibility(View.INVISIBLE);
+	    
+	      try{
+	          new Thread(){
+	              public void run() {
+	                  initializeApp();
+	                  uiHandler.post( new Runnable(){
+	                      @Override
+	                      public void run() {
+	                          if(isUpdateRequired){
+	                          }else{
+	                        	  user_picture.setImageBitmap(TabMain.userpic);
+	                        	  connectionsButton.setText(TabMain.connnum);
+	                        	  profproglin.setVisibility(View.GONE);
+	                        	  frameprof.setVisibility(View.VISIBLE);
+	                          }
+	                      }
+	                  } );
+	              }
+	              public void initializeApp(){
+	            	  while (done==null) {
+	            		  try {
+							sleep(1);
+						} catch (InterruptedException e) {
+							e.printStackTrace();
+						}
+	            	  }
+	              }
+	      }.start();
+	      }catch (Exception e) {}
       
   	    //StaffTasks staff = new StaffTasks();
   	    //parseResponse(staff.returnProfInfo());
+  	    
+  	    
   	    
   	  
   
@@ -261,6 +311,7 @@ public class HomePage extends Activity {
 	        	if (extras.getString("profdetails")!=null) {
 		        	parseResponse(extras.getString("profdetails")); 
 	        	}
+	        	done = "done";
 	        	
 	        }
 	        

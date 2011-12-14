@@ -42,8 +42,6 @@ public class StaffService extends IntentService {
         	
         if (msg.equals("runHome")){ // All things needed for the user profile
         	broadcastIntent.putExtra("profdetails", StaffTasks.getProfDetails(this));
-        	broadcastIntent.putExtra("userpic", StaffTasks.getUserPic()); 
-        	broadcastIntent.putExtra("connnum", StaffTasks.getFriendCount(access_token));
         	sendBroadcast(broadcastIntent);
             
             stopSelf();
@@ -59,7 +57,6 @@ public class StaffService extends IntentService {
         } else if (msg.equals("checkIn")){ // All things needed for the check in page
         	broadcastIntent.putExtra("appliedjobs", StaffTasks.viewAppliedJobs(this));
         	broadcastIntent.putExtra("contracts", StaffTasks.viewContracts(this)); 
-        	broadcastIntent.putExtra("connnum", StaffTasks.getFriendCount(access_token));
         	sendBroadcast(broadcastIntent);
             stopSelf();
         } else if (msg.equals("availOn")){ // Async way of setting availability on
@@ -82,11 +79,7 @@ public class StaffService extends IntentService {
             sendBroadcast(broadcastIntent);
             counter++;
             stopSelf();
-        }} catch (IOException e1) {
-			e1.printStackTrace();
-		} catch (FacebookError e1) {
-			e1.printStackTrace();
-		} catch (InterruptedException e) {
+        }} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}

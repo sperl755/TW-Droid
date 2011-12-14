@@ -17,13 +17,15 @@ import android.widget.TabHost.TabSpec;
 import android.widget.TextView;
 
 import android.content.res.Resources;
+import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.widget.TabWidget;
 
 public class TabMain extends TabActivity {
-
+	public static String connnum;
+	public static Bitmap userpic;
 	private TabHost mTabHost;
 	private Button notification;
 	private Button notificationoff;

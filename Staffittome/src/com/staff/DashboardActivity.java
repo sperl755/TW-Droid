@@ -312,6 +312,7 @@ public class DashboardActivity extends Activity {
     	  
     	 AsyncStaffInfo async = new AsyncStaffInfo(this, connButton, uname, user_picture); 
     	 async.execute(access_token);
+    	 
 
     //
     	  

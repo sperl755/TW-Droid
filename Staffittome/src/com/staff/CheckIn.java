@@ -20,10 +20,12 @@ import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.message.BasicNameValuePair;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.http.AndroidHttpClient;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -69,8 +71,11 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.Chronometer;
+import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ImageView.ScaleType;
@@ -97,7 +102,7 @@ public class CheckIn extends Activity {
 	private TextView jobAppStatus1;
 	private ImageButton jobAppButton1;
 	private static TextView jobAppTitle2;
-	private static TextView jobAppDesc2;
+	private static TextView jobAppDesc2=null;
 	private TextView jobAppStatus2;
 	private ImageButton jobAppButton2;
 	private ImageButton availableOn;
@@ -107,8 +112,17 @@ public class CheckIn extends Activity {
 	private String facebook_uid;
 	private String name;
     private ResponseReceiver receiver;
+    private ProgressDialog progDailog;
+    private FrameLayout framecheck;
+    private static final int PROGRESS = 0x1;
+    private final Handler uiHandler=new Handler();
+    private boolean isUpdateRequired=false;
+    private ProgressBar mProgress;
+    private int mProgressStatus = 0;
+    private LinearLayout checkproglin;
+    private String done;
 
-	@Override
+    @Override
 	public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.checkin);
@@ -158,7 +172,7 @@ public class CheckIn extends Activity {
         jobAppStatus2.setTypeface(hm);
         jobAppButton2=(ImageButton)this.findViewById(R.id.jobAppButton2);
         user_pic = (ImageView)this.findViewById(R.id.userpic);
-        
+        user_pic.setScaleType( ScaleType.CENTER_CROP );
       
         availableOn = (ImageButton)this.findViewById(R.id.availableOn);
         availableOff = (ImageButton)this.findViewById(R.id.availableOff);
@@ -190,13 +204,53 @@ public class CheckIn extends Activity {
 				Toast.makeText(getApplicationContext(), "This should take you to the job apply page and set the status", 0).show();
 			}
 		});
-        AsyncFB fb = new AsyncFB(user_pic, this);
-	    user_pic.setScaleType( ScaleType.CENTER_CROP );
+
+        /*
+         * grabbing some stuff from PREFS
+         */
+        
 	    facebook_uid = prefs.getString("facebook_uid", null);
 	    name = prefs.getString("name", null);
 	    uname.setText(name);
-        fb.execute("http://graph.facebook.com/"+facebook_uid+"/picture?type=large");
-        
+	    
+	    /*
+	     * Going to grab more stuff from TabMain global vars
+	     */
+	    checkproglin = (LinearLayout)this.findViewById(R.id.checkproglin);
+	      framecheck = (FrameLayout)this.findViewById(R.id.checkframe);
+	      mProgress = (ProgressBar) findViewById(R.id.checkProg);
+	      framecheck.setVisibility(View.INVISIBLE);
+	    
+	      try{
+	          new Thread(){
+	              public void run() {
+	                  initializeApp();
+	                  uiHandler.post( new Runnable(){
+	                      @Override
+	                      public void run() {
+	                          if(isUpdateRequired){
+	                          }else{
+	                        	  user_pic.setImageBitmap(TabMain.userpic);
+	                        	  connectionsButton.setText(TabMain.connnum);
+	                        	  checkproglin.setVisibility(View.GONE);
+	                        	  framecheck.setVisibility(View.VISIBLE);
+	                          }
+	                      }
+	                  } );
+	              }
+	              public void initializeApp(){
+	            	  while (done==null) {
+	            		  try {
+							sleep(1);
+						} catch (InterruptedException e) {
+							e.printStackTrace();
+						}
+	            	  }
+	              }
+	      }.start();
+	      }catch (Exception e) {}
+	    
+	    
         IntentFilter filter = new IntentFilter(ResponseReceiver.ACTION_RESP);
         filter.addCategory(Intent.CATEGORY_DEFAULT);
         receiver = new ResponseReceiver();
@@ -231,6 +285,7 @@ public class CheckIn extends Activity {
 	        	// Get & Set user contracts
 	        	if (extras.getString("contracts")!=null){
 	        		parseContracts(extras.getString("contracts"));
+	        		done = "done";
 	        	}
 	        	//Get & Set User Connection #
 	        	if (extras.getString("connnum")!=null) {

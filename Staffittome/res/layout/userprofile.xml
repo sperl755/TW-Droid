@@ -5,7 +5,11 @@
   android:orientation="vertical"
   android:layout_width="match_parent"
   android:background="@drawable/backgroundcolor" android:isScrollContainer="true" android:layout_height="match_parent">
-    <FrameLayout android:id="@+id/frameLayout3" android:layout_height="wrap_content" android:layout_width="match_parent">
+    <LinearLayout android:layout_gravity="center_horizontal" android:layout_height="wrap_content" android:layout_width="match_parent" android:id="@+id/profproglin" android:gravity="center_horizontal">
+        <ProgressBar android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/profprog" android:layout_marginRight="5dp" style="@android:style/Widget.ProgressBar.Small"></ProgressBar>
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Loading"></TextView>
+    </LinearLayout>
+    <FrameLayout android:id="@+id/profframe" android:layout_height="wrap_content" android:layout_width="match_parent">
         <ScrollView android:id="@+id/scrollView1" android:layout_height="match_parent" android:layout_width="match_parent">
             <LinearLayout android:id="@+id/linearLayout6" android:layout_height="match_parent" android:orientation="vertical" android:layout_width="match_parent">
                 <FrameLayout android:id="@+id/FrameLayout1" android:layout_height="wrap_content" android:layout_width="match_parent" android:paddingTop="15dp">

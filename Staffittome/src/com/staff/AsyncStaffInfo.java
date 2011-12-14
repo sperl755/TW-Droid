@@ -94,6 +94,9 @@ public class AsyncStaffInfo extends AsyncTask<String, Integer, String> implement
 		mButton.setText(connnum);
 		pic.setImageBitmap(userpic);
 		uname.setText(username);
+		TabMain.userpic = userpic;
+		TabMain.connnum  = connnum;
+
 	}	
 
 	public void onCancel(DialogInterface arg0) {
