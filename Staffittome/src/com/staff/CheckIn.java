@@ -285,7 +285,7 @@ public class CheckIn extends Activity {
 	        	
 	        	/*
 	        	 * RECIEVE EXTRAS FROM INTENT 
-	        	 */
+	        	 *///
 	        	
 	        	Bundle extras = intent.getExtras();
 

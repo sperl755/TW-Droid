@@ -180,7 +180,9 @@ public class Message extends Activity {
 		   
 		   
 		   
-		   
+		   /*
+		    * Going to send the following to the intent server from now on for efficfiency / usability of loading screens due to setting texts heirarchy. 
+		    */
 		   
 		   public void getMessageDetail(String messageid) {
 		    	SharedPreferences prefs= PreferenceManager.getDefaultSharedPreferences(Message.this); 

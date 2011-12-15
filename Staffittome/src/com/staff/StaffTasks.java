@@ -441,7 +441,32 @@ public static void setAvailability(String availstatus, Context c) {
 	}
 
 
-}		
+}
+
+public static String getMessageDetail(String messageid, Context c) {
+	SharedPreferences prefs= PreferenceManager.getDefaultSharedPreferences(c); 
+    String key = prefs.getString("staffkey", null);
+    Log.d("TAG",key);
+    MyHttpClient client = new MyHttpClient(c);
+    String responseBody = null;
+    
+    HttpPost post = new HttpPost("https://helium.staffittome.com/apis/"+messageid+"/view_message");
+    List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>(2);
+    nameValuePairs.add(new BasicNameValuePair("session_key", key));
+    try {
+    post.setEntity(new UrlEncodedFormEntity(nameValuePairs));
+	ResponseHandler<String> responseHandler=new BasicResponseHandler();
+	responseBody = client.execute(post, responseHandler);
+	Log.d("TAG","TEST RESULTS FROM HTTPS VIEW MESSAGE DETAILS WITH MESSAGE ID "+messageid+" IS: "+responseBody);
+    } catch (ClientProtocolException e) {
+		e.printStackTrace();
+	} catch (IOException e) {
+		e.printStackTrace();
+	} catch (ParseException e) {
+		e.printStackTrace();
+	} 
+	return responseBody;
+}
  
 public String returnJobs(){
 	return appliedjobs;
