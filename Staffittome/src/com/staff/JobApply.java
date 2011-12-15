@@ -265,6 +265,8 @@ public class JobApply extends Activity {
         	   locationValue.setText(city+" ,"+state);
         	  }
 
+         JSONObject companyAttributes = json_data.getJSONObject("company");
+         String companyThumbUrl = companyAttributes.getString("thumb_photo");
          
          
          String thecompany = json_data.getString("company");
