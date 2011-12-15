@@ -10,7 +10,6 @@
         <TextView android:text="Loading" android:layout_height="wrap_content" android:layout_width="wrap_content"></TextView>
     </LinearLayout>
                    <FrameLayout android:layout_width="match_parent" android:layout_height="match_parent" android:id="@+id/checkframe">
-                       <ImageView android:layout_gravity="top" android:src="@drawable/header_shadowx" android:id="@+id/imageView2" android:layout_height="20px" android:scaleType="centerCrop" android:layout_width="wrap_content"></ImageView>
                        <ScrollView android:id="@+id/scrollView1" android:layout_height="match_parent" android:layout_width="match_parent">
                            <LinearLayout android:id="@+id/linearLayout6" android:layout_height="match_parent" android:orientation="vertical" android:layout_width="match_parent">
                                <FrameLayout android:id="@+id/FrameLayout1" android:layout_height="wrap_content" android:layout_width="match_parent" android:paddingTop="15dp">
@@ -89,7 +88,8 @@
                                </FrameLayout>
                            </LinearLayout>
                        </ScrollView>
-                       <ImageView android:src="@drawable/footer_shadowx" android:layout_height="20px" android:id="@+id/ImageView01" android:layout_width="wrap_content" android:scaleType="centerCrop" android:layout_gravity="bottom"></ImageView>
+                       <ImageView android:layout_gravity="top" android:id="@+id/imageView2" android:layout_height="20px" android:layout_width="wrap_content" android:src="@drawable/header_shadowx" android:scaleType="centerCrop"></ImageView>
+                       <ImageView android:layout_gravity="bottom" android:id="@+id/ImageView01" android:layout_height="20px" android:layout_width="wrap_content" android:src="@drawable/footer_shadowx" android:scaleType="centerCrop"></ImageView>
                    </FrameLayout>
    <!--  <Button android:layout_height="50px" android:text="Search" android:id="@+id/searchDash" android:layout_width="match_parent"></Button>
     <Button android:layout_height="50px" android:text="Staff Yourself" android:id="@+id/staffYourself" android:layout_width="match_parent"></Button>

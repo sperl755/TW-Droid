@@ -26,6 +26,7 @@ import android.widget.TabWidget;
 public class TabMain extends TabActivity {
 	public static String connnum;
 	public static Bitmap userpic;
+	public static boolean available = true;
 	private TabHost mTabHost;
 	private Button notification;
 	private Button notificationoff;

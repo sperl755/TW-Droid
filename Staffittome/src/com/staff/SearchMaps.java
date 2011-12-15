@@ -232,8 +232,8 @@ public class SearchMaps extends MapActivity {
                     	//	Toast.makeText(getApplicationContext(), "Please enter a valid term", 0).show();
                     	//	Log.d("TAG", "THE ENTERED TERM IS COMPLETE BULLSHIT");
                     	//	searchEdit.setText("");
-                 
-       	              int lngspan = mapView.getLongitudeSpan();   
+                    	mapOverlays.clear();
+                    	int lngspan = mapView.getLongitudeSpan();   
 					Log.d("TAG", "LONGITUDE SPAN IS: "+lngspan);
 					distance = Double.toString((lngspan*68.97/1000000));
 					Log.d("TAG", "THE DISTANCE OF THE SCREEN STUFF IS: "+distance);
