@@ -16,19 +16,26 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.json.JSONTokener;
 
+import com.staff.CheckIn.ResponseReceiver;
+
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Handler;
 import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -56,6 +63,18 @@ public class Message extends Activity {
 	private String messagesubject;
 	private String message_id;
 	private String idtosendto;
+    private ProgressDialog progDailog;
+    private FrameLayout framemess;
+    private static final int PROGRESS = 0x1;
+    private final Handler uiHandler=new Handler();
+    private boolean isUpdateRequired=false;
+    private ProgressBar mProgress;
+    private int mProgressStatus = 0;
+    private LinearLayout messproglin;
+    private String done;
+    private int counter;
+	
+	
 		   public void onCreate(Bundle savedInstanceState) {
 		       super.onCreate(savedInstanceState);
 		       setContentView(R.layout.message);
@@ -93,6 +112,7 @@ public class Message extends Activity {
 				 * Here will be the getMessages api, to check if there are any messages, if so, change the visibility of notification to VISIBLE and change nonotification to INVISIBLE
 				 */
 				Log.d("TAG","ABOUT TO GET DETAILS FOR MESSAGEID: "+messid);
+				
 				getMessageDetail(messid);
 				
 				
@@ -116,8 +136,52 @@ public class Message extends Activity {
 			
 			       //getMessageDetail("THIS IS A FUCKING TEST REMOVE THIS"); //Parse the getMesssages and set this for each message that is returned <3
 
+			      messproglin = (LinearLayout)this.findViewById(R.id.messproglin);
+			      framemess = (FrameLayout)this.findViewById(R.id.messframe);
+			      mProgress = (ProgressBar) findViewById(R.id.messProg);
 		   
 		   }
+		   
+		   
+		 /*  @Override
+		    protected void onResume() {
+		        super.onResume();
+		        done = null;
+		        checkLoading();
+		  }
+		  */
+		  
+		  public void checkLoading(){
+		      framemess.setVisibility(View.INVISIBLE);
+	    	  messproglin.setVisibility(View.VISIBLE);
+			   try{
+			          new Thread(){
+			              public void run() {
+			                  initializeApp();
+			                  uiHandler.post( new Runnable(){
+			                      @Override
+			                      public void run() {
+			                          if(isUpdateRequired){
+			                          }else{
+			                        	  messproglin.setVisibility(View.GONE);
+			                        	  framemess.setVisibility(View.VISIBLE);
+			                          }
+			                      }
+			                  } );
+			              }
+			              public void initializeApp(){
+			            	  while (done==null) {
+			            		  getMessageDetail(messid);
+			            	  }
+			              }
+			      }.start();
+			      }catch (Exception e) {}
+		  }
+		   
+		   
+		   
+		   
+		   
 		   public void getMessageDetail(String messageid) {
 		    	SharedPreferences prefs= PreferenceManager.getDefaultSharedPreferences(Message.this); 
 		        String key = prefs.getString("staffkey", null);
@@ -142,7 +206,8 @@ public class Message extends Activity {
 				} catch (JSONException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
-				}
+				} 
+				done = "done";
 		    }
 		   
 		   public void parseMessageDetails(String stuff) throws JSONException{

@@ -121,6 +121,7 @@ public class CheckIn extends Activity {
     private int mProgressStatus = 0;
     private LinearLayout checkproglin;
     private String done;
+    private int counter;
 
     @Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -177,11 +178,9 @@ public class CheckIn extends Activity {
         availableOn = (ImageButton)this.findViewById(R.id.availableOn);
         availableOff = (ImageButton)this.findViewById(R.id.availableOff);
     	  availableOff.setVisibility(View.INVISIBLE);
-          final DashboardActivity dash = new DashboardActivity();
   		SharedPreferences prefs= PreferenceManager.getDefaultSharedPreferences(CheckIn.this); 
         key = prefs.getString("staffkey", null);
         user_id = prefs.getString("staffuser", null);
-        Log.d("TAG","GETTING AVAILABILITY IN CHECKIN CLASS FOR USER ID: "+user_id);
     
         connectionsButton.setOnClickListener(new OnClickListener() {
 			@Override
@@ -219,50 +218,62 @@ public class CheckIn extends Activity {
 	    checkproglin = (LinearLayout)this.findViewById(R.id.checkproglin);
 	      framecheck = (FrameLayout)this.findViewById(R.id.checkframe);
 	      mProgress = (ProgressBar) findViewById(R.id.checkProg);
-	      framecheck.setVisibility(View.INVISIBLE);
 	    
-	      try{
-	          new Thread(){
-	              public void run() {
-	                  initializeApp();
-	                  uiHandler.post( new Runnable(){
-	                      @Override
-	                      public void run() {
-	                          if(isUpdateRequired){
-	                          }else{
-	                        	  user_pic.setImageBitmap(TabMain.userpic);
-	                        	  connectionsButton.setText(TabMain.connnum);
-	                        	  checkproglin.setVisibility(View.GONE);
-	                        	  framecheck.setVisibility(View.VISIBLE);
-	                          }
-	                      }
-	                  } );
-	              }
-	              public void initializeApp(){
-	            	  while (done==null) {
-	            		  try {
-							sleep(1);
-						} catch (InterruptedException e) {
-							e.printStackTrace();
-						}
-	            	  }
-	              }
-	      }.start();
-	      }catch (Exception e) {}
+	   
 	    
 	    
-        IntentFilter filter = new IntentFilter(ResponseReceiver.ACTION_RESP);
-        filter.addCategory(Intent.CATEGORY_DEFAULT);
-        receiver = new ResponseReceiver();
-        registerReceiver(receiver, filter);
-        Intent msgIntent = new Intent(this, StaffService.class);
-	      msgIntent.putExtra(StaffService.PARAM_IN_MSG, "checkIn");
-	      startService(msgIntent);
 
 	}
 	  @Override
 	    protected void onResume() {
 	        super.onResume();
+	        done = null;
+	        sendIntent();
+	        checkLoading();
+	  }
+	  
+	  public void sendIntent(){
+
+	        IntentFilter filter = new IntentFilter(ResponseReceiver.ACTION_RESP);
+	        filter.addCategory(Intent.CATEGORY_DEFAULT);
+	        receiver = new ResponseReceiver();
+	        registerReceiver(receiver, filter);
+	        Intent msgIntent = new Intent(this, StaffService.class);
+		      msgIntent.putExtra(StaffService.PARAM_IN_MSG, "checkIn");
+		      startService(msgIntent);      
+	  }
+	  
+	  public void checkLoading(){
+	      framecheck.setVisibility(View.INVISIBLE);
+    	  checkproglin.setVisibility(View.VISIBLE);
+		   try{
+		          new Thread(){
+		              public void run() {
+		                  initializeApp();
+		                  uiHandler.post( new Runnable(){
+		                      @Override
+		                      public void run() {
+		                          if(isUpdateRequired){
+		                          }else{
+		                        	  user_pic.setImageBitmap(TabMain.userpic);
+		                        	  connectionsButton.setText(TabMain.connnum);
+		                        	  checkproglin.setVisibility(View.GONE);
+		                        	  framecheck.setVisibility(View.VISIBLE);
+		                          }
+		                      }
+		                  } );
+		              }
+		              public void initializeApp(){
+		            	  while (done==null) {
+		            		  try {
+								sleep(1);
+							} catch (InterruptedException e) {
+								e.printStackTrace();
+							}
+		            	  }
+		              }
+		      }.start();
+		      }catch (Exception e) {}
 	  }
 	
 	  public class ResponseReceiver extends BroadcastReceiver {
@@ -286,11 +297,6 @@ public class CheckIn extends Activity {
 	        	if (extras.getString("contracts")!=null){
 	        		parseContracts(extras.getString("contracts"));
 	        		done = "done";
-	        	}
-	        	//Get & Set User Connection #
-	        	if (extras.getString("connnum")!=null) {
-	        	String connnum = extras.getString("connnum");
-	        	connectionsButton.setText(connnum);
 	        	}
 
 	        }
