@@ -57,6 +57,7 @@ import android.widget.Toast;
 
 import com.facebook.android.*;
 import com.facebook.android.Facebook.*;
+import com.staff.DashboardActivity.ResponseReceiver;
 
 public class HomePage extends Activity {
     private JSONObject json_data = null;
@@ -212,11 +213,6 @@ public class HomePage extends Activity {
 	              }
 	      }.start();
 	      }catch (Exception e) {}
-      
-  	    //StaffTasks staff = new StaffTasks();
-  	    //parseResponse(staff.returnProfInfo());
-  	    
-  	    
   	    
   	  
   
@@ -250,7 +246,7 @@ public class HomePage extends Activity {
                 availableOn.setVisibility(View.INVISIBLE);
           	  availableOff.setVisibility(View.VISIBLE);
           	  TabMain.available = false;
-          	  Log.d("TAG", "AVAILABILITY IS NOW OFF");
+          	  sendAvail(false);
 
             }
         });
@@ -261,7 +257,7 @@ public class HomePage extends Activity {
           	  availableOff.setVisibility(View.INVISIBLE);
                 availableOn.setVisibility(View.VISIBLE);
             	  TabMain.available = true;
-          	  Log.d("TAG", "AVAILABILITY IS NOW ON");
+          	 sendAvail(true);
 
             }
         });
@@ -289,6 +285,21 @@ public class HomePage extends Activity {
 
   }
 
+    public void sendAvail(boolean bool){
+		IntentFilter filter = new IntentFilter(ResponseReceiver.ACTION_RESP);
+	    filter.addCategory(Intent.CATEGORY_DEFAULT);
+	    receiver = new ResponseReceiver();
+	    registerReceiver(receiver, filter);
+	    final Intent msgIntent = new Intent(this, StaffService.class);
+		if (bool == true){
+		    msgIntent.putExtra(StaffService.PARAM_IN_MSG, "availOn");
+		} else if (bool == false){
+		    msgIntent.putExtra(StaffService.PARAM_IN_MSG, "availOff");
+		}
+	    startService(msgIntent);	
+	}
+    
+    
 	public void checkAvailability(){
 		if (TabMain.available == true ){
         	  availableOff.setVisibility(View.INVISIBLE);

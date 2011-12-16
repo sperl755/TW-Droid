@@ -268,7 +268,7 @@ public class MessageInbox extends Activity {
 	
 	          Log.d("TAG", "IN PARSE MESSAGE RESPONSE");
 
-			  for (int i=1; i<jresult.length(); i++) { //Runs through the messages for as long as the array is
+			  for (int i=0; i<jresult.length(); i++) { //Runs through the messages for as long as the array is
 
 	    	  json_data = jresult.getJSONObject(i); //For each json object
 	    	     
@@ -288,27 +288,26 @@ public class MessageInbox extends Activity {
 	  
 	   private static void setTexts(String body, String subject, String sender_name,
 			String id, int i) {
-
+		   i=i+1;
 		   if (i==1) {
-		   messagedesc1.setText(body);
+		   messagedesc1.setText(sender_name+": "+subject);
 		   messageid1 = id;
 		   } else if (i==2) {
-		   messagedesc2.setText(body);
+		   messagedesc2.setText(sender_name+": "+subject);
 		   messageid2 = id;
 		   } else if (i==3) {
-		   messagedesc3.setText(body);
-		   messageid3 = id;
+		   messagedesc3.setText(sender_name+": "+subject);
 		   } else if (i==4) {
-		   messagedesc4.setText(body);
+		   messagedesc4.setText(sender_name+": "+subject);
 		   messageid4 = id;
 		   } else if (i==5) {
-		   messagedesc5.setText(body);
+		   messagedesc5.setText(sender_name+": "+subject);
 		   messageid5 = id;
 		   } else if (i==6) {
-		   messagedesc6.setText(body);
+		   messagedesc6.setText(sender_name+": "+subject);
 		   messageid6 = id;
 		   } else if (i==7) {
-		   messagedesc7.setText(body);
+		   messagedesc7.setText(sender_name+": "+subject);
 		   messageid7 = id;
 		   } else if (i>=7) {
 			   Log.d("TAG","too many messages");

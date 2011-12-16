@@ -445,6 +445,7 @@ public class DashboardActivity extends Activity {
         	  availableOff.setVisibility(View.VISIBLE);
         	  TabMain.available = false;
         	  Log.d("TAG", "AVAILABILITY IS NOW OFF");
+        	  sendAvail(false);
           }
       });
       availableOff.setOnClickListener(new View.OnClickListener()
@@ -455,7 +456,7 @@ public class DashboardActivity extends Activity {
               availableOn.setVisibility(View.VISIBLE);
         	  TabMain.available = true;
               Log.d("TAG", "AVAILABILITY IS NOW ON");
-
+              sendAvail(false);
           }
       });
 
@@ -510,6 +511,20 @@ public class DashboardActivity extends Activity {
 			 availableOn.setVisibility(View.INVISIBLE);
 	       	  availableOff.setVisibility(View.VISIBLE);
 		}
+	}
+	
+	public void sendAvail(boolean bool){
+		IntentFilter filter = new IntentFilter(ResponseReceiver.ACTION_RESP);
+	    filter.addCategory(Intent.CATEGORY_DEFAULT);
+	    receiver = new ResponseReceiver();
+	    registerReceiver(receiver, filter);
+	    final Intent msgIntent = new Intent(this, StaffService.class);
+		if (bool == true){
+		    msgIntent.putExtra(StaffService.PARAM_IN_MSG, "availOn");
+		} else if (bool == false){
+		    msgIntent.putExtra(StaffService.PARAM_IN_MSG, "availOff");
+		}
+	    startService(msgIntent);	
 	}
 	
 	

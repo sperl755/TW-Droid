@@ -63,11 +63,9 @@ public class StaffService extends IntentService {
             stopSelf();
         } else if (msg.equals("availOn")){ // Async way of setting availability on
         	StaffTasks.setAvailability("1", this); //Kind of Sketchy right now
-        	sendBroadcast(broadcastIntent);
         	stopSelf();       
         } else if (msg.equals("availOff")){ // Async way of setting availability off
         	StaffTasks.setAvailability("0", this);	// Kind of sketchy right now
-        	sendBroadcast(broadcastIntent);
         	stopSelf();
         } else if (msg.equals("runCompany")){ 
         	broadcastIntent.putExtra("companyinfo",StaffTasks.getCompanyDetail(extraParam, this));	

@@ -27,7 +27,7 @@ public class TabMain extends TabActivity {
 	public static String connnum;
 	public static Bitmap userpic;
 	public static boolean available = true;
-	private TabHost mTabHost;
+	private static TabHost mTabHost;
 	private Button notification;
 	private Button notificationoff;
 	private void setupTabHost() {
@@ -41,6 +41,8 @@ public class TabMain extends TabActivity {
 		super.onCreate(savedInstanceState);
 		// construct the tabhost
 		setContentView(R.layout.homepage);
+		
+		// Perhaps check initial availability upon app opening
 
 		setupTabHost();
 		mTabHost.getTabWidget().setDividerDrawable(R.drawable.menu_seperator);
@@ -77,6 +79,11 @@ public class TabMain extends TabActivity {
 	      });
 	
 	}
+	public static void setTab(){
+		mTabHost.setCurrentTab(0);
+	}
+	
+	
     private void addActivityTab(final View view, final String tag, int iconResource, Intent intent) {
 		View tabview = createTabView(mTabHost.getContext(), tag, iconResource);
 		TabSpec setContent = mTabHost.newTabSpec(tag).setIndicator(tabview)
