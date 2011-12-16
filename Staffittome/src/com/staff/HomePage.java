@@ -99,6 +99,10 @@ public class HomePage extends Activity {
 	private TextView unameJobExperienceCompany1;
 	private ImageButton unameJobExperience1Button;
 	private TextView unameJobExperience2;
+	private TextView unameEducation1;
+	private TextView unameEducationSchool1;
+	private TextView unameEducation2;
+	private TextView unameEducationSchool2;
 	private TextView unameJobExperienceCompany2;
 	private ImageButton unameJobExpereince2Button;
 	private String profdetails;
@@ -158,8 +162,19 @@ public class HomePage extends Activity {
         unameJobExperienceCompany2=(TextView)this.findViewById(R.id.unameJobExperienceCompany2);
         unameJobExperienceCompany2.setTypeface(hm);
         unameJobExpereince2Button=(ImageButton)this.findViewById(R.id.unameJobExperience2Button);
+        unameJobExperienceCompany2.setTypeface(hm);
+        unameJobExpereince2Button=(ImageButton)this.findViewById(R.id.unameJobExperience2Button);
         user_picture=(ImageView)this.findViewById(R.id.userpic);
         user_picture.setScaleType( ScaleType.CENTER_CROP );
+        unameEducation1 = (TextView)this.findViewById(R.id.unameEducation1);
+        unameEducation1.setTypeface(hm);
+        unameEducation2 = (TextView)this.findViewById(R.id.unameEducation2);
+        unameEducation2.setTypeface(hm);
+        unameEducationSchool1 = (TextView)this.findViewById(R.id.unameEducationSchool1);
+        unameEducationSchool1.setTypeface(hm);
+        unameEducationSchool2 = (TextView)this.findViewById(R.id.unameEducationSchool2);
+        unameEducationSchool2.setTypeface(hm);
+
 
         
         /*
@@ -346,8 +361,10 @@ public class HomePage extends Activity {
 		 Log.d("TAG", "IN PARSE RESPONSE FOR HOMEPAGE: "+responseBody);
 		 JSONObject exp; 
 		 JSONObject cap; 
+		 JSONObject edu;
 		 JSONArray jexperiences; 
 		 JSONArray jcapabilities; 
+		 JSONArray jeducations; 
 		 JSONObject json_data = null;
 		 JSONTokener tokener = new JSONTokener(responseBody);
 		 try {
@@ -366,12 +383,32 @@ public class HomePage extends Activity {
 				String price = cap.getString("price");
 				setCaps(title,price,i);
 			}
+			jeducations = json_data.getJSONArray("educations");
+			for (int i=0;i<jeducations.length();i++){
+				edu = jeducations.getJSONObject(i);
+				String organization = edu.getString("organization");
+				String end_year = edu.getString("end_year");
+				String degree = edu.getString("major");
+				setEdus(organization,end_year,degree,i);
+			}
 		 } catch (JSONException e) {
 			e.printStackTrace();
 		}
 	}
 	 
-		
+	 	public void setEdus(String organization, String end_year, String degree, int i){
+	 		if (i == 0) {
+	 			unameEducation1.setText(degree);
+	 			unameEducationSchool1.setText(organization+" "+end_year);
+			} else if (i == 1) {
+				unameEducation2.setText(degree);
+				unameEducationSchool2.setText(organization+" "+end_year);
+			}
+			else if (i>2) {
+				Toast.makeText(getApplicationContext(), "Make more rows for capabilities", 0).show();
+			}
+				
+			}
 		public void setCaps(String title, String price, int i) {
 			if (i == 0) {
 				unameJobSkillJob1.setText(title);

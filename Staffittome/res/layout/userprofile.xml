@@ -82,14 +82,6 @@
                     <TextView android:text="Loading..." android:paddingTop="10dp" android:layout_gravity="center_vertical" android:textSize="10dp" android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingLeft="15dp" android:id="@+id/unameJobExperienceCompany2"></TextView>
                     <ImageButton android:layout_gravity="center_vertical|right" android:background="@drawable/arrow" android:layout_marginRight="20dp" android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/unameJobExperience2Button"></ImageButton>
                 </FrameLayout>
-                <LinearLayout android:id="@+id/LinearLayout05" android:layout_height="wrap_content" android:layout_width="match_parent">
-                    <FrameLayout android:id="@+id/FrameLayout04" android:layout_height="match_parent" android:layout_width="match_parent" android:paddingLeft="10dp" android:paddingRight="10dp">
-                        <ImageView android:background="@drawable/module_row_last" android:adjustViewBounds="true" android:id="@+id/imageView10" android:layout_height="wrap_content" android:layout_width="fill_parent" android:layout_gravity="center_horizontal"></ImageView>
-                        <TextView android:gravity="center_vertical" android:text="Loading..." android:textColor="#333333" android:layout_gravity="center_vertical" android:paddingBottom="20dp" android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingLeft="15dp" android:id="@+id/unameJobSkillJob2"></TextView>
-                        <TextView android:text="Loading..." android:paddingTop="10dp" android:layout_gravity="center_vertical" android:textSize="10dp" android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingLeft="15dp" android:id="@+id/unameJobSkillRate2"></TextView>
-                        <ImageButton android:layout_gravity="center_vertical|right" android:background="@drawable/arrow" android:layout_marginRight="20dp" android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/unameJobSkillJob2Button"></ImageButton>
-                    </FrameLayout>
-                </LinearLayout>
                 <LinearLayout android:id="@+id/LinearLayout06" android:orientation="vertical" android:layout_height="10px" android:layout_width="match_parent"></LinearLayout>
                 <FrameLayout android:id="@+id/FrameLayout05" android:layout_height="match_parent" android:layout_gravity="center_horizontal|clip_horizontal" android:layout_width="match_parent" android:paddingLeft="10dp" android:paddingRight="10dp">
                         <ImageView android:background="@drawable/module_header" android:adjustViewBounds="true" android:id="@+id/imageView10" android:layout_height="wrap_content" android:layout_width="fill_parent" android:layout_gravity="center_horizontal"></ImageView>
