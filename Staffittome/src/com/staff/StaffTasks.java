@@ -480,7 +480,27 @@ public static String getMessageDetail(String messageid, Context c) {
 	}
 	return bip;
 	}
-  	
+	public static String getCompanyDetail(String companyid, Context c) {
+			String companydetail = null;
+		try {
+			URI url = new URI("https://helium.staffittome.com/apis/"+companyid+"/view_company");
+			
+		    HttpGet get = new HttpGet(url);
+		    HttpClient client = new MyHttpClient(c);
+		    ResponseHandler<String> responseHandler=new BasicResponseHandler();
+		    companydetail = client.execute(get, responseHandler);
+		    Log.d("TAG", "RESPONSE STRING FROM HTTPS VIEW COMPANY IS :"+companydetail);
+			} catch (ClientProtocolException e) {
+				e.printStackTrace();
+			} catch (IOException e) {
+				e.printStackTrace();
+			} catch (ParseException e) {
+				e.printStackTrace();
+		    } catch (URISyntaxException e) {
+				e.printStackTrace();
+			}
+		    return companydetail;
+	}	
  
 public String returnJobs(){
 	return appliedjobs;

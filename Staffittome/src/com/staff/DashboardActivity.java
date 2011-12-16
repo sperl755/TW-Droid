@@ -563,20 +563,7 @@ public class DashboardActivity extends Activity {
            e.printStackTrace();
        }
     }
-	
-	public static Bitmap downloadBitmap(String url) {
-		
-		Bitmap bip=null;
-	  	URL url1 = null;
-	  	try {
-			url1 = new URL(url);
-		bip = BitmapFactory.decodeStream(url1.openConnection().getInputStream());
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return bip;
-		}
+
 	public static void parseResponse(String stuff, int z) {
 		  JSONObject jresult;
           JSONArray jobsarray;

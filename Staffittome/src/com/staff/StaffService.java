@@ -17,6 +17,7 @@ import android.util.Log;
 
 public class StaffService extends IntentService {
     public static final String PARAM_IN_MSG = "";
+    public static final String EXTRA_PARAM = "";
     public static final String PARAM_OUT_MSG = "";
     private int counter=0;
 
@@ -28,6 +29,7 @@ public class StaffService extends IntentService {
     protected void onHandleIntent(Intent intent) {
 
         String msg = intent.getStringExtra(PARAM_IN_MSG);
+        String extraParam = intent.getStringExtra("companyid"); // This will be a job id, or message id, or company id, something of that sort that needs to be passed.
 
     	SharedPreferences prefs= PreferenceManager.getDefaultSharedPreferences(getApplicationContext()); 
         String access_token = prefs.getString("access_token", null);
@@ -62,15 +64,15 @@ public class StaffService extends IntentService {
         } else if (msg.equals("availOn")){ // Async way of setting availability on
         	StaffTasks.setAvailability("1", this); //Kind of Sketchy right now
         	sendBroadcast(broadcastIntent);
-
-           // stopSelf();
-                 
+        	stopSelf();       
         } else if (msg.equals("availOff")){ // Async way of setting availability off
         	StaffTasks.setAvailability("0", this);	// Kind of sketchy right now
         	sendBroadcast(broadcastIntent);
-
-           // stopSelf();
-        
+        	stopSelf();
+        } else if (msg.equals("runCompany")){ 
+        	broadcastIntent.putExtra("companyinfo",StaffTasks.getCompanyDetail(extraParam, this));	
+        	sendBroadcast(broadcastIntent);
+		    stopSelf();
         } else if (msg.equals("start")){
         	if (counter==0){
             	Thread.sleep(10000);

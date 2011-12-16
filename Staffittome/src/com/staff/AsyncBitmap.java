@@ -28,12 +28,12 @@ import android.view.Window;
 import android.widget.ImageView;
 import android.widget.ImageView.ScaleType;
 
-public class AsyncFB extends AsyncTask<String, Integer, Bitmap> implements
+public class AsyncBitmap extends AsyncTask<String, Integer, Bitmap> implements
 		OnCancelListener {
 	private final ImageView mImageView;
 	private final Context mContext;
 
-	public AsyncFB(ImageView imageView, Context context) {
+	public AsyncBitmap(ImageView imageView, Context context) {
 		super();
 		mImageView = imageView;
 		mContext = context;
@@ -46,7 +46,7 @@ public class AsyncFB extends AsyncTask<String, Integer, Bitmap> implements
 		} catch (InterruptedException e) {
 		}
 		publishProgress(5000);
-		Bitmap b = DashboardActivity.downloadBitmap(parameters[0]);
+		Bitmap b = StaffTasks.downloadBitmap(parameters[0]);
 		publishProgress(10000);
 		return b;
 	}

@@ -6,7 +6,6 @@
   android:background="@drawable/backgroundcolor" android:isScrollContainer="true">
     <FrameLayout android:layout_height="wrap_content" android:id="@+id/frameLayout1" android:layout_width="match_parent">
         <ImageView android:scaleType="centerCrop" android:id="@+id/imageView1" android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_gravity="top" android:paddingTop="0px" android:src="@drawable/header_bgx"></ImageView>
-        <ImageView android:id="@+id/imageView3" android:layout_height="wrap_content" android:layout_width="wrap_content" android:src="@drawable/logox" android:paddingTop="10dp" android:paddingLeft="3dp" android:layout_gravity="center_horizontal"></ImageView>
         <ImageView android:id="@+id/imageView4" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/notify_alertx" android:paddingTop="3dp" android:layout_gravity="right" android:paddingRight="4dp"></ImageView>
     </FrameLayout>
     <FrameLayout android:id="@+id/frameLayout5" android:layout_height="wrap_content" android:layout_width="match_parent">
@@ -39,7 +38,7 @@
                 <LinearLayout android:id="@+id/linearLayout1" android:layout_height="wrap_content" android:layout_width="match_parent">
                     <FrameLayout android:id="@+id/frameLayout6" android:layout_height="match_parent" android:layout_width="match_parent">
                         <ImageView android:src="@drawable/module_row_lastx" android:id="@+id/imageView13" android:layout_height="wrap_content" android:layout_width="match_parent"></ImageView>
-                        <TextView android:text="Here we eat a lot of tacos, burritos and nachos, then spend the day farting, pretty cool eh?!" android:paddingTop="10dp" android:textColor="#666666" android:textSize="11dp" android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingLeft="20dp" android:id="@+id/coSummaryText"></TextView>
+                        <TextView android:layout_height="wrap_content" android:paddingLeft="20dp" android:layout_width="wrap_content" android:text="Here we eat a lot of tacos, burritos and nachos, then spend the day farting, pretty cool eh?!" android:textSize="11dp" android:paddingTop="10dp" android:id="@+id/coSummaryText" android:textColor="#666666"></TextView>
                     </FrameLayout>
                 </LinearLayout>
                 <LinearLayout android:id="@+id/linearLayout6" android:orientation="vertical" android:layout_height="10px" android:layout_width="match_parent"></LinearLayout>
@@ -53,7 +52,7 @@
                     <FrameLayout android:id="@+id/frameLayout6" android:layout_height="wrap_content" android:layout_width="match_parent">
                         <ImageView android:src="@drawable/module_split_last" android:id="@+id/imageView2" android:layout_height="match_parent" android:layout_width="match_parent"></ImageView>
                         <TextView android:text="Size" android:paddingTop="10dp" android:textColor="#666666" android:textSize="10dp" android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingLeft="60dp" android:id="@+id/coSize"></TextView>
-                        <TextView android:text="Job Type" android:paddingTop="10dp" android:textColor="#666666" android:textSize="10dp" android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingLeft="215dp" android:id="@+id/coJobType"></TextView>
+                        <TextView android:text="Company Type" android:paddingTop="10dp" android:textColor="#666666" android:textSize="10dp" android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingLeft="215dp" android:id="@+id/coJobType"></TextView>
                         <ImageView android:layout_gravity="center_vertical" android:src="@drawable/icon_location" android:paddingLeft="20dp" android:id="@+id/imageView6" android:layout_height="wrap_content" android:layout_width="wrap_content"></ImageView>
                         <ImageView android:layout_gravity="center_vertical|center_horizontal" android:src="@drawable/icon_job_type" android:paddingLeft="50dp" android:id="@+id/imageView9" android:layout_height="wrap_content" android:layout_width="wrap_content"></ImageView>
                         <TextView android:text="10,000+ employees" android:paddingTop="5dp" android:textColor="#333333" android:layout_gravity="center_vertical" android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingLeft="60dp" android:textSize="11dp" android:id="@+id/coSizeValue"></TextView>

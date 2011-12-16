@@ -31,6 +31,7 @@ import com.facebook.android.FacebookError;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -39,11 +40,13 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class JobApply extends Activity {
 	private ImageButton back;
+	private ImageView thumbnail;
 	private TextView jobTitle1;
 	private TextView company;
 	private Button apply;
@@ -65,6 +68,9 @@ public class JobApply extends Activity {
 	private TextView jobSkillsReq1Value;
 	private String jobid;
 	private String distance;
+	private String companyid;
+	private String state;
+	private String city;
 	/*
 	private TextView jobSkillsReq2;
 	private TextView jobSkillsReq2Value;
@@ -133,7 +139,7 @@ public class JobApply extends Activity {
 		jobSkillsReq1.setTypeface(hm);
 		jobSkillsReq1Value =(TextView)this.findViewById(R.id.jobSkillsReq1Description);
 		jobSkillsReq1Value.setTypeface(hm);
-		
+		thumbnail = (ImageView)this.findViewById(R.id.jobThumbnail);
 		/*
 		 * GETTING JOB ID FROM SEARCHMAPS/ITEMIZED OVERLAY
 		 */
@@ -171,7 +177,26 @@ public class JobApply extends Activity {
 	            	applyJob(jobid);
 	            }
 	        });
+	       thumbnail.setOnClickListener(new View.OnClickListener()
+	        {
+	            public void onClick(View v)
+	            {
+	            	startCompanyPage();
+		   		}
+	        });
 	   }
+	
+		public void startCompanyPage(){
+      		 Intent intent =new Intent(this, CompanyPage.class);
+      		 	if (jobid!=null){
+      		 	intent.putExtra("id", companyid);
+      		 	intent.putExtra("city", city);
+      		 	intent.putExtra("state", state);
+      		 	this.startActivity(intent);
+      		 	} else {
+      		 		Toast.makeText(getApplicationContext(), "Wait a second", 0).show();
+      		 	}
+		}
 	public void applyJob(String jobid2) {
 		SharedPreferences prefs= PreferenceManager.getDefaultSharedPreferences(JobApply.this); 
         String key = prefs.getString("staffkey", null);
@@ -248,8 +273,8 @@ public class JobApply extends Activity {
 
          JSONObject locationData = json_data.getJSONObject("location");
          JSONObject json_loc_data = locationData.getJSONObject("location");
-         String state = json_loc_data.getString("state");
-         String city = json_loc_data.getString("city");
+         state = json_loc_data.getString("state");
+         city = json_loc_data.getString("city");
          //String address1 = json_loc_data.getString("address1");
          //String phone = json_loc_data.getString("phone");
          //String loc_created_at = json_loc_data.getString("created_at");
@@ -264,12 +289,17 @@ public class JobApply extends Activity {
         	  } else {
         	   locationValue.setText(city+" ,"+state);
         	  }
+         	  
 
          JSONObject companyAttributes = json_data.getJSONObject("company");
          String companyThumbUrl = companyAttributes.getString("thumb_photo");
+         companyid = companyAttributes.getString("coid");
          
+         AsyncBitmap a = new AsyncBitmap(thumbnail, this);
+         Log.d("TAG","THE URL USED FOR DOWNLOADING THE BITMAP IS :"+companyThumbUrl);
+         a.execute(companyThumbUrl);
          
-         String thecompany = json_data.getString("company");
+         String thecompany = companyAttributes.getString("name");
    	  		if (thecompany.length()>16) {
     	  String compsub = thecompany.substring(0, 15);
     	  String comp1 = compsub+"..";

@@ -43,7 +43,8 @@ android:windowSoftInputMode="adjustResize" android:screenOrientation="portrait" 
 android:windowSoftInputMode="adjustResize" android:screenOrientation="portrait" ></activity>
 		<activity android:name=".SearchTabMain" android:theme="@android:style/Theme.NoTitleBar"
 android:windowSoftInputMode="adjustResize" android:screenOrientation="portrait" ></activity>
-		
+				<activity android:name=".CompanyPage" android:theme="@android:style/Theme.NoTitleBar"
+android:windowSoftInputMode="adjustResize" android:screenOrientation="portrait" ></activity>
 		<service android:name="StaffService"> </service>
    <uses-library android:name="com.google.android.maps" />
    
