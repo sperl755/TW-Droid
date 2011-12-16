@@ -443,9 +443,7 @@ public class DashboardActivity extends Activity {
           {
               availableOn.setVisibility(View.INVISIBLE);
         	  availableOff.setVisibility(View.VISIBLE);
-        	  //msgIntent.putExtra(StaffService.PARAM_IN_MSG, "availOff");
-              //startService(msgIntent);
-        	  
+        	  TabMain.available = false;
         	  Log.d("TAG", "AVAILABILITY IS NOW OFF");
           }
       });
@@ -455,8 +453,7 @@ public class DashboardActivity extends Activity {
           {
         	  availableOff.setVisibility(View.INVISIBLE);
               availableOn.setVisibility(View.VISIBLE);
-              //msgIntent.putExtra(StaffService.PARAM_IN_MSG, "availOn");
-              //startService(msgIntent);
+        	  TabMain.available = true;
               Log.d("TAG", "AVAILABILITY IS NOW ON");
 
           }
@@ -503,7 +500,18 @@ public class DashboardActivity extends Activity {
 	
 	protected void onResume() {
         super.onResume();
+        checkAvailability();
         }
+	public void checkAvailability(){
+		if (TabMain.available == true ){
+        	  availableOff.setVisibility(View.INVISIBLE);
+              availableOn.setVisibility(View.VISIBLE);
+		} else {
+			 availableOn.setVisibility(View.INVISIBLE);
+	       	  availableOff.setVisibility(View.VISIBLE);
+		}
+	}
+	
 	
 	  public static  void startintentServie() {
 		//  if (counter == 0)

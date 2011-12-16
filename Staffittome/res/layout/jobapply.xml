@@ -6,7 +6,6 @@
   android:background="@drawable/backgroundcolor" android:isScrollContainer="true">
     <FrameLayout android:layout_height="wrap_content" android:id="@+id/frameLayout1" android:layout_width="match_parent">
         <ImageView android:scaleType="centerCrop" android:id="@+id/imageView1" android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_gravity="top" android:paddingTop="0px" android:src="@drawable/header_bgx"></ImageView>
-        <ImageView android:id="@+id/imageView3" android:layout_height="wrap_content" android:layout_width="wrap_content" android:src="@drawable/logox" android:paddingTop="10dp" android:paddingLeft="3dp" android:layout_gravity="center_horizontal"></ImageView>
         <Button android:id="@+id/notificationlit" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/notify_alertx" android:layout_gravity="right"  android:gravity="right" android:layout_marginTop="3dp" android:layout_marginRight="4dp"></Button>
         <ImageButton android:background="@drawable/back_button" android:src="@drawable/back_button_selector" android:layout_height="wrap_content" android:id="@+id/backInbox" android:layout_width="wrap_content" android:layout_gravity="center_vertical" android:layout_marginLeft="4dp"></ImageButton>
     </FrameLayout>

@@ -181,6 +181,31 @@ public class CheckIn extends Activity {
   		SharedPreferences prefs= PreferenceManager.getDefaultSharedPreferences(CheckIn.this); 
         key = prefs.getString("staffkey", null);
         user_id = prefs.getString("staffuser", null);
+        
+        availableOn.setOnClickListener(new View.OnClickListener()
+        {
+            public void onClick(View v)
+            {
+                availableOn.setVisibility(View.INVISIBLE);
+          	  availableOff.setVisibility(View.VISIBLE);
+          	  TabMain.available = false;
+          	  Log.d("TAG", "AVAILABILITY IS NOW OFF");
+
+            }
+        });
+        availableOff.setOnClickListener(new View.OnClickListener()
+        {
+            public void onClick(View v)
+            {
+          	  availableOff.setVisibility(View.INVISIBLE);
+                availableOn.setVisibility(View.VISIBLE);
+            	  TabMain.available = true;
+          	  Log.d("TAG", "AVAILABILITY IS NOW ON");
+
+            }
+        });
+ 
+        
     
         connectionsButton.setOnClickListener(new OnClickListener() {
 			@Override
@@ -230,7 +255,18 @@ public class CheckIn extends Activity {
 	        done = null;
 	        sendIntent();
 	        checkLoading();
+	        checkAvailability();
 	  }
+	  
+		public void checkAvailability(){
+			if (TabMain.available == true ){
+	        	  availableOff.setVisibility(View.INVISIBLE);
+	              availableOn.setVisibility(View.VISIBLE);
+			} else {
+				 availableOn.setVisibility(View.INVISIBLE);
+		       	  availableOff.setVisibility(View.VISIBLE);
+			}
+		}
 	  
 	  public void sendIntent(){
 

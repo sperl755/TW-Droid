@@ -249,8 +249,8 @@ public class HomePage extends Activity {
             {
                 availableOn.setVisibility(View.INVISIBLE);
           	  availableOff.setVisibility(View.VISIBLE);
-              //dash.setAvailability("0",key,  HomePage.this);
-        	  Log.d("TAG", "AVAILABILITY IS NOW OFF");
+          	  TabMain.available = false;
+          	  Log.d("TAG", "AVAILABILITY IS NOW OFF");
 
             }
         });
@@ -260,7 +260,7 @@ public class HomePage extends Activity {
             {
           	  availableOff.setVisibility(View.INVISIBLE);
                 availableOn.setVisibility(View.VISIBLE);
-                //dash.setAvailability("1",key, HomePage.this);
+            	  TabMain.available = true;
           	  Log.d("TAG", "AVAILABILITY IS NOW ON");
 
             }
@@ -285,9 +285,22 @@ public class HomePage extends Activity {
     @Override
     protected void onResume() {
         super.onResume();
+        checkAvailability();
+
   }
 
-
+	public void checkAvailability(){
+		if (TabMain.available == true ){
+        	  availableOff.setVisibility(View.INVISIBLE);
+              availableOn.setVisibility(View.VISIBLE);
+		} else {
+			 availableOn.setVisibility(View.INVISIBLE);
+	       	  availableOff.setVisibility(View.VISIBLE);
+		}
+	}
+	
+    
+    
 	  public class ResponseReceiver extends BroadcastReceiver {
 	        public static final String ACTION_RESP = "com.staff.intent.action.MESSAGE_PROCESSED";
 	        @Override

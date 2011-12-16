@@ -71,6 +71,7 @@ public class JobApply extends Activity {
 	private String companyid;
 	private String state;
 	private String city;
+	private String industry;
 	/*
 	private TextView jobSkillsReq2;
 	private TextView jobSkillsReq2Value;
@@ -192,6 +193,9 @@ public class JobApply extends Activity {
       		 	intent.putExtra("id", companyid);
       		 	intent.putExtra("city", city);
       		 	intent.putExtra("state", state);
+      		 	intent.putExtra("industry", industry);
+      		 	//intent.putExtra("thumbnail", thumbnail);
+
       		 	this.startActivity(intent);
       		 	} else {
       		 		Toast.makeText(getApplicationContext(), "Wait a second", 0).show();
@@ -307,7 +311,7 @@ public class JobApply extends Activity {
     	  } else {
     	  company.setText(thecompany);
     	  }
-         String industry = json_data.getString("industry");
+          industry = json_data.getString("industry");
          String description = json_data.getString("description");
          String cost_method = json_data.getString("cost_method");
          String time_details = json_data.getString("time_details");

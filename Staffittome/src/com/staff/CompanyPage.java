@@ -71,8 +71,8 @@ public class CompanyPage extends Activity {
 		    coLocation =(TextView)this.findViewById(R.id.coLocation);
 		    coLocation.setTypeface(hm);
 		    coDistance =(TextView)this.findViewById(R.id.coDistance);
-		    coDistance.setTypeface(hb);
-		    coDistanceMiles =(TextView)this.findViewById(R.id.coDistance);
+		    coDistance.setTypeface(hm);
+		    coDistanceMiles =(TextView)this.findViewById(R.id.coDistanceMiles);
 		    coDistanceMiles.setTypeface(hb);	    
 		    coBasicInfo =(TextView)this.findViewById(R.id.coBasicInfo);
 		    coBasicInfo.setTypeface(hb);
@@ -94,7 +94,7 @@ public class CompanyPage extends Activity {
 		    
 
 	        coLocation.setText(extras.getString("city")+extras.getString("state"));
-	       
+	        smallCoDescription.setText(extras.getString("industry"));
 	       /*
 	        * SEND INTENT TO SERVICE REGARDING OUR NEEDS
 	        */
@@ -142,10 +142,10 @@ public class CompanyPage extends Activity {
 	         String size = jsoncompany.getString("size");
 	         coSizeValue.setText(size);
 	         String description = jsoncompany.getString("description");
-	         smallCoDescription.setText(description);
+	         coSummaryText.setText(description);
 	         String company_type = jsoncompany.getString("company_type");
 	         if (company_type!=null) {
-	         coJobType.setText(company_type);
+	         coJobTypeValue.setText(company_type);
 	         }
 	         //String coname = jsoncompany.getString("name");
 
