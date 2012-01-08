@@ -8,6 +8,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
 import org.apache.http.ParseException;
 import org.apache.http.client.ClientProtocolException;
@@ -501,6 +502,33 @@ public static String getMessageDetail(String messageid, Context c) {
 			}
 		    return companydetail;
 	}	
+	
+	 public static String search(String terms, String lng, String lat, String rad, Context c) {
+	    	SharedPreferences prefs= PreferenceManager.getDefaultSharedPreferences(c); 
+	        String key = prefs.getString("staffkey", null);
+	        Log.d("TAG",key);
+	        String responseBody = null;
+	        String trimmed = terms.trim();
+	        String getUrl = ("https://helium.staffittome.com/apis/search/"+trimmed+"?latitude="+lat+"&longitude="+lng+"&distance="+rad);
+	        Log.d("TAG","URL USED FOR SEARCHING: "+getUrl);
+	        HttpClient client = new MyHttpClient(c);
+	        HttpGet get = new HttpGet(getUrl);
+         HttpResponse responseGet = null;
+			try {
+				ResponseHandler<String> responseHandler=new BasicResponseHandler();
+				responseBody = client.execute(get, responseHandler);
+			} catch (ParseException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}  
+			return responseBody;
+         }
  
 public String returnJobs(){
 	return appliedjobs;
