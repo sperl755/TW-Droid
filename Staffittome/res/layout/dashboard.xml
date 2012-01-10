@@ -66,7 +66,7 @@
                    
                     </FrameLayout>
                 </LinearLayout>
-                <LinearLayout android:id="@+id/linearLayout1" android:layout_height="wrap_content" android:layout_width="match_parent">
+                <LinearLayout android:layout_height="wrap_content" android:layout_width="match_parent" android:id="@+id/linearjob1" android:clickable="true">
                     <FrameLayout android:id="@+id/frameLayout6" android:layout_height="match_parent" android:layout_width="match_parent" android:paddingLeft="10dp" android:paddingRight="10dp">
                         <ImageView android:background="@drawable/module_row" android:adjustViewBounds="true" android:id="@+id/imageView10" android:layout_height="wrap_content" android:layout_width="fill_parent" android:layout_gravity="center_horizontal"></ImageView>
                              <ImageView android:src="@drawable/small_default_company" android:paddingLeft="15dp" android:id="@+id/suggesJobPic4" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center_vertical"></ImageView>
@@ -78,7 +78,7 @@
                         <ImageView android:layout_gravity="center_vertical" android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_marginTop="9dp" android:layout_marginLeft="33dp" android:id="@+id/randDisc1"></ImageView>
                     </FrameLayout>
                 </LinearLayout>
-                <LinearLayout android:id="@+id/LinearLayout05" android:layout_height="wrap_content" android:layout_width="match_parent">
+                <LinearLayout android:layout_height="wrap_content" android:layout_width="match_parent" android:id="@+id/linearjob2" android:clickable="true">
                     <FrameLayout android:id="@+id/FrameLayout01" android:layout_height="match_parent" android:layout_width="match_parent" android:paddingLeft="10dp" android:paddingRight="10dp">
                         <ImageView android:background="@drawable/module_row" android:adjustViewBounds="true" android:id="@+id/imageView10" android:layout_height="wrap_content" android:layout_width="fill_parent" android:layout_gravity="center_horizontal"></ImageView>
                            <ImageView android:src="@drawable/small_default_company" android:paddingLeft="15dp" android:id="@+id/suggesJobPic4" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center_vertical"></ImageView>
@@ -90,7 +90,7 @@
                         <ImageView android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_gravity="center_vertical" android:layout_marginTop="9dp" android:layout_marginLeft="33dp" android:id="@+id/randDisc2"></ImageView>
                     </FrameLayout>
                 </LinearLayout>
-                 <LinearLayout android:id="@+id/LinearLayout05" android:layout_height="wrap_content" android:layout_width="match_parent">
+                 <LinearLayout android:layout_height="wrap_content" android:layout_width="match_parent" android:id="@+id/linearjob3" android:clickable="true">
                     <FrameLayout android:id="@+id/FrameLayout01" android:layout_height="match_parent" android:layout_width="match_parent" android:paddingLeft="10dp" android:paddingRight="10dp">
                         <ImageView android:background="@drawable/module_row" android:adjustViewBounds="true" android:id="@+id/imageView10" android:layout_height="wrap_content" android:layout_width="fill_parent" android:layout_gravity="center_horizontal"></ImageView>
                             <ImageView android:src="@drawable/small_default_company" android:paddingLeft="15dp" android:id="@+id/suggesJobPic4" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center_vertical"></ImageView>
@@ -102,7 +102,7 @@
                         <ImageView android:layout_gravity="center_vertical" android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_marginTop="9dp" android:layout_marginLeft="33dp" android:id="@+id/randDisc3"></ImageView>
                     </FrameLayout>
                 </LinearLayout>
-                <FrameLayout android:id="@+id/frameLayout7" android:layout_height="wrap_content" android:layout_width="match_parent" android:paddingLeft="10dp" android:paddingRight="10dp">
+                <FrameLayout android:layout_height="wrap_content" android:layout_width="match_parent" android:paddingLeft="10dp" android:paddingRight="10dp" android:id="@+id/linearjob4" android:clickable="true">
                         <ImageView android:background="@drawable/module_row_last" android:adjustViewBounds="true" android:id="@+id/imageView10" android:layout_height="wrap_content" android:layout_width="fill_parent" android:layout_gravity="center_horizontal"></ImageView>
                     <ImageView android:src="@drawable/small_default_company" android:paddingLeft="15dp" android:id="@+id/suggesJobPic4" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_gravity="center_vertical"></ImageView>
                     <ImageView android:src="@drawable/small_pic_overlay" android:layout_gravity="center_vertical|center_horizontal|clip_horizontal|left" android:paddingLeft="15dp" android:id="@+id/small_pic_overlay" android:layout_width="wrap_content" android:layout_height="wrap_content"></ImageView>

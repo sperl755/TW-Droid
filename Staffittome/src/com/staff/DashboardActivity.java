@@ -144,6 +144,11 @@ public class DashboardActivity extends Activity {
     private ProgressBar mProgress;
     private int mProgressStatus = 0;
     private LinearLayout dashproglin;
+    private LinearLayout linearjob1;
+    private static LinearLayout linearjob2;
+    private static LinearLayout linearjob3;
+    private static FrameLayout linearjob4;
+
 	
     
 	@Override
@@ -188,7 +193,7 @@ public class DashboardActivity extends Activity {
                   } );
               }
               public void initializeApp(){
-            	  while (jobid4==null) {
+            	  while (friendname2==null) {
             		  try {
 						sleep(1);
 					} catch (InterruptedException e) {
@@ -269,6 +274,10 @@ public class DashboardActivity extends Activity {
       namePromote2.setTypeface(hm);
       user_picture = (ImageView)this.findViewById(R.id.userpic);
       user_picture.setScaleType( ScaleType.CENTER_CROP );
+      linearjob1 = (LinearLayout)this.findViewById(R.id.linearjob1);
+      linearjob2 = (LinearLayout)this.findViewById(R.id.linearjob2);
+      linearjob3 = (LinearLayout)this.findViewById(R.id.linearjob3);
+      linearjob4 = (FrameLayout)this.findViewById(R.id.linearjob4);
 
 
       r1 =getResources().getDrawable(R.drawable.icon_connection);
@@ -343,7 +352,7 @@ public class DashboardActivity extends Activity {
   		/*
        * GETTING AND SETTING BUTTON/TEXTS OTHERS
        */
-      disc1.setOnClickListener(new View.OnClickListener()
+      linearjob1.setOnClickListener(new View.OnClickListener()
       {
           public void onClick(View v)
           {
@@ -354,7 +363,7 @@ public class DashboardActivity extends Activity {
           	}
           }
       });
-      disc2.setOnClickListener(new View.OnClickListener()
+      linearjob2.setOnClickListener(new View.OnClickListener()
       {
           public void onClick(View v)
           {
@@ -365,7 +374,7 @@ public class DashboardActivity extends Activity {
             	}
           }
       });
-      disc3.setOnClickListener(new View.OnClickListener()
+      linearjob3.setOnClickListener(new View.OnClickListener()
       {
           public void onClick(View v)
           {
@@ -376,7 +385,7 @@ public class DashboardActivity extends Activity {
         	}
           }
       });
-      disc4.setOnClickListener(new View.OnClickListener()
+      linearjob4.setOnClickListener(new View.OnClickListener()
       {
           public void onClick(View v)
           {
@@ -591,6 +600,7 @@ public class DashboardActivity extends Activity {
 		  JSONObject jresult;
           JSONArray jobsarray;
 		  JSONObject json_data = null;
+		  int disclength = 0;
 		  JSONTokener tokener = new JSONTokener(stuff);
           try {
 			jresult = new JSONObject(tokener);
@@ -598,7 +608,7 @@ public class DashboardActivity extends Activity {
 		  jobsarray = jresult.getJSONArray("jobs");
           Log.d("TAG", "IN PARSE RESPONSE");
   		  for (int i=z; i<jobsarray.length(); i++) { //Runs through the Job postings for as long as the array is
-
+  		  disclength++;
     	  json_data = jobsarray.getJSONObject(i); //For each json object
     	  
           //JSONObject job = json_data.getJSONObject(""); // for each json object within that object named job, parse the below
@@ -607,11 +617,28 @@ public class DashboardActivity extends Activity {
           String company_name = json_data.getString("company_name");
           String id = json_data.getString("id");
          setTexts(title, company_name, i, id);
+         Log.d("TAG", title+ " "+ company_name+" " +  i +" "+ id);
+
 			}
       	} catch (JSONException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+      	/*
+      	 * List shortnening due to num of jobs listed in your discovery feed. (prob should change the last background so it does the rounded corners too)
+      	 */
+      	if (disclength == 4) {
+      		//Do Nothing
+      	} else if (disclength == 3) {
+      		linearjob4.setVisibility(View.INVISIBLE);
+      	} else if (disclength == 2) {
+      		linearjob4.setVisibility(View.INVISIBLE);
+      		linearjob3.setVisibility(View.INVISIBLE);
+      	} else if (disclength == 1) {
+      		linearjob4.setVisibility(View.INVISIBLE);
+      		linearjob3.setVisibility(View.INVISIBLE);
+      		linearjob2.setVisibility(View.INVISIBLE);
+      	}
 		  
 	}
 	
@@ -621,23 +648,20 @@ public class DashboardActivity extends Activity {
 		title = title.substring(0, 20);
 		title = title+"..";
 		} else {
-		if (i== 0) {
-			//parseResponse(discjobs,i+1);//
-		} else 
-		if (i == 1 || i ==5) {
+		if (i == 0 || i ==4) {
 			jobSuggesTitle1.setText(title);
 			jobSuggesComp1.setText(company);
 			jobid1= id;
-		} else if (i == 2 || i==6) {
+		} else if (i == 1 || i==5) {
 			jobSuggesTitle2.setText(title);
 			jobSuggesComp2.setText(company);
 			jobid2= id;
 		}
-		else if (i == 3 || i==7) {
+		else if (i == 2 || i==6) {
 			jobSuggesTitle3.setText(title);
 			jobSuggesComp3.setText(company);
 			jobid3= id;
-		} else if (i == 4 || i ==8) {
+		} else if (i == 3 || i ==7) {
 			jobSuggesTitle4.setText(title);
 			jobSuggesComp4.setText(company);
 			jobid4= id;

@@ -295,6 +295,7 @@ public class CheckIn extends Activity {
 	        registerReceiver(receiver, filter);
 	        Intent msgIntent = new Intent(this, StaffService.class);
 		      msgIntent.putExtra(StaffService.PARAM_IN_MSG, "checkIn");
+		      Log.d("TAG","JUST ABOUT TO SEND INENT");
 		      startService(msgIntent);      
 	  }
 	  
@@ -408,7 +409,7 @@ public class CheckIn extends Activity {
 			jresult = new JSONArray(tokener);
 	
 		  
-        Log.d("TAG", "IN PARSE RESPONSE");
+        Log.d("TAG", "IN PARSE RESPONSE CHEKIN PAGE");
         //jsearch = jresult.getJSONArray("");
 
 		  for (int i=0; i<jresult.length(); i++) { //Runs through the Job postings for as long as the array is
