@@ -12,40 +12,39 @@
     <FrameLayout android:id="@+id/frameLayout5" android:layout_height="wrap_content" android:layout_width="match_parent">
         <ScrollView android:id="@+id/scrollView1" android:layout_height="wrap_content" android:layout_width="match_parent">
             <LinearLayout android:id="@+id/linearLayout3" android:layout_height="wrap_content" android:orientation="vertical" android:layout_width="match_parent">
-                <LinearLayout android:id="@+id/linearLayout4" android:layout_height="wrap_content" android:layout_width="match_parent">
-                    <FrameLayout android:id="@+id/frameLayout2" android:layout_height="match_parent" android:layout_marginTop="0dp" android:layout_width="wrap_content">
+                <FrameLayout android:id="@+id/FrameLayout1" android:layout_height="wrap_content" android:layout_width="match_parent">
+                  
+                  
+                    <FrameLayout android:id="@+id/frameLayout2" android:layout_height="match_parent" android:layout_marginTop="0dp" android:layout_width="wrap_content" android:paddingLeft="10dp">
                         <ImageView android:src="@drawable/default_company" android:id="@+id/jobThumbnail" android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_gravity="center_vertical|center_horizontal"></ImageView>
                         <ImageView android:src="@drawable/profile_pic_overlayx" android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/thumboverlay"></ImageView>
                     </FrameLayout>
-                    <LinearLayout android:id="@+id/linearLayout5" android:paddingTop="10dp" android:orientation="vertical" android:layout_height="match_parent" android:layout_width="120dp">
+                    <LinearLayout android:id="@+id/linearLayout5" android:paddingTop="10dp" android:orientation="vertical" android:layout_height="match_parent" android:layout_width="120dp" android:layout_gravity="center_horizontal">
                         <TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:text="Chief Staff Officer" android:paddingTop="0dp" android:textColor="#333333" android:id="@+id/jobTitle1"></TextView>
                         <TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:text="at StaffitToMe" android:paddingTop="0dp" android:textColor="#999" android:textSize="11dip" android:id="@+id/company"></TextView>
                         <Button android:layout_height="wrap_content" android:layout_gravity="center_vertical" android:layout_marginTop="0dp" android:layout_width="wrap_content" android:background="@drawable/connections_boxx" android:text="Apply" android:textColor="#999" android:id="@+id/applyButton"></Button>
                     </LinearLayout>
-                    <FrameLayout android:id="@+id/frameLayout3" android:layout_height="match_parent" android:layout_marginTop="0dp" android:layout_width="wrap_content" android:layout_gravity="center_vertical|right" android:layout_marginLeft="20dp">
+                    <FrameLayout android:layout_height="match_parent" android:id="@+id/frameLayout1" android:layout_width="wrap_content" android:layout_gravity="right" android:paddingRight="11dp">
                         <ImageView android:src="@drawable/distance_box" android:id="@+id/imageView8" android:layout_height="wrap_content" android:layout_width="wrap_content"></ImageView>
                         <TextView android:text="68.9 mi" android:textColor="#31486a" android:layout_gravity="center_vertical|center_horizontal" android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/distanceValue"></TextView>
                         <TextView android:textAppearance="?android:attr/textAppearanceSmall" android:text="Distance" android:paddingTop="10dp" android:textColor="#999" android:layout_gravity="center_horizontal" android:textSize="11dip" android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/distanceText"></TextView>
                     </FrameLayout>
-                </LinearLayout>
+                </FrameLayout>
                 <LinearLayout android:id="@+id/LinearLayout03" android:orientation="vertical" android:layout_height="15px" android:layout_width="match_parent"></LinearLayout>
                 <LinearLayout android:id="@+id/LinearLayout01" android:layout_height="wrap_content" android:layout_width="match_parent">
-                    <FrameLayout android:id="@+id/FrameLayout02" android:layout_height="match_parent" android:layout_gravity="center_horizontal|clip_horizontal" android:layout_width="match_parent">
-                        <ImageView android:layout_gravity="center_horizontal" android:src="@drawable/module_headerx" android:adjustViewBounds="true" android:id="@+id/ImageView02" android:layout_height="wrap_content" android:layout_width="wrap_content"></ImageView>
-                        <TextView android:gravity="center_vertical" android:text="Job Summary" android:textColor="#31486a" android:layout_height="match_parent" android:layout_width="wrap_content" android:paddingLeft="15dp" android:id="@+id/jobSummaryText"></TextView>
+                    <FrameLayout  android:paddingLeft="10dp" android:paddingRight="10dp" android:id="@+id/FrameLayout02" android:layout_height="match_parent" android:layout_gravity="center_horizontal|clip_horizontal" android:layout_width="match_parent">
+<ImageView android:background="@drawable/module_header" android:adjustViewBounds="true" android:id="@+id/imageView10" android:layout_height="wrap_content" android:layout_width="fill_parent" android:layout_gravity="center_horizontal"></ImageView>                        <TextView android:gravity="center_vertical" android:text="Job Summary" android:textColor="#31486a" android:layout_height="match_parent" android:layout_width="wrap_content" android:paddingLeft="15dp" android:id="@+id/jobSummaryText"></TextView>
                     </FrameLayout>
                 </LinearLayout>
                 <LinearLayout android:id="@+id/linearLayout1" android:layout_height="wrap_content" android:layout_width="match_parent">
-                    <FrameLayout android:id="@+id/frameLayout6" android:layout_height="match_parent" android:layout_width="match_parent">
-                        <ImageView android:src="@drawable/module_row_lastx" android:id="@+id/imageView13" android:layout_height="wrap_content" android:layout_width="match_parent"></ImageView>
-                        <TextView android:text="This job is the best job of all time, all you do is spend everyday staffing yourself over and over. You may ask what the fuck?" android:paddingTop="10dp" android:textColor="#666666" android:textSize="11dp" android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingLeft="20dp" android:id="@+id/jobSummaryValue"></TextView>
+                    <FrameLayout  android:paddingLeft="10dp" android:paddingRight="10dp" android:id="@+id/frameLayout6" android:layout_height="match_parent" android:layout_width="match_parent">
+<ImageView android:background="@drawable/module_row_last" android:adjustViewBounds="true" android:id="@+id/imageView10" android:layout_height="wrap_content" android:layout_width="fill_parent" android:layout_gravity="center_horizontal"></ImageView>                        <TextView android:text="This job is the best job of all time, all you do is spend everyday staffing yourself over and over. You may ask what the fuck?" android:paddingTop="10dp" android:textColor="#666666" android:textSize="11dp" android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingLeft="20dp" android:id="@+id/jobSummaryValue"></TextView>
                     </FrameLayout>
                 </LinearLayout>
                 <LinearLayout android:id="@+id/linearLayout6" android:orientation="vertical" android:layout_height="10px" android:layout_width="match_parent"></LinearLayout>
                 <LinearLayout android:id="@+id/LinearLayout01" android:layout_height="wrap_content" android:layout_width="match_parent">
-                    <FrameLayout android:id="@+id/FrameLayout02" android:layout_height="match_parent" android:layout_gravity="center_horizontal|clip_horizontal" android:layout_width="match_parent">
-                        <ImageView android:layout_gravity="center_horizontal" android:src="@drawable/module_headerx" android:adjustViewBounds="true" android:id="@+id/ImageView02" android:layout_height="wrap_content" android:layout_width="wrap_content"></ImageView>
-                        <TextView android:gravity="center_vertical" android:text="Basic Info" android:textColor="#31486a" android:layout_height="match_parent" android:layout_width="wrap_content" android:paddingLeft="15dp" android:id="@+id/basicInfoText"></TextView></FrameLayout>
+                    <FrameLayout  android:paddingLeft="10dp" android:paddingRight="10dp"  android:id="@+id/FrameLayout02" android:layout_height="match_parent" android:layout_gravity="center_horizontal|clip_horizontal" android:layout_width="match_parent">
+<ImageView android:background="@drawable/module_header" android:adjustViewBounds="true" android:id="@+id/imageView10" android:layout_height="wrap_content" android:layout_width="fill_parent" android:layout_gravity="center_horizontal"></ImageView>                        <TextView android:gravity="center_vertical" android:text="Basic Info" android:textColor="#31486a" android:layout_height="match_parent" android:layout_width="wrap_content" android:paddingLeft="15dp" android:id="@+id/basicInfoText"></TextView></FrameLayout>
                 </LinearLayout>
                 <LinearLayout android:id="@+id/linearLayout1" android:layout_height="wrap_content" android:layout_width="match_parent">
                     <FrameLayout android:id="@+id/frameLayout6" android:layout_height="wrap_content" android:layout_width="match_parent">
@@ -71,14 +70,13 @@
                 </LinearLayout>
                 <LinearLayout android:id="@+id/LinearLayout02" android:orientation="vertical" android:layout_height="10px" android:layout_width="match_parent"></LinearLayout>
                 <LinearLayout android:id="@+id/LinearLayout01" android:layout_height="wrap_content" android:layout_width="match_parent">
-                    <FrameLayout android:id="@+id/FrameLayout02" android:layout_height="match_parent" android:layout_gravity="center_horizontal|clip_horizontal" android:layout_width="match_parent">
-                        <ImageView android:layout_gravity="center_horizontal" android:src="@drawable/module_headerx" android:adjustViewBounds="true" android:id="@+id/ImageView02" android:layout_height="wrap_content" android:layout_width="wrap_content"></ImageView>
-                        <TextView android:gravity="center_vertical" android:text="Job Skills" android:textColor="#31486a" android:layout_height="match_parent" android:layout_width="wrap_content" android:paddingLeft="15dp" android:id="@+id/jobSkillsText"></TextView>
+                    <FrameLayout  android:paddingLeft="10dp" android:paddingRight="10dp" android:id="@+id/FrameLayout02" android:layout_height="match_parent" android:layout_gravity="center_horizontal|clip_horizontal" android:layout_width="match_parent">
+<ImageView android:background="@drawable/module_header" android:adjustViewBounds="true" android:id="@+id/imageView10" android:layout_height="wrap_content" android:layout_width="fill_parent" android:layout_gravity="center_horizontal"></ImageView>                        <TextView android:gravity="center_vertical" android:text="Job Skills" android:textColor="#31486a" android:layout_height="match_parent" android:layout_width="wrap_content" android:paddingLeft="15dp" android:id="@+id/jobSkillsText"></TextView>
                     </FrameLayout>
                 </LinearLayout>
                 <LinearLayout android:id="@+id/linearLayout1" android:layout_height="wrap_content" android:layout_width="match_parent">
-                    <FrameLayout android:id="@+id/frameLayout6" android:layout_height="match_parent" android:layout_width="match_parent">
-                        <ImageView android:src="@drawable/module_row_lastx" android:id="@+id/imageView13" android:layout_height="wrap_content" android:layout_width="match_parent"></ImageView>
+                    <FrameLayout  android:paddingLeft="10dp" android:paddingRight="10dp" android:id="@+id/frameLayout6" android:layout_height="match_parent" android:layout_width="match_parent">
+<ImageView  android:background="@drawable/module_row_last" android:adjustViewBounds="true" android:id="@+id/imageView10" android:layout_height="wrap_content" android:layout_width="fill_parent" android:layout_gravity="center_horizontal"></ImageView>
                         <TextView android:gravity="center_vertical" android:text="Teamwork" android:textColor="#333333" android:layout_gravity="center_vertical" android:paddingBottom="20dp" android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingLeft="20dp" android:id="@+id/jobSkillsReq1"></TextView>
                         <TextView android:text="Ability to work with a team" android:paddingTop="10dp" android:textColor="#999" android:layout_gravity="center_vertical" android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingLeft="20dp" android:id="@+id/jobSkillsReq1Description"></TextView>
                     </FrameLayout>
