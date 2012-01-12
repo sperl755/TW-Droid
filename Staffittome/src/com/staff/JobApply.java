@@ -370,6 +370,68 @@ public class JobApply extends Activity {
  		
  		*/
 	 }
+	 
+	 /*
+	  *  TableLayout tl = new TableLayout(YourActivity.this);
+    tl.setLayoutParams(new LayoutParams(LayoutParams.FILL_PARENT,LayoutParams.WRAP_CONTENT));
+    tl.setStretchAllColumns(true);
+
+    TextView header= new TextView(YourActivity.this);
+    header.setText("This is heading ");
+    header.setTextColor(Color.WHITE);
+    header.setBackgroundColor(Color.parseColor("#323232"));
+    header.setTextSize((float) 17.0);
+    header.setGravity(Gravity.CENTER);
+    header.setClickable(true);
+
+    for(int sub = 0; sub <=6; sub++) { // Six Rows will be genrated.
+    TableRow tr = new TableRow(YourActivity.this);
+    tr.setLayoutParams(new LayoutParams(LayoutParams.FILL_PARENT,LayoutParams.WRAP_CONTENT));
+    if(sub != 0 ){
+        TextView col1 = new TextView(YourActivity.this);
+        col1.setText("Column1");
+        col1.setTextSize((float) 17.0);
+        col1.setPadding(5, 0, 0, 2);
+        col1.setTextColor(Color.GRAY);
+        col1.setGravity(Gravity.CENTER_VERTICAL);
+        col1.setLayoutParams(new LayoutParams(50,50));
+        tr.addView(col1);
+
+        TextView col2 = new TextView(YourActivity.this);
+        col2.setText("Column2");
+        col2.setTextSize((float) 17.0);
+        col2.setPadding(0, 2, 0, 2);
+        col2.setTextColor(Color.GRAY);
+        col2.setGravity(Gravity.CENTER_VERTICAL);
+        col2.setLayoutParams(new LayoutParams(LayoutParams.FILL_PARENT,50));
+        tr.addView(col2);
+
+        View v = new View(YourActivity.this);
+        v.setBackgroundColor(Color.GRAY);
+        v.setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT,1));
+        tl.addView(v);
+    } 
+        tl.addView(tr);// add rows to the table.
+     }
+        TableRow row1 = new TableRow(Activity.this); // seventh row with //only one column 
+        ImageButton startButton = new ImageButton(YourActivity.this);
+        startButton.setBackgroundColor(Color.TRANSPARENT);
+        startButton.setImageResource(R.drawable.icon);
+        startButton.setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT,LayoutParams.WRAP_CONTENT));
+        row1.addView(startButton);
+
+
+
+
+row1.setGravity(Gravity.CENTER);
+        tl.addView(row1);
+
+        sv.addView(tl); //add table to scrollview to make it scrollable.
+            ll.addView(header); //  add heading to the LinearLayout
+            ll.addView(sv);     // add scrollview to LinearLayout
+            setContentView(ll);  enter code here
+	  */
+	 
 	 }
 	 
         
