@@ -125,6 +125,10 @@ public class CheckIn extends Activity {
     private String done;
     private int counter;
     private LayoutInflater inflater; 
+    private static TableLayout tablelayout1;
+    private static View child;
+    private static TextView jobtitle;
+    private static TextView jobdesc;
 
     @Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -161,7 +165,7 @@ public class CheckIn extends Activity {
         jobApplicationText.setTypeface(hb);
         jobApplicationsNum=(TextView)this.findViewById(R.id.jobApplicationsNum);
         jobApplicationsNum.setTypeface(hm);
-        jobAppTitle1=(TextView)this.findViewById(R.id.jobAppTitle1);
+        /*jobAppTitle1=(TextView)this.findViewById(R.id.jobAppTitle1);
         jobAppTitle1.setTypeface(hm);
         jobAppDesc1=(TextView)this.findViewById(R.id.jobAppDesc1);
         jobAppDesc1.setTypeface(hm);
@@ -175,20 +179,18 @@ public class CheckIn extends Activity {
         jobAppStatus2=(TextView)this.findViewById(R.id.jobAppStatus2);
         jobAppStatus2.setTypeface(hm);
         jobAppButton2=(ImageButton)this.findViewById(R.id.jobAppButton2);
+        */
         user_pic = (ImageView)this.findViewById(R.id.userpic);
         user_pic.setScaleType( ScaleType.CENTER_CROP );
-        
+		  tablelayout1 = (TableLayout)this.findViewById(R.id.tableLayout1);
+
+
         /*
          * Layout inflater test stuff
          * 
          */
         
-        TableLayout tablelayout1 = (TableLayout)this.findViewById(R.id.tableLayout1);
-        for (int i =0;i<7;i++){
-            View child = getLayoutInflater().inflate(R.layout.row, null);
-        tablelayout1.addView(child);
-        }
-        ImageView pic;
+       
 
         availableOn = (ImageButton)this.findViewById(R.id.availableOn);
         availableOff = (ImageButton)this.findViewById(R.id.availableOff);
@@ -233,7 +235,7 @@ public class CheckIn extends Activity {
 		});
 
         
-        
+        /*
         jobAppButton1.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -246,6 +248,7 @@ public class CheckIn extends Activity {
 				Toast.makeText(getApplicationContext(), "This should take you to the job apply page and set the status", 0).show();
 			}
 		});
+		*/
 
         /*
          * grabbing some stuff from PREFS
@@ -271,6 +274,8 @@ public class CheckIn extends Activity {
 	    protected void onResume() {
 	        super.onResume();
 	        done = null;
+		       tablelayout1.removeAllViewsInLayout();
+
 	        sendIntent();
 	        checkLoading();
 	        checkAvailability();
@@ -414,7 +419,7 @@ public class CheckIn extends Activity {
 			
 	}
 
-	public static void parseResponse(String stuff){
+	public  void parseResponse(String stuff){
 		JSONArray jresult;
         JSONArray jsearch;
 		JSONObject json_data = null;
@@ -446,7 +451,12 @@ public class CheckIn extends Activity {
 			e.printStackTrace();
 		}
 	}
-	public static void setTexts(String title, String company_name, String job_id, int i) {
+	public  void setTexts(String title, String company_name, final String job_id, int i) { 
+		/*
+		 * Older method of setting things in a list (pain in the ass)
+		 */
+		
+		/*
 		if (i == 0) {
 		jobAppTitle1.setText(title);
 		jobAppDesc1.setText(company_name);
@@ -457,6 +467,22 @@ public class CheckIn extends Activity {
 		else if (i>2) {
 			Log.d("TAG", "Need to make more rows for the jobs you have applied to");
 		}
-			
+		*/
+		
+		/*
+		 * Newer method of inflating views, just need to fidn out how to deal with the last column.
+		 */
+		   child = getLayoutInflater().inflate(R.layout.row, null);
+	       jobtitle = (TextView)child.findViewById(R.id.jobtitle);
+	       jobdesc = (TextView)child.findViewById(R.id.jobdesc);
+	       child.setOnClickListener(new OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					Toast.makeText(getApplicationContext(), "jobid for this job is: "+job_id, 0).show();
+				}
+			});
+	       tablelayout1.addView(child);	        
+	       jobtitle.setText(title);
+	       jobdesc.setText(company_name);
 		}
 }
