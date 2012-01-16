@@ -66,22 +66,13 @@
                                        <TextView android:paddingRight="20dp" android:text=".. jobs" android:textColor="#7b95c4" android:layout_gravity="center_vertical|right" android:textSize="10dp" android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/jobApplicationsNum"></TextView>
                                    </FrameLayout>
                                </LinearLayout>
-                               <TableLayout android:layout_height="wrap_content" android:id="@+id/tableLayout1" android:layout_width="match_parent">
+                               <TableLayout android:layout_height="wrap_content" android:id="@+id/tableLayout1" android:layout_width="match_parent" android:paddingBottom="20dp">
                                    <TableRow android:id="@+id/tableRow1" android:layout_width="wrap_content" android:layout_height="wrap_content">
                                    </TableRow>
                                    <TableRow android:id="@+id/tableRow2" android:layout_width="wrap_content" android:layout_height="wrap_content"></TableRow>
                                    <TableRow android:id="@+id/tableRow3" android:layout_width="wrap_content" android:layout_height="wrap_content"></TableRow>
                                    <TableRow android:id="@+id/tableRow4" android:layout_width="wrap_content" android:layout_height="wrap_content"></TableRow>
                                </TableLayout>
-                               <FrameLayout android:layout_height="wrap_content" android:layout_width="match_parent" android:paddingBottom="20dp" android:paddingLeft="10dp" android:paddingRight="10dp" android:id="@+id/jobapplylayout2">
-                        <ImageView android:background="@drawable/module_row_last" android:adjustViewBounds="true" android:id="@+id/imageView10" android:layout_height="wrap_content" android:layout_width="fill_parent" android:layout_gravity="center_horizontal"></ImageView>
-                                   <TextView android:text="Loading..." android:textColor="#333333" android:layout_gravity="center_vertical" android:paddingBottom="20dp" android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingLeft="70dp" android:id="@+id/jobAppTitle2"></TextView>
-                                   <TextView android:text="Loading..." android:paddingTop="10dp" android:layout_gravity="center_vertical" android:textSize="10dp" android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingLeft="70dp" android:id="@+id/jobAppDesc2"></TextView>
-                                   <TextView android:paddingRight="45dp" android:textAppearance="?android:attr/textAppearanceSmall" android:text="Pending" android:layout_gravity="center_vertical|right" android:textSize="10dp" android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/jobAppStatus2"></TextView>
-                                   <ImageButton android:layout_gravity="center_vertical|right" android:background="@drawable/arrow" android:layout_marginRight="20dp" android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/jobAppButton2"></ImageButton>
-                                   <ImageView android:layout_gravity="center_vertical" android:layout_height="wrap_content" android:paddingLeft="15dp" android:layout_width="wrap_content" android:src="@drawable/small_default_company" android:id="@+id/ImageView08"></ImageView>
-                                   <ImageView android:layout_gravity="center_vertical|center_horizontal|clip_horizontal|left" android:layout_height="wrap_content" android:paddingLeft="15dp" android:layout_width="wrap_content" android:src="@drawable/small_pic_overlay" android:id="@+id/ImageView07"></ImageView>
-                               </FrameLayout>
                            </LinearLayout>
                        </ScrollView>
                        <ImageView android:layout_gravity="top" android:id="@+id/imageView2" android:layout_height="20px" android:layout_width="wrap_content" android:src="@drawable/header_shadowx" android:scaleType="centerCrop"></ImageView>

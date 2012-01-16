@@ -65,6 +65,7 @@ import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.Typeface;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.util.Log;
@@ -274,9 +275,7 @@ public class CheckIn extends Activity {
 	    protected void onResume() {
 	        super.onResume();
 	        done = null;
-		       tablelayout1.removeAllViewsInLayout();
-
-	        sendIntent();
+		    sendIntent();
 	        checkLoading();
 	        checkAvailability();
 	  }
@@ -444,14 +443,14 @@ public class CheckIn extends Activity {
   	  Log.d("TAG",job_id);
   	  Log.d("TAG",Integer.toString(i));
   	 count++;
-  	  setTexts(title, company_name, job_id, i);
+  	  setTexts(title, company_name, job_id, i, jresult.length());
 		  }
 		  jobApplicationsNum.setText(Integer.toString(count)+" jobs");
     	} catch (JSONException e) {
 			e.printStackTrace();
 		}
 	}
-	public  void setTexts(String title, String company_name, final String job_id, int i) { 
+	public  void setTexts(String title, String company_name, final String job_id, int i, int length) { 
 		/*
 		 * Older method of setting things in a list (pain in the ass)
 		 */
@@ -472,6 +471,14 @@ public class CheckIn extends Activity {
 		/*
 		 * Newer method of inflating views, just need to fidn out how to deal with the last column.
 		 */
+		/*
+		 * Clears tablelayout each time
+		 */
+
+		   if (i==0) {
+			   tablelayout1.removeAllViewsInLayout();
+			    tablelayout1.removeAllViews();
+		   }
 		   child = getLayoutInflater().inflate(R.layout.row, null);
 	       jobtitle = (TextView)child.findViewById(R.id.jobtitle);
 	       jobdesc = (TextView)child.findViewById(R.id.jobdesc);
@@ -484,5 +491,12 @@ public class CheckIn extends Activity {
 	       tablelayout1.addView(child);	        
 	       jobtitle.setText(title);
 	       jobdesc.setText(company_name);
-		}
+	       
+	       if (i==length-1) {
+	       ImageView applybg = (ImageView)child.findViewById(R.id.applybg);
+	       Drawable d = getResources().getDrawable(R.drawable.module_row_last);
+	       applybg.setBackgroundDrawable(d);
+	       //tablelayout1.getChildAt(num);
+	       }
+	       }
 }
