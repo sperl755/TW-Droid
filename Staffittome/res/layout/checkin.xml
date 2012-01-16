@@ -58,7 +58,7 @@
                                    <ImageView android:layout_gravity="center_vertical" android:layout_height="wrap_content" android:paddingLeft="15dp" android:layout_width="wrap_content" android:src="@drawable/small_default_company" android:id="@+id/ImageView04"></ImageView>
                                    <ImageView android:layout_gravity="center_vertical|center_horizontal|clip_horizontal|left" android:layout_height="wrap_content" android:paddingLeft="15dp" android:layout_width="wrap_content" android:src="@drawable/small_pic_overlay" android:id="@+id/ImageView03"></ImageView>
                                </FrameLayout>
-                               <LinearLayout android:id="@+id/LinearLayout03" android:orientation="vertical" android:layout_height="15px" android:layout_width="match_parent"></LinearLayout>
+                               <LinearLayout android:layout_height="15px" android:layout_width="match_parent" android:id="@+id/LinearLayout03" android:orientation="vertical"></LinearLayout>
                                <LinearLayout android:id="@+id/LinearLayout01" android:layout_height="wrap_content" android:layout_width="match_parent">
                                    <FrameLayout android:id="@+id/FrameLayout02" android:layout_height="match_parent" android:layout_gravity="center_horizontal|clip_horizontal" android:layout_width="match_parent" android:paddingLeft="10dp" android:paddingRight="10dp">
                         <ImageView android:background="@drawable/module_header" android:adjustViewBounds="true" android:id="@+id/imageView10" android:layout_height="wrap_content" android:layout_width="fill_parent" android:layout_gravity="center_horizontal"></ImageView>
@@ -82,7 +82,7 @@
                                    <TableRow android:id="@+id/tableRow3" android:layout_width="wrap_content" android:layout_height="wrap_content"></TableRow>
                                    <TableRow android:id="@+id/tableRow4" android:layout_width="wrap_content" android:layout_height="wrap_content"></TableRow>
                                </TableLayout>
-                               <FrameLayout android:id="@+id/frameLayout7" android:layout_height="wrap_content" android:layout_width="match_parent" android:paddingBottom="20dp" android:paddingLeft="10dp" android:paddingRight="10dp">
+                               <FrameLayout android:layout_height="wrap_content" android:layout_width="match_parent" android:paddingBottom="20dp" android:paddingLeft="10dp" android:paddingRight="10dp" android:id="@+id/jobapplylayout2">
                         <ImageView android:background="@drawable/module_row_last" android:adjustViewBounds="true" android:id="@+id/imageView10" android:layout_height="wrap_content" android:layout_width="fill_parent" android:layout_gravity="center_horizontal"></ImageView>
                                    <TextView android:text="Loading..." android:textColor="#333333" android:layout_gravity="center_vertical" android:paddingBottom="20dp" android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingLeft="70dp" android:id="@+id/jobAppTitle2"></TextView>
                                    <TextView android:text="Loading..." android:paddingTop="10dp" android:layout_gravity="center_vertical" android:textSize="10dp" android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingLeft="70dp" android:id="@+id/jobAppDesc2"></TextView>

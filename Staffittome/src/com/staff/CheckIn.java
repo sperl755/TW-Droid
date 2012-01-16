@@ -27,6 +27,7 @@ import android.net.http.AndroidHttpClient;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -76,6 +77,7 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
+import android.widget.TableLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ImageView.ScaleType;
@@ -122,6 +124,7 @@ public class CheckIn extends Activity {
     private LinearLayout checkproglin;
     private String done;
     private int counter;
+    private LayoutInflater inflater; 
 
     @Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -174,7 +177,19 @@ public class CheckIn extends Activity {
         jobAppButton2=(ImageButton)this.findViewById(R.id.jobAppButton2);
         user_pic = (ImageView)this.findViewById(R.id.userpic);
         user_pic.setScaleType( ScaleType.CENTER_CROP );
-      
+        
+        /*
+         * Layout inflater test stuff
+         * 
+         */
+        
+        TableLayout tablelayout1 = (TableLayout)this.findViewById(R.id.tableLayout1);
+        for (int i =0;i<7;i++){
+            View child = getLayoutInflater().inflate(R.layout.row, null);
+        tablelayout1.addView(child);
+        }
+        ImageView pic;
+
         availableOn = (ImageButton)this.findViewById(R.id.availableOn);
         availableOff = (ImageButton)this.findViewById(R.id.availableOff);
     	  availableOff.setVisibility(View.INVISIBLE);
