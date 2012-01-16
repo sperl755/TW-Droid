@@ -373,7 +373,7 @@ public class HomePage extends Activity {
 			for (int i=0;i<jexperiences.length();i++){
 				exp = jexperiences.getJSONObject(i);
 				String title = exp.getString("title");
-				String description = exp.getString("description");
+				String description = exp.getString("company_name");
 				setExps(title,description,i);
 			}
 			jcapabilities = json_data.getJSONArray("capabilities");
