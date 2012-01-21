@@ -45,6 +45,7 @@ import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.ImageView.ScaleType;
 
 public class JobApply extends Activity {
 	private ImageButton back;
@@ -143,6 +144,8 @@ public class JobApply extends Activity {
 		jobSkillsReq1Value =(TextView)this.findViewById(R.id.jobSkillsReq1Description);
 		jobSkillsReq1Value.setTypeface(hm);
 		thumbnail = (ImageView)this.findViewById(R.id.jobThumbnail);
+
+		
 		/*
 		 * GETTING JOB ID FROM SEARCHMAPS/ITEMIZED OVERLAY
 		 */

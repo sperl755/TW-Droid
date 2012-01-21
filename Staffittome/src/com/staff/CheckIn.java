@@ -83,7 +83,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ImageView.ScaleType;
 
-public class CheckIn extends Activity {
+public class CheckIn extends Activity { //
 	private ImageView user_pic;
 	private Chronometer timein;
 	private TextView uname;
@@ -156,12 +156,14 @@ public class CheckIn extends Activity {
         myJobDesc1.setTypeface(hm);
         myJobManual1=(ImageButton)this.findViewById(R.id.myJobManual1);
         myJobCheckIn1=(ImageButton)this.findViewById(R.id.myJobCheckIn1);
+      /*
         myJobTitle2=(TextView)this.findViewById(R.id.myJobTitle2);
         myJobTitle2.setTypeface(hm);
         myJobDesc2=(TextView)this.findViewById(R.id.myJobDesc2);
         myJobDesc2.setTypeface(hm);
         myJobCheckIn2=(ImageButton)this.findViewById(R.id.myJobCheckIn2);
         myJobManual2=(ImageButton)this.findViewById(R.id.myJobManual2);
+        */
         jobApplicationText=(TextView)this.findViewById(R.id.jobApplicationsText);
         jobApplicationText.setTypeface(hb);
         jobApplicationsNum=(TextView)this.findViewById(R.id.jobApplicationsNum);

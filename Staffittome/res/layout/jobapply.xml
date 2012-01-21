@@ -16,8 +16,8 @@
                   
                   
                     <FrameLayout android:id="@+id/frameLayout2" android:layout_height="match_parent" android:layout_marginTop="0dp" android:layout_width="wrap_content" android:paddingLeft="10dp">
-                        <ImageView android:src="@drawable/default_company" android:id="@+id/jobThumbnail" android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_gravity="center_vertical|center_horizontal"></ImageView>
-                        <ImageView android:src="@drawable/profile_pic_overlayx" android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/thumboverlay"></ImageView>
+                        <ImageView android:src="@drawable/default_company" android:id="@+id/jobThumbnail" android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_gravity="center_vertical|center_horizontal" android:adjustViewBounds="true" android:maxHeight="100px" android:maxWidth="100px" android:scaleType="centerCrop" android:minWidth="100px" android:minHeight="100px"></ImageView>
+                        <ImageView android:src="@drawable/profile_pic_overlayx" android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/thumboverlay" android:adjustViewBounds="true"></ImageView>
                     </FrameLayout>
                     <LinearLayout android:id="@+id/linearLayout5" android:paddingTop="10dp" android:orientation="vertical" android:layout_height="match_parent" android:layout_width="120dp" android:layout_gravity="center_horizontal">
                         <TextView android:layout_height="wrap_content" android:layout_width="wrap_content" android:text="Chief Staff Officer" android:paddingTop="0dp" android:textColor="#333333" android:id="@+id/jobTitle1"></TextView>

@@ -116,7 +116,7 @@ public class DashboardActivity extends Activity {
 	private boolean logindone = false;
 	private ImageButton jDiscLeft;
 	private ImageButton jDiscRight;
-	private static String discjobs;
+	public static String discjobs = null;
 	private static String jobid1;
 	private static String jobid2;
 	private static String jobid3;
@@ -402,7 +402,7 @@ public class DashboardActivity extends Activity {
           public void onClick(View v)
           {
         	  if (discjobs!=null){
-        	  //parseResponse(discjobs,1);
+        	  parseResponse(discjobs,1);
         	  } else Toast.makeText(getApplicationContext(), "Jobs are still loading", 0).show();
         	  }
       });
@@ -411,7 +411,7 @@ public class DashboardActivity extends Activity {
           public void onClick(View v)
           {
         	  if (discjobs!=null){
-        	  //parseResponse(discjobs,5);
+        	  parseResponse(discjobs,5);
         	  } else Toast.makeText(getApplicationContext(), "Jobs are still loading", 0).show();
           }
       });
@@ -596,7 +596,7 @@ public class DashboardActivity extends Activity {
        }
     }
 
-	public static void parseResponse(String stuff, int z) {
+	public  void parseResponse(String stuff, int z) {
 		  JSONObject jresult;
           JSONArray jobsarray;
 		  JSONObject json_data = null;
@@ -642,7 +642,7 @@ public class DashboardActivity extends Activity {
 		  
 	}
 	
-	public static void setTexts(String title, String company, int i, String id){
+	public  void setTexts(String title, String company, int i, String id){
 		Log.d("TAG","I HERE IS EQUALS TO: "+i);
 		if (title.length()>=21){
 		title = title.substring(0, 20);

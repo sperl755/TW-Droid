@@ -174,6 +174,7 @@ public static String jobDiscovery(Context c) {
     post.setEntity(new UrlEncodedFormEntity(nameValuePairs));
 	ResponseHandler<String> responseHandler=new BasicResponseHandler();
 	discjobs = client.execute(post, responseHandler);
+	DashboardActivity.discjobs = discjobs;
 	Log.d("TAG","TEST RESULTS FROM HTTPS JOB DISCOVERY IS: "+discjobs);
 	//parseResponse(discjobs,0);
 	} catch (ClientProtocolException e) {
