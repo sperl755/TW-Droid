@@ -9,6 +9,7 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.KeyEvent;
+import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
@@ -17,9 +18,13 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.TableLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class ListJobs extends Activity {
+	/*
 	private ImageButton job1;
 	private TextView jobtitle1;
 	private TextView jobtitle2;
@@ -66,10 +71,16 @@ public class ListJobs extends Activity {
 	private TextView dist13;
 	private TextView dist14;
 	private TextView dist15;
+	*/
 	private EditText searchEdit;
 	private String searchstuff;
 	private Button searchbutton;
 	private Button removebutton;
+	private TableLayout searchtable;
+    private static View child;
+    private static TextView jobtitle;
+    private static TextView jobdesc;
+
 
 	
 
@@ -87,7 +98,7 @@ public class ListJobs extends Activity {
 		 */
 		Typeface hm = Typeface.createFromAsset(getAssets(),"fonts/hm.ttf");
 	    Typeface hb = Typeface.createFromAsset(getAssets(),"fonts/hb.ttf");
-		
+		/*
 		jobtitle1=(TextView)this.findViewById(R.id.jobtitle1);
 		jobtitle1.setTypeface(hm);
 		jobtitle2=(TextView)this.findViewById(R.id.jobtitle2);
@@ -178,14 +189,11 @@ public class ListJobs extends Activity {
 		dist14.setTypeface(hm);
 		dist15=(TextView)this.findViewById(R.id.dist15);
 		dist15.setTypeface(hm);
+		*/
+		  searchtable = (TableLayout)this.findViewById(R.id.searchtable);
+
 		
-		
-		job1 = (ImageButton)this.findViewById(R.id.imageButton451);
-		job1.setOnClickListener(new OnClickListener() {
-		public void onClick(View v) {
-			startActivity(new Intent(ListJobs.this, JobApply.class));
-		}
-	});
+	
 		
 	       searchEdit = (EditText)this.findViewById(R.id.editSearch);
 	       searchEdit.requestFocus();
@@ -259,10 +267,35 @@ public class ListJobs extends Activity {
 	 protected void onResume() {
 	  // TODO Auto-generated method stub
 	  super.onResume();
-	  	String[] companyfeed = SearchTabMain.companies;
-		String[] jobfeed = SearchTabMain.jobs;
-		String[] distfeed = SearchTabMain.distances;
-		for (int i=0;i<15;i++){
+	  
+	  searchtable.removeAllViewsInLayout();
+	  searchtable.removeAllViews();
+	 
+	  
+	  
+	  	String[] companyfeed = SearchMaps.companies;
+		String[] jobfeed = SearchMaps.jobtitles;
+		String[] distfeed = SearchMaps.distances;
+		for (int i=0;i<jobfeed.length;i++){
+		
+			   child = getLayoutInflater().inflate(R.layout.row, null);
+		       jobtitle = (TextView)child.findViewById(R.id.jobtitle);
+		       jobdesc = (TextView)child.findViewById(R.id.jobdesc);
+		       child.setOnClickListener(new OnClickListener() {
+					@Override
+					public void onClick(View v) {
+						Toast.makeText(getApplicationContext(), "jobid for this job is: ", 0).show();
+					}
+				});
+		       searchtable.addView(child);	        
+		       jobtitle.setText(jobfeed[i]);
+		       jobdesc.setText(companyfeed[i]);
+		       
+		       if (i==jobfeed.length-1) {
+		       ImageView applybg = (ImageView)child.findViewById(R.id.applybg);
+		       Drawable d = getResources().getDrawable(R.drawable.module_row_last);
+		       applybg.setBackgroundDrawable(d);
+			/*
 			if (i==0){
 				jobtitle1.setText(jobfeed[i]);
 				company1.setText(companyfeed[i]);
@@ -325,8 +358,10 @@ public class ListJobs extends Activity {
 				dist15.setText(distfeed[i]+"mi");
 			} else if (i==15) {
 			}
+			*/
 			
 	 }
 		}
 	}
+}
 

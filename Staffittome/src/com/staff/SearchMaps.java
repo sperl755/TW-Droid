@@ -95,10 +95,10 @@ public class SearchMaps extends MapActivity {
 	private String distance;
 	private GeoPoint currentCenter;
 	private String[] jobselections = {"All", "Part Time", "Full Time" };
-	private static String[] jobtitles = new String[15];
-	private static String[] jobids = new String[15];
-	private static String[] companies = new String[15];
-	private static String[] distances = new String[15];
+	public static String[] jobtitles;// = new String[15];
+	public static String[] jobids; //= new String[15];
+	public static String[] companies; //= new String[15];
+	public static String[] distances; // = new String[15];
 
 	 MyItemizedOverlay myItemizedOverlay;
 	 MyLocationOverlay myLocationOverlay;
@@ -303,6 +303,7 @@ public class SearchMaps extends MapActivity {
 	  myLocationOverlay.disableMyLocation();
 	  myLocationOverlay.disableCompass();
 
+	  /*
 	  for (int i=0;i<jobtitles.length;i++){
 		  if (jobtitles[i]!=null){
 	  SearchTabMain.jobs[i] = jobtitles[i];
@@ -327,7 +328,7 @@ public class SearchMaps extends MapActivity {
 		  } else 
 			  SearchTabMain.distances[i]="";
 		  }
-	 
+	 */
 	 } 
 	 
 	  public static String search(String terms, String lng, String lat, String rad, Context c) {

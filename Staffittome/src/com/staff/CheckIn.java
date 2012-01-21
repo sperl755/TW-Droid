@@ -150,13 +150,14 @@ public class CheckIn extends Activity { //
         myJobsText.setTypeface(hb);
         myJobsNum=(TextView)this.findViewById(R.id.myJobsNum);
         myJobsNum.setTypeface(hm);
+       /*
         myJobTitle1=(TextView)this.findViewById(R.id.myJobTitle1);
         myJobTitle1.setTypeface(hm);
         myJobDesc1=(TextView)this.findViewById(R.id.myJobDesc1);
         myJobDesc1.setTypeface(hm);
         myJobManual1=(ImageButton)this.findViewById(R.id.myJobManual1);
         myJobCheckIn1=(ImageButton)this.findViewById(R.id.myJobCheckIn1);
-      /*
+      
         myJobTitle2=(TextView)this.findViewById(R.id.myJobTitle2);
         myJobTitle2.setTypeface(hm);
         myJobDesc2=(TextView)this.findViewById(R.id.myJobDesc2);
