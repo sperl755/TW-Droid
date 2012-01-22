@@ -1,5 +1,7 @@
 package com.staff;
 
+import java.util.List;
+
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -80,6 +82,7 @@ public class ListJobs extends Activity {
     private static View child;
     private static TextView jobtitle;
     private static TextView jobdesc;
+    private static TextView distance;
 
 
 	
@@ -271,97 +274,42 @@ public class ListJobs extends Activity {
 	  searchtable.removeAllViewsInLayout();
 	  searchtable.removeAllViews();
 	 
-	  
-	  
-	  	String[] companyfeed = SearchMaps.companies;
-		String[] jobfeed = SearchMaps.jobtitles;
-		String[] distfeed = SearchMaps.distances;
-		for (int i=0;i<jobfeed.length;i++){
-		
+	  	List<String> companyfeed = SearchMaps.companies;
+		List<String>jobfeed = SearchMaps.jobtitles;
+		final List<String> distfeed = SearchMaps.distances;
+		final List<String> idfeed = SearchMaps.jobids;
+		for (int i=0;i<jobfeed.size();i++){
+			  final int z = i;
 			   child = getLayoutInflater().inflate(R.layout.row, null);
 		       jobtitle = (TextView)child.findViewById(R.id.jobtitle);
 		       jobdesc = (TextView)child.findViewById(R.id.jobdesc);
+		       distance = (TextView)child.findViewById(R.id.jobAppStatus2);
 		       child.setOnClickListener(new OnClickListener() {
 					@Override
 					public void onClick(View v) {
-						Toast.makeText(getApplicationContext(), "jobid for this job is: ", 0).show();
+						startJobApply(idfeed.get(z),distfeed.get(z));
 					}
 				});
 		       searchtable.addView(child);	        
-		       jobtitle.setText(jobfeed[i]);
-		       jobdesc.setText(companyfeed[i]);
+		       jobtitle.setText(jobfeed.get(i));
+		       jobdesc.setText(companyfeed.get(i));
+		       String tempdistance =distfeed.get(i);
+			   tempdistance = tempdistance.substring(0, tempdistance.indexOf(".")+2);
+		       distance.setText(tempdistance);
 		       
-		       if (i==jobfeed.length-1) {
+		       if (i==jobfeed.size()-1) {
 		       ImageView applybg = (ImageView)child.findViewById(R.id.applybg);
 		       Drawable d = getResources().getDrawable(R.drawable.module_row_last);
 		       applybg.setBackgroundDrawable(d);
-			/*
-			if (i==0){
-				jobtitle1.setText(jobfeed[i]);
-				company1.setText(companyfeed[i]);
-				dist1.setText(distfeed[i]+"mi");
-			} else if (i==1) {
-				jobtitle2.setText(jobfeed[i]);
-				company2.setText(companyfeed[i]);
-				dist2.setText(distfeed[i]+"mi");
-			} else if (i==2) {
-				jobtitle3.setText(jobfeed[i]);
-				company3.setText(companyfeed[i]);
-				dist3.setText(distfeed[i]+"mi");
-			} else if (i==3) {
-				jobtitle4.setText(jobfeed[i]);
-				company4.setText(companyfeed[i]);
-				dist4.setText(distfeed[i]+"mi");
-			} else if (i==4) {
-				jobtitle5.setText(jobfeed[i]);
-				company5.setText(companyfeed[i]);
-				dist5.setText(distfeed[i]+"mi");
-			} else if (i==5) {
-				jobtitle6.setText(jobfeed[i]);
-				company6.setText(companyfeed[i]);
-				dist6.setText(distfeed[i]+"mi");
-			} else if (i==6) {
-				jobtitle7.setText(jobfeed[i]);
-				company7.setText(companyfeed[i]);
-				dist7.setText(distfeed[i]+"mi");
-			} else if (i==7) {
-				jobtitle8.setText(jobfeed[i]);
-				company8.setText(companyfeed[i]);
-				dist8.setText(distfeed[i]+"mi");
-			} else if (i==8) {
-				jobtitle9.setText(jobfeed[i]);
-				company9.setText(companyfeed[i]);
-				dist9.setText(distfeed[i]+"mi");
-			} else if (i==9) {
-				jobtitle10.setText(jobfeed[i]);
-				company10.setText(companyfeed[i]);
-				dist10.setText(distfeed[i]+"mi");
-			} else if (i==10) {
-				jobtitle11.setText(jobfeed[i]);
-				company11.setText(companyfeed[i]);
-				dist11.setText(distfeed[i]+"mi");
-			} else if (i==11) {
-				jobtitle12.setText(jobfeed[i]);
-				company12.setText(companyfeed[i]);
-				dist12.setText(distfeed[i]+"mi");
-			} else if (i==12) {
-				jobtitle13.setText(jobfeed[i]);
-				company13.setText(companyfeed[i]);
-				dist13.setText(distfeed[i]+"mi");
-			} else if (i==13) {
-				jobtitle14.setText(jobfeed[i]);
-				company14.setText(companyfeed[i]);
-				dist14.setText(distfeed[i]+"mi");
-			} else if (i==14) {
-				jobtitle15.setText(jobfeed[i]);
-				company15.setText(companyfeed[i]);
-				dist15.setText(distfeed[i]+"mi");
-			} else if (i==15) {
-			}
-			*/
 			
 	 }
 		}
+	}
+	public void startJobApply(String id,String distance) {
+		 Intent intent =new Intent(this, JobApply.class);
+		   intent.putExtra("jobid", id);
+		   intent.putExtra("distance", distance);
+ 		this.startActivity(intent);
 	}
 }
 

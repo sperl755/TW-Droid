@@ -89,6 +89,7 @@ public class MessageInbox extends Activity {
 	        "fonts/hm.ttf");
 	        Typeface hb = Typeface.createFromAsset(getAssets(),
 	        "fonts/hb.ttf");
+	        /*
 	        messagedesc1=(TextView)this.findViewById(R.id.messagedesc1);
 	        messagedesc1.setTypeface(hm);
 	        messagedesc2=(TextView)this.findViewById(R.id.messagedesc2);
@@ -112,6 +113,7 @@ public class MessageInbox extends Activity {
 	        messageButton5=(Button)this.findViewById(R.id.messageButton5);
 	        messageButton6=(Button)this.findViewById(R.id.messageButton6);
 	        messageButton7=(Button)this.findViewById(R.id.messageButton7);
+	        */
 
 	    	SharedPreferences prefs= PreferenceManager.getDefaultSharedPreferences(MessageInbox.this); 
 	        key = prefs.getString("staffkey", null);
@@ -137,6 +139,7 @@ public class MessageInbox extends Activity {
 	            	}
 	            }
 	        });
+	       /*
 	       messageButton2.setOnClickListener(new View.OnClickListener()
 	        {
 	            public void onClick(View v)
@@ -203,6 +206,7 @@ public class MessageInbox extends Activity {
 	            	}
 	            }
 	        });
+	        */
 	   	notification = (Button)this.findViewById(R.id.notificationlit);
 	    notificationoff = (Button)this.findViewById(R.id.notificationunlit);
 		/*
@@ -288,6 +292,7 @@ public class MessageInbox extends Activity {
 	  
 	   private static void setTexts(String body, String subject, String sender_name,
 			String id, int i) {
+		   /*
 		   i=i+1;
 		   if (i==1) {
 		   messagedesc1.setText(sender_name+": "+subject);
@@ -312,6 +317,7 @@ public class MessageInbox extends Activity {
 		   } else if (i>=7) {
 			   Log.d("TAG","too many messages");
 		   }
+		   */
 	}
 }
 

@@ -152,7 +152,7 @@ public class JobApply extends Activity {
 		
 		Bundle extras = getIntent().getExtras();
 		jobid = extras.getString("jobid");
-		if (distance==null){
+		if (extras.getString("distance")==null){
 		distance = "44.3"; }
 		else {
 		distance = extras.getString("distance");

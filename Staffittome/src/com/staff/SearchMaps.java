@@ -95,10 +95,10 @@ public class SearchMaps extends MapActivity {
 	private String distance;
 	private GeoPoint currentCenter;
 	private String[] jobselections = {"All", "Part Time", "Full Time" };
-	public static String[] jobtitles;// = new String[15];
-	public static String[] jobids; //= new String[15];
-	public static String[] companies; //= new String[15];
-	public static String[] distances; // = new String[15];
+	public static List<String> jobtitles = new ArrayList<String>();
+	public static List<String> companies = new ArrayList<String>();
+	public static List<String> distances = new ArrayList<String>();
+	public static List<String> jobids = new ArrayList<String>();
 
 	 MyItemizedOverlay myItemizedOverlay;
 	 MyLocationOverlay myLocationOverlay;
@@ -302,36 +302,18 @@ public class SearchMaps extends MapActivity {
 	  super.onPause();
 	  myLocationOverlay.disableMyLocation();
 	  myLocationOverlay.disableCompass();
-
-	  /*
-	  for (int i=0;i<jobtitles.length;i++){
-		  if (jobtitles[i]!=null){
-	  SearchTabMain.jobs[i] = jobtitles[i];
-		  } else 
-			  SearchTabMain.jobs[i]="";
-		  }
-	  for (int i=0;i<companies.length;i++){
-		  if (companies[i]!=null){
-	  SearchTabMain.companies[i] = companies[i];
-		  } else 
-			  SearchTabMain.companies[i]="";
-		  }
-	  for (int i=0;i<jobids.length;i++){
-		  if (jobids[i]!=null){
-	  SearchTabMain.jobids[i] = jobids[i];
-		  } else 
-			  SearchTabMain.jobids[i]="";
-		  }
-	  for (int i=0;i<distances.length;i++){
-		  if (distances[i]!=null){
-	  SearchTabMain.distances[i] = distances[i];
-		  } else 
-			  SearchTabMain.distances[i]="";
-		  }
-	 */
 	 } 
 	 
 	  public static String search(String terms, String lng, String lat, String rad, Context c) {
+		/*
+		 * Clear previous list(s)/Search results
+		 */
+		  
+		  jobtitles.clear();
+		  companies.clear();
+		  distances.clear();
+		  jobids.clear();
+		  
 	    	SharedPreferences prefs= PreferenceManager.getDefaultSharedPreferences(c); 
 	        String key = prefs.getString("staffkey", null);
 	        Log.d("TAG",key);
@@ -417,9 +399,7 @@ public class SearchMaps extends MapActivity {
           String latitude = json_data.getString("latitude");
           String industry_name = json_data.getString("industry_name");
           String distance = json_data.getString("distance");
-          String id = json_data.getString("id");
-         
-          
+          String id = json_data.getString("id");          
           
           Log.d("TAG", "Longitude is: "+longitude+"Latitude is: "+latitude+" and jobid is "+id);
           
@@ -445,12 +425,12 @@ public class SearchMaps extends MapActivity {
 		  GeoPoint myPoint1 = new GeoPoint((int)(doublat * 1e6), (int)(doublng * 1e6));
 		  OverlayItem overlayItem = new OverlayItem(myPoint1, title+" at "+company,jobtype+" / "+industryname);
 		  itemizedOverlay.addOverlay(overlayItem);
-		  mapView.getOverlays().add(itemizedOverlay);	       
-		  jobtitles[i]=title;
-		  companies[i]=company;
-		  distances[i]=dist;
-		  jobids[i]=jobid;
-	       MapController mc = mapView.getController();
+		  mapView.getOverlays().add(itemizedOverlay);	  
+		  jobtitles.add(i, title);
+		  companies.add(i, company);
+		  distances.add(i, distance);
+		  jobids.add(i, jobid);
+	       //MapController mc = mapView.getController();
 	       //mc.animateTo(myPoint1);
 	  }
 }

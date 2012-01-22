@@ -9,7 +9,7 @@
         <ScrollView android:id="@+id/scrollView2" android:layout_height="wrap_content" android:layout_width="match_parent">
             <LinearLayout android:id="@+id/linearLayout2" android:layout_height="match_parent" android:orientation="vertical" android:layout_width="match_parent" android:paddingTop="20dp">
                 <FrameLayout android:id="@+id/frameLayout1" android:layout_height="wrap_content" android:layout_width="match_parent"></FrameLayout>
-                <TableLayout android:layout_height="match_parent" android:layout_width="match_parent" android:id="@+id/searchtable">
+                <TableLayout android:layout_height="match_parent" android:layout_width="match_parent" android:id="@+id/searchtable" android:paddingBottom="55dp">
                     <TableRow android:layout_width="wrap_content" android:id="@+id/tableRow1" android:layout_height="wrap_content"></TableRow>
                     <TableRow android:layout_width="wrap_content" android:id="@+id/tableRow2" android:layout_height="wrap_content"></TableRow>
                     <TableRow android:layout_width="wrap_content" android:id="@+id/tableRow3" android:layout_height="wrap_content"></TableRow>
