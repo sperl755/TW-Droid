@@ -217,6 +217,7 @@ public static String getAvailability(Context c) {
 }	
 public static String getMessages(Context c) {
     Log.d("TAG",key);
+    		String inbox = null;
 	        MyHttpClient client = new MyHttpClient(c);
 	        HttpPost post = new HttpPost("https://helium.staffittome.com/apis/inbox");
 	        List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>(2);
@@ -224,8 +225,8 @@ public static String getMessages(Context c) {
 	        try {
 	        post.setEntity(new UrlEncodedFormEntity(nameValuePairs));
 			ResponseHandler<String> responseHandler=new BasicResponseHandler();
-			String messages = client.execute(post, responseHandler);
-			Log.d("TAG","TEST RESULTS FROM HTTPS INBOX IS: "+messages);
+			inbox = client.execute(post, responseHandler);
+			Log.d("TAG","TEST RESULTS FROM HTTPS INBOX IS: "+inbox);
 		
 			} catch (ClientProtocolException e) {
 				e.printStackTrace();
@@ -234,7 +235,7 @@ public static String getMessages(Context c) {
 			} catch (ParseException e) {
 				e.printStackTrace();
 			}
-			return messages;
+			return inbox;
 }
 public static String viewContracts(Context c) {
 	SharedPreferences prefs= PreferenceManager.getDefaultSharedPreferences(c); 

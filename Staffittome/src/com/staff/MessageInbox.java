@@ -29,13 +29,17 @@ import org.json.JSONObject;
 import org.json.JSONTokener;
 
 import com.facebook.android.FacebookError;
+import com.staff.CheckIn.ResponseReceiver;
 
 import android.app.Activity;
+import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.Typeface;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.util.Log;
@@ -43,6 +47,8 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.TableLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -75,7 +81,11 @@ public class MessageInbox extends Activity {
 	private static String messageid6;
 	private static String messageid7;
 	private static String key;
-	
+	private static TableLayout messageTable; 
+    private static View child;
+    private static TextView messdesc;
+    private ResponseReceiver receiver;
+
 
 
 	   public void onCreate(Bundle savedInstanceState) {
@@ -114,7 +124,8 @@ public class MessageInbox extends Activity {
 	        messageButton6=(Button)this.findViewById(R.id.messageButton6);
 	        messageButton7=(Button)this.findViewById(R.id.messageButton7);
 	        */
-
+	        messageTable = (TableLayout)this.findViewById(R.id.messageTable);
+	        
 	    	SharedPreferences prefs= PreferenceManager.getDefaultSharedPreferences(MessageInbox.this); 
 	        key = prefs.getString("staffkey", null);
 	        
@@ -127,7 +138,8 @@ public class MessageInbox extends Activity {
 	            	MessageInbox.this.finish();
 	            }
 	        });
-	       
+	       /*
+
 	       messageButton1.setOnClickListener(new View.OnClickListener()
 	        {
 	            public void onClick(View v)
@@ -139,7 +151,6 @@ public class MessageInbox extends Activity {
 	            	}
 	            }
 	        });
-	       /*
 	       messageButton2.setOnClickListener(new View.OnClickListener()
 	        {
 	            public void onClick(View v)
@@ -232,41 +243,55 @@ public class MessageInbox extends Activity {
 	      });
 	
 	      /*
-	       * GETTING SHIT
+	       * GETTING MESSAGES
 	       */
-	      if (key != null) {
-	    	     AsyncMessage am = new AsyncMessage(this);
-	    	     am.execute();
-	      } else {
-	    	  Toast.makeText(getApplicationContext(), "Still loggin in please wait", 0).show();
-	      }
-	 
 	   }
-	   public static String getMessages(Context c) {
-	        Log.d("TAG",key);
-	    	        MyHttpClient client = new MyHttpClient(c);
-	    	        HttpPost post = new HttpPost("https://helium.staffittome.com/apis/inbox");
-	    	        List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>(2);
-	    	        nameValuePairs.add(new BasicNameValuePair("session_key", key));
-	    	        try {
-	    	        post.setEntity(new UrlEncodedFormEntity(nameValuePairs));
-	    			ResponseHandler<String> responseHandler=new BasicResponseHandler();
-	    			messages = client.execute(post, responseHandler);
-	    			Log.d("TAG","TEST RESULTS FROM HTTPS INBOX IS: "+messages);
- 			
-	    			} catch (ClientProtocolException e) {
-	    				e.printStackTrace();
-	    			} catch (IOException e) {
-	    				e.printStackTrace();
-	    			} catch (ParseException e) {
-	    				e.printStackTrace();
-	    			}
-	    			return messages;
+	   
+	   @Override
+	    protected void onResume() {
+	        super.onResume();
+	        //done = null;
+		    sendIntent();
+	  }
+		  public void sendIntent(){
+
+		        IntentFilter filter = new IntentFilter(ResponseReceiver.ACTION_RESP);
+		        filter.addCategory(Intent.CATEGORY_DEFAULT);
+		        receiver = new ResponseReceiver();
+		        registerReceiver(receiver, filter);
+		        Intent msgIntent = new Intent(this, StaffService.class);
+			    msgIntent.putExtra(StaffService.PARAM_IN_MSG, "inbox");
+			    startService(msgIntent);      
+		  }
+	   
+	   public class ResponseReceiver extends BroadcastReceiver {
+	        public static final String ACTION_RESP = "com.staff.intent.action.MESSAGE_PROCESSED";
+	        @Override
+	        public void onReceive(Context context, Intent intent) {
+	        	//CheckIn check = new CheckIn();
+	            // Update UI, new "message" processed by SimpleIntentService
+	        	
+	        	/*
+	        	 * RECIEVE EXTRAS FROM INTENT 
+	        	 *///
+	        	
+	        	Bundle extras = intent.getExtras();
+
+	        	//Get & Set User applied jobs
+	        	if (extras.getString("inbox")!=null) {
+	        		parseInbox(extras.getString("inbox")); 
+	        	
+	        	//done = "done";
+	        	}
+
+	        }
+	        
 	    }
-	   public static void parseMessage() {
+	   
+	   public  void parseInbox(String inbox) {
 			  JSONArray jresult;
 			  JSONObject json_data = null;
-			  JSONTokener tokener = new JSONTokener(messages);
+			  JSONTokener tokener = new JSONTokener(inbox);
 	          try {
 				jresult = new JSONArray(tokener);
 	
@@ -281,8 +306,8 @@ public class MessageInbox extends Activity {
 	          String sender_name = json_data.getString("sender_name");
 	          String created_at = json_data.getString("created_at");
 	          String id = json_data.getString("id");
-	          setTexts(body, subject, sender_name,id, i);
-	   } ////
+	          setTexts(body, subject, sender_name,id, i, jresult.length());
+			} 
 	  		} catch (JSONException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -290,34 +315,29 @@ public class MessageInbox extends Activity {
 			  
 	   }
 	  
-	   private static void setTexts(String body, String subject, String sender_name,
-			String id, int i) {
-		   /*
-		   i=i+1;
-		   if (i==1) {
-		   messagedesc1.setText(sender_name+": "+subject);
-		   messageid1 = id;
-		   } else if (i==2) {
-		   messagedesc2.setText(sender_name+": "+subject);
-		   messageid2 = id;
-		   } else if (i==3) {
-		   messagedesc3.setText(sender_name+": "+subject);
-		   } else if (i==4) {
-		   messagedesc4.setText(sender_name+": "+subject);
-		   messageid4 = id;
-		   } else if (i==5) {
-		   messagedesc5.setText(sender_name+": "+subject);
-		   messageid5 = id;
-		   } else if (i==6) {
-		   messagedesc6.setText(sender_name+": "+subject);
-		   messageid6 = id;
-		   } else if (i==7) {
-		   messagedesc7.setText(sender_name+": "+subject);
-		   messageid7 = id;
-		   } else if (i>=7) {
-			   Log.d("TAG","too many messages");
-		   }
-		   */
+	   private  void setTexts(String body, String subject, String sender_name,
+			final String id, int i, int length) {
+	
+		 //  if (i==0) {
+		//	   messageTable.removeAllViewsInLayout();
+		//	   messageTable.removeAllViews();
+		 //  }
+		   child = getLayoutInflater().inflate(R.layout.messagerow, null);
+		   messdesc = (TextView)child.findViewById(R.id.messagedesc1);
+	       child.setOnClickListener(new OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					Toast.makeText(getApplicationContext(), "Messaage id for this message is: "+id, 0).show();
+				}
+			});
+	       messageTable.addView(child);	        
+	       messdesc.setText(sender_name+": "+body);
+	       
+	       if (i==length-1) {
+	       ImageView applybg = (ImageView)child.findViewById(R.id.inboxrowbg);
+	       Drawable d = getResources().getDrawable(R.drawable.module_row_last);
+	       applybg.setBackgroundDrawable(d);
+	       }
 	}
 }
 

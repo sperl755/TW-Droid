@@ -46,7 +46,7 @@ public class AsyncMessage extends AsyncTask<String, Integer, Void> implements
 		} catch (InterruptedException e) {
 		}
 		publishProgress(5000);
-		String messagedata = MessageInbox.getMessages(mContext);
+		//String messagedata = MessageInbox.getMessages(mContext);
 		publishProgress(10000);
 		return null;
 	}
@@ -72,7 +72,7 @@ public class AsyncMessage extends AsyncTask<String, Integer, Void> implements
 	}
 	@Override
 	protected void onPostExecute(Void v) {
-		MessageInbox.parseMessage();
+		//MessageInbox.parseMessage();
 		//progressDialog.dismiss();
 		
 	}

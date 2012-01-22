@@ -454,29 +454,6 @@ public class CheckIn extends Activity { //
 		}
 	}
 	public  void setTexts(String title, String company_name, final String job_id, int i, int length) { 
-		/*
-		 * Older method of setting things in a list (pain in the ass)
-		 */
-		
-		/*
-		if (i == 0) {
-		jobAppTitle1.setText(title);
-		jobAppDesc1.setText(company_name);
-		} else if (i == 1) {
-		jobAppTitle2.setText(title);
-		jobAppDesc2.setText(company_name);
-		}
-		else if (i>2) {
-			Log.d("TAG", "Need to make more rows for the jobs you have applied to");
-		}
-		*/
-		
-		/*
-		 * Newer method of inflating views, just need to fidn out how to deal with the last column.
-		 */
-		/*
-		 * Clears tablelayout each time
-		 */
 
 		   if (i==0) {
 			   tablelayout1.removeAllViewsInLayout();
