@@ -479,4 +479,8 @@ public class CheckIn extends Activity { //
 	       //tablelayout1.getChildAt(num);
 	       }
 	       }
+	@Override
+	public void onBackPressed() {
+		TabMain.setTab();
+	}
 }

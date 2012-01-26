@@ -752,4 +752,8 @@ public class DashboardActivity extends Activity {
 	    }
 	    
 	}
+	@Override
+	public void onBackPressed() {
+		TabMain.setTab();
+	}
 }

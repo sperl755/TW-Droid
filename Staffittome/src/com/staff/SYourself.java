@@ -293,4 +293,8 @@ private void seperateCaps(String responseBody) {
 		e.printStackTrace();
 	}
 }
+@Override
+public void onBackPressed() {
+	TabMain.setTab();
+}
 }

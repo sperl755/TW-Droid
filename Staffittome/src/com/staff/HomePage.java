@@ -435,5 +435,9 @@ public class HomePage extends Activity {
 			}
 				
 			}
+		@Override
+		public void onBackPressed() {
+			TabMain.setTab();
+		}
 }
 

@@ -318,10 +318,10 @@ public class MessageInbox extends Activity {
 	   private  void setTexts(String body, String subject, String sender_name,
 			final String id, int i, int length) {
 	
-		 //  if (i==0) {
-		//	   messageTable.removeAllViewsInLayout();
-		//	   messageTable.removeAllViews();
-		 //  }
+		   if (i==0) {
+			   messageTable.removeAllViewsInLayout();
+			   messageTable.removeAllViews();
+		   }
 		   child = getLayoutInflater().inflate(R.layout.messagerow, null);
 		   messdesc = (TextView)child.findViewById(R.id.messagedesc1);
 	       child.setOnClickListener(new OnClickListener() {
