@@ -38,9 +38,9 @@
                                        <TextView android:paddingRight="20dp" android:text=".. jobs" android:textColor="#7b95c4" android:layout_gravity="center_vertical|right" android:textSize="10dp" android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/myJobsNum"></TextView>
                                    </FrameLayout>
                                </LinearLayout>
-                               <FrameLayout android:paddingLeft="10dp" android:paddingRight="10dp" android:id="@+id/frameLayout6" android:layout_width="match_parent" android:layout_height="match_parent">
+                               <FrameLayout android:paddingLeft="10dp" android:paddingRight="10dp" android:layout_width="match_parent" android:layout_height="match_parent" android:id="@+id/noJobs">
                                    <ImageView android:layout_height="wrap_content" android:background="@drawable/module_row_last" android:id="@+id/imageView10" android:adjustViewBounds="true" android:layout_width="fill_parent" android:layout_gravity="center_horizontal"></ImageView>
-                                   <TextView android:textSize="11dp" android:paddingTop="10dp" android:textColor="#666666" android:layout_height="wrap_content" android:text=" Search For a Job!" android:id="@+id/jobSummaryValue" android:paddingLeft="20dp" android:layout_width="wrap_content" android:gravity="center_horizontal" android:layout_gravity="center_vertical|center_horizontal"></TextView>
+                                   <TextView android:textSize="11dp" android:paddingTop="10dp" android:textColor="#666666" android:layout_height="wrap_content" android:text="None Yet, Click to Search!" android:id="@+id/jobSummaryValue" android:paddingLeft="20dp" android:layout_width="wrap_content" android:gravity="center_horizontal" android:layout_gravity="center_vertical|center_horizontal"></TextView>
                                </FrameLayout>
                                <TableLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:id="@+id/jobTable">
                                    <TableRow android:layout_width="wrap_content" android:id="@+id/tableRow5" android:layout_height="wrap_content"></TableRow>
@@ -56,6 +56,10 @@
                                        <TextView android:paddingRight="20dp" android:text=".. jobs" android:textColor="#7b95c4" android:layout_gravity="center_vertical|right" android:textSize="10dp" android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/jobApplicationsNum"></TextView>
                                    </FrameLayout>
                                </LinearLayout>
+                               <FrameLayout android:paddingRight="10dp" android:layout_height="match_parent" android:layout_width="match_parent" android:paddingLeft="10dp" android:id="@+id/noApps">
+                                   <ImageView android:layout_height="wrap_content" android:id="@+id/ImageView02" android:background="@drawable/module_row_last" android:layout_gravity="center_horizontal" android:adjustViewBounds="true" android:layout_width="fill_parent"></ImageView>
+                                   <TextView android:layout_height="wrap_content" android:paddingTop="10dp" android:layout_gravity="center_vertical|center_horizontal" android:textColor="#666666" android:gravity="center_horizontal" android:id="@+id/TextView01" android:textSize="11dp" android:layout_width="wrap_content" android:paddingLeft="20dp" android:text="None Yet, Click to Search!"></TextView>
+                               </FrameLayout>
                                <TableLayout android:layout_height="wrap_content" android:id="@+id/tableLayout1" android:layout_width="match_parent" android:paddingBottom="20dp">
                                    <TableRow android:id="@+id/tableRow1" android:layout_width="wrap_content" android:layout_height="wrap_content">
                                    </TableRow>

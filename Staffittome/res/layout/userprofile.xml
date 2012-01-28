@@ -48,58 +48,51 @@
                     <TextView android:gravity="center_vertical" android:text="Shayan Yassami's Capabilities" android:textColor="#31486a" android:layout_gravity="center_vertical" android:layout_height="match_parent" android:layout_width="wrap_content" android:paddingLeft="15dp" android:id="@+id/unameJobSummaryText"></TextView>
                     <LinearLayout android:id="@+id/LinearLayout02" android:orientation="vertical" android:layout_height="match_parent" android:layout_width="match_parent"></LinearLayout>
                 </FrameLayout>
-                <LinearLayout android:id="@+id/LinearLayout04" android:layout_height="wrap_content" android:layout_width="match_parent">
-                    <FrameLayout android:id="@+id/FrameLayout03" android:layout_height="match_parent" android:layout_width="match_parent" android:paddingLeft="10dp" android:paddingRight="10dp">
-                        <ImageView android:background="@drawable/module_row" android:adjustViewBounds="true" android:id="@+id/imageView10" android:layout_height="wrap_content" android:layout_width="fill_parent" android:layout_gravity="center_horizontal"></ImageView>
-                        <TextView android:gravity="center_vertical" android:text="Loading..." android:textColor="#333333" android:layout_gravity="center_vertical" android:paddingBottom="20dp" android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingLeft="15dp" android:id="@+id/unameJobSkillJob1"></TextView>
-                        <TextView android:text="Loading..." android:paddingTop="10dp" android:layout_gravity="center_vertical" android:textSize="10dp" android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingLeft="15dp" android:id="@+id/unameJobSkillRate1"></TextView>
-                        <ImageButton android:layout_gravity="center_vertical|right" android:background="@drawable/arrow" android:layout_marginRight="20dp" android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/unameJobSkillJob1Button"></ImageButton>
-                    </FrameLayout>
+                <FrameLayout android:layout_width="match_parent" android:paddingRight="10dp" android:layout_height="match_parent" android:paddingLeft="10dp" android:id="@+id/noCaps">
+                    <ImageView android:layout_height="wrap_content" android:id="@+id/ImageView02" android:background="@drawable/module_row_last" android:layout_gravity="center_horizontal" android:adjustViewBounds="true" android:layout_width="fill_parent"></ImageView>
+                    <TextView android:layout_height="wrap_content" android:paddingTop="10dp" android:layout_gravity="center_vertical|center_horizontal" android:textColor="#666666" android:gravity="center_horizontal" android:id="@+id/TextView01" android:textSize="11dp" android:layout_width="wrap_content" android:paddingLeft="20dp" android:text="None Yet, Click to Search!"></TextView>
+                </FrameLayout>
+                <TableLayout android:layout_height="wrap_content" android:layout_width="match_parent" android:id="@+id/capTable">
+                    <TableRow android:id="@+id/tableRow9" android:layout_width="wrap_content" android:layout_height="wrap_content"></TableRow>
+                    <TableRow android:id="@+id/tableRow10" android:layout_width="wrap_content" android:layout_height="wrap_content"></TableRow>
+                    <TableRow android:id="@+id/tableRow11" android:layout_width="wrap_content" android:layout_height="wrap_content"></TableRow>
+                    <TableRow android:id="@+id/tableRow12" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                    </TableRow>
+                </TableLayout>
+                <LinearLayout android:id="@+id/LinearLayout06" android:orientation="vertical" android:layout_height="10px" android:layout_width="match_parent">
                 </LinearLayout>
-                <LinearLayout android:id="@+id/LinearLayout05" android:layout_height="wrap_content" android:layout_width="match_parent">
-                    <FrameLayout android:id="@+id/FrameLayout04" android:layout_height="match_parent" android:layout_width="match_parent" android:paddingLeft="10dp" android:paddingRight="10dp">
-                        <ImageView android:background="@drawable/module_row_last" android:adjustViewBounds="true" android:id="@+id/imageView10" android:layout_height="wrap_content" android:layout_width="fill_parent" android:layout_gravity="center_horizontal"></ImageView>
-                        <TextView android:gravity="center_vertical" android:text="Loading..." android:textColor="#333333" android:layout_gravity="center_vertical" android:paddingBottom="20dp" android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingLeft="15dp" android:id="@+id/unameJobSkillJob2"></TextView>
-                        <TextView android:text="Loading..." android:paddingTop="10dp" android:layout_gravity="center_vertical" android:textSize="10dp" android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingLeft="15dp" android:id="@+id/unameJobSkillRate2"></TextView>
-                        <ImageButton android:layout_gravity="center_vertical|right" android:background="@drawable/arrow" android:layout_marginRight="20dp" android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/unameJobSkillJob2Button"></ImageButton>
-                    </FrameLayout>
-                </LinearLayout>
-                <LinearLayout android:id="@+id/LinearLayout06" android:orientation="vertical" android:layout_height="10px" android:layout_width="match_parent"></LinearLayout>
                 <FrameLayout android:id="@+id/FrameLayout05" android:layout_height="match_parent" android:layout_gravity="center_horizontal|clip_horizontal" android:layout_width="match_parent" android:paddingLeft="10dp" android:paddingRight="10dp">
                         <ImageView android:background="@drawable/module_header" android:adjustViewBounds="true" android:id="@+id/imageView10" android:layout_height="wrap_content" android:layout_width="fill_parent" android:layout_gravity="center_horizontal"></ImageView>
                     <TextView android:gravity="center_vertical" android:text="Shayan Yassami's Experience" android:textColor="#31486a" android:layout_gravity="center_vertical" android:layout_height="match_parent" android:layout_width="wrap_content" android:paddingLeft="15dp" android:id="@+id/unameExperienceText"></TextView>
                     <LinearLayout android:id="@+id/LinearLayout07" android:orientation="vertical" android:layout_height="match_parent" android:layout_width="match_parent"></LinearLayout>
                 </FrameLayout>
-                <FrameLayout android:id="@+id/FrameLayout06" android:layout_height="match_parent" android:layout_width="match_parent" android:paddingLeft="10dp" android:paddingRight="10dp">
-                        <ImageView android:background="@drawable/module_row" android:adjustViewBounds="true" android:id="@+id/imageView10" android:layout_height="wrap_content" android:layout_width="fill_parent" android:layout_gravity="center_horizontal"></ImageView>
-                    <TextView android:gravity="center_vertical" android:text="Loading..." android:textColor="#333333" android:layout_gravity="center_vertical" android:paddingBottom="20dp" android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingLeft="15dp" android:id="@+id/unameJobExperience1"></TextView>
-                    <TextView android:text="Loading..." android:paddingTop="10dp" android:layout_gravity="center_vertical" android:textSize="10dp" android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingLeft="15dp" android:id="@+id/unameJobExperienceCompany1"></TextView>
-                    <ImageButton android:layout_gravity="center_vertical|right" android:background="@drawable/arrow" android:layout_marginRight="20dp" android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/unameJobExperience1Button"></ImageButton>
+                <FrameLayout android:layout_height="match_parent" android:paddingRight="10dp" android:layout_width="match_parent" android:paddingLeft="10dp" android:id="@+id/noExps">
+                    <ImageView android:layout_height="wrap_content" android:id="@+id/ImageView01" android:background="@drawable/module_row_last" android:layout_gravity="center_horizontal" android:adjustViewBounds="true" android:layout_width="fill_parent"></ImageView>
+                    <TextView android:layout_height="wrap_content" android:paddingTop="10dp" android:layout_gravity="center_vertical|center_horizontal" android:textColor="#666666" android:gravity="center_horizontal" android:id="@+id/TextView02" android:textSize="11dp" android:layout_width="wrap_content" android:paddingLeft="20dp" android:text="None Yet, Click to Search!"></TextView>
                 </FrameLayout>
-                <FrameLayout android:id="@+id/FrameLayout07" android:layout_height="match_parent" android:layout_width="match_parent" android:paddingLeft="10dp" android:paddingRight="10dp">
-                        <ImageView android:background="@drawable/module_row_last" android:adjustViewBounds="true" android:id="@+id/imageView10" android:layout_height="wrap_content" android:layout_width="fill_parent" android:layout_gravity="center_horizontal"></ImageView>
-                    <TextView android:gravity="center_vertical" android:text="Loading..." android:textColor="#333333" android:layout_gravity="center_vertical" android:paddingBottom="20dp" android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingLeft="15dp" android:id="@+id/unameJobExperience2"></TextView>
-                    <TextView android:text="Loading..." android:paddingTop="10dp" android:layout_gravity="center_vertical" android:textSize="10dp" android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingLeft="15dp" android:id="@+id/unameJobExperienceCompany2"></TextView>
-                    <ImageButton android:layout_gravity="center_vertical|right" android:background="@drawable/arrow" android:layout_marginRight="20dp" android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/unameJobExperience2Button"></ImageButton>
-                </FrameLayout>
-                <LinearLayout android:id="@+id/LinearLayout06" android:orientation="vertical" android:layout_height="10px" android:layout_width="match_parent"></LinearLayout>
+                <TableLayout android:layout_height="wrap_content" android:layout_width="match_parent" android:id="@+id/expTable">
+                    <TableRow android:id="@+id/tableRow5" android:layout_width="wrap_content" android:layout_height="wrap_content"></TableRow>
+                    <TableRow android:id="@+id/tableRow6" android:layout_width="wrap_content" android:layout_height="wrap_content"></TableRow>
+                    <TableRow android:id="@+id/tableRow7" android:layout_width="wrap_content" android:layout_height="wrap_content"></TableRow>
+                    <TableRow android:id="@+id/tableRow8" android:layout_width="wrap_content" android:layout_height="wrap_content"></TableRow>
+                </TableLayout>
+                <LinearLayout android:id="@+id/LinearLayout06" android:orientation="vertical" android:layout_height="10px" android:layout_width="match_parent">
+                </LinearLayout>
                 <FrameLayout android:id="@+id/FrameLayout05" android:layout_height="match_parent" android:layout_gravity="center_horizontal|clip_horizontal" android:layout_width="match_parent" android:paddingLeft="10dp" android:paddingRight="10dp">
                         <ImageView android:background="@drawable/module_header" android:adjustViewBounds="true" android:id="@+id/imageView10" android:layout_height="wrap_content" android:layout_width="fill_parent" android:layout_gravity="center_horizontal"></ImageView>
                     <TextView android:gravity="center_vertical" android:text="Shayan Yassami's Education" android:textColor="#31486a" android:layout_gravity="center_vertical" android:layout_height="match_parent" android:layout_width="wrap_content" android:paddingLeft="15dp" android:id="@+id/unameEducationText"></TextView>
                     <LinearLayout android:id="@+id/LinearLayout07" android:orientation="vertical" android:layout_height="match_parent" android:layout_width="match_parent"></LinearLayout>
                 </FrameLayout>
-                <FrameLayout android:id="@+id/FrameLayout06" android:layout_height="match_parent" android:layout_width="match_parent" android:paddingLeft="10dp" android:paddingRight="10dp">
-                        <ImageView android:background="@drawable/module_row" android:adjustViewBounds="true" android:id="@+id/imageView10" android:layout_height="wrap_content" android:layout_width="fill_parent" android:layout_gravity="center_horizontal"></ImageView>
-                    <TextView android:gravity="center_vertical" android:text="Loading..." android:textColor="#333333" android:layout_gravity="center_vertical" android:paddingBottom="20dp" android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingLeft="15dp" android:id="@+id/unameEducation1"></TextView>
-                    <TextView android:text="Loading..." android:paddingTop="10dp" android:layout_gravity="center_vertical" android:textSize="10dp" android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingLeft="15dp" android:id="@+id/unameEducationSchool1"></TextView>
-                    <ImageButton android:layout_gravity="center_vertical|right" android:background="@drawable/arrow" android:layout_marginRight="20dp" android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/unameJobExperience1Button"></ImageButton>
+                <FrameLayout android:paddingRight="10dp" android:layout_height="match_parent" android:layout_width="match_parent" android:paddingLeft="10dp" android:id="@+id/noEdus">
+                    <ImageView android:layout_height="wrap_content" android:id="@+id/ImageView03" android:background="@drawable/module_row_last" android:layout_gravity="center_horizontal" android:adjustViewBounds="true" android:layout_width="fill_parent"></ImageView>
+                    <TextView android:layout_height="wrap_content" android:paddingTop="10dp" android:layout_gravity="center_vertical|center_horizontal" android:textColor="#666666" android:gravity="center_horizontal" android:id="@+id/TextView03" android:textSize="11dp" android:layout_width="wrap_content" android:paddingLeft="20dp" android:text="None Yet, Click to Search!"></TextView>
                 </FrameLayout>
-                <FrameLayout android:id="@+id/FrameLayout07" android:layout_height="match_parent" android:layout_width="match_parent" android:paddingLeft="10dp" android:paddingRight="10dp">
-                        <ImageView android:background="@drawable/module_row_last" android:adjustViewBounds="true" android:id="@+id/imageView10" android:layout_height="wrap_content" android:layout_width="fill_parent" android:layout_gravity="center_horizontal"></ImageView>
-                    <TextView android:gravity="center_vertical" android:text="Loading..." android:textColor="#333333" android:layout_gravity="center_vertical" android:paddingBottom="20dp" android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingLeft="15dp" android:id="@+id/unameEducation2"></TextView>
-                    <TextView android:text="Loading..." android:paddingTop="10dp" android:layout_gravity="center_vertical" android:textSize="10dp" android:layout_height="wrap_content" android:layout_width="wrap_content" android:paddingLeft="15dp" android:id="@+id/unameEducationSchool2"></TextView>
-                    <ImageButton android:layout_gravity="center_vertical|right" android:background="@drawable/arrow" android:layout_marginRight="20dp" android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/unameJobExperience2Button"></ImageButton>
-                </FrameLayout>
+                <TableLayout android:layout_height="wrap_content" android:layout_width="match_parent" android:id="@+id/eduTable">
+                    <TableRow android:id="@+id/tableRow1" android:layout_width="wrap_content" android:layout_height="wrap_content"></TableRow>
+                    <TableRow android:id="@+id/tableRow2" android:layout_width="wrap_content" android:layout_height="wrap_content"></TableRow>
+                    <TableRow android:id="@+id/tableRow3" android:layout_width="wrap_content" android:layout_height="wrap_content"></TableRow>
+                    <TableRow android:id="@+id/tableRow4" android:layout_width="wrap_content" android:layout_height="wrap_content"></TableRow>
+                </TableLayout>
                 <Button android:layout_height="wrap_content" android:layout_width="wrap_content" android:id="@+id/logout" android:text="Logout"></Button>
             </LinearLayout>
         </ScrollView>

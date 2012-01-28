@@ -39,6 +39,7 @@ import android.content.SharedPreferences.Editor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Typeface;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.preference.PreferenceManager;
@@ -51,6 +52,7 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
+import android.widget.TableLayout;
 import android.widget.ImageView.ScaleType;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -116,6 +118,22 @@ public class HomePage extends Activity {
     private int mProgressStatus = 0;
     private LinearLayout profproglin;
     private String done;
+    private static TableLayout capTable;
+    private static TableLayout expTable;
+    private static TableLayout eduTable;
+    private static View child1;
+    private static View child2;
+    private static View child3; 
+    private static TextView attr1;
+    private static TextView attr2;
+    private static TextView attr3;
+    private static TextView attr4;
+    private static TextView attr5;
+    private static TextView attr6;
+    private FrameLayout noCaps;
+    private FrameLayout noEdus;
+    private FrameLayout noExps;
+    
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -139,42 +157,19 @@ public class HomePage extends Activity {
         unameJobSummaryText=(TextView)this.findViewById(R.id.unameJobSummaryText);
         unameJobSummaryText.setTypeface(hb);
         unameSummaryText=(TextView)this.findViewById(R.id.unameSummaryText);
-        unameSummaryText.setTypeface(hb);
-        unameJobSkillJob1=(TextView)this.findViewById(R.id.unameJobSkillJob1);
-        unameJobSkillJob1.setTypeface(hm);
-        unameJobSkillJob1=(TextView)this.findViewById(R.id.unameJobSkillJob1);
-        unameJobSkillJob1.setTypeface(hm);
-        unameJobSkillRate1=(TextView)this.findViewById(R.id.unameJobSkillRate1);
-        unameJobSkillRate1.setTypeface(hm);
-        unameJobSkillJob1Button=(ImageButton)this.findViewById(R.id.unameJobSkillJob1Button);
-        unameJobSkillJob2=(TextView)this.findViewById(R.id.unameJobSkillJob2);
-        unameJobSkillJob2.setTypeface(hm);
-        unameJobSkillRate2=(TextView)this.findViewById(R.id.unameJobSkillRate2);
+        unameSummaryText.setTypeface(hb); 
         unameExperienceText=(TextView)this.findViewById(R.id.unameExperienceText);
         unameExperienceText.setTypeface(hb);
-        unameJobExperience1=(TextView)this.findViewById(R.id.unameJobExperience1);
-        unameJobExperience1.setTypeface(hm);
-        unameJobExperienceCompany1=(TextView)this.findViewById(R.id.unameJobExperienceCompany1);
-        unameJobExperienceCompany1.setTypeface(hm);
-        unameJobExperience1Button=(ImageButton)this.findViewById(R.id.unameJobExperience1Button);
-        unameJobExperience2=(TextView)this.findViewById(R.id.unameJobExperience2);
-        unameJobExperience2.setTypeface(hm);
-        unameJobExperienceCompany2=(TextView)this.findViewById(R.id.unameJobExperienceCompany2);
-        unameJobExperienceCompany2.setTypeface(hm);
-        unameJobExpereince2Button=(ImageButton)this.findViewById(R.id.unameJobExperience2Button);
-        unameJobExperienceCompany2.setTypeface(hm);
-        unameJobExpereince2Button=(ImageButton)this.findViewById(R.id.unameJobExperience2Button);
+        capTable = (TableLayout)this.findViewById(R.id.capTable);
+        eduTable = (TableLayout)this.findViewById(R.id.eduTable);
+        expTable = (TableLayout)this.findViewById(R.id.expTable);
         user_picture=(ImageView)this.findViewById(R.id.userpic);
         user_picture.setScaleType( ScaleType.CENTER_CROP );
-        unameEducation1 = (TextView)this.findViewById(R.id.unameEducation1);
-        unameEducation1.setTypeface(hm);
-        unameEducation2 = (TextView)this.findViewById(R.id.unameEducation2);
-        unameEducation2.setTypeface(hm);
-        unameEducationSchool1 = (TextView)this.findViewById(R.id.unameEducationSchool1);
-        unameEducationSchool1.setTypeface(hm);
-        unameEducationSchool2 = (TextView)this.findViewById(R.id.unameEducationSchool2);
-        unameEducationSchool2.setTypeface(hm);
+        noCaps = (FrameLayout)this.findViewById(R.id.noCaps);
+        noEdus = (FrameLayout)this.findViewById(R.id.noEdus);
+        noExps = (FrameLayout)this.findViewById(R.id.noExps);
 
+	
 
         
         /*
@@ -374,14 +369,14 @@ public class HomePage extends Activity {
 				exp = jexperiences.getJSONObject(i);
 				String title = exp.getString("title");
 				String description = exp.getString("company_name");
-				setExps(title,description,i);
+				setExps(title,description,i,jexperiences.length());
 			}
 			jcapabilities = json_data.getJSONArray("capabilities");
 			for (int i=0;i<jcapabilities.length();i++){
 				cap = jcapabilities.getJSONObject(i);
 				String title = cap.getString("title");
 				String price = cap.getString("price");
-				setCaps(title,price,i);
+				setCaps(title,price,i,jcapabilities.length());
 			}
 			jeducations = json_data.getJSONArray("educations");
 			for (int i=0;i<jeducations.length();i++){
@@ -389,51 +384,99 @@ public class HomePage extends Activity {
 				String organization = edu.getString("organization");
 				String end_year = edu.getString("end_year");
 				String degree = edu.getString("major");
-				setEdus(organization,end_year,degree,i);
+				setEdus(organization,end_year,degree,i,jeducations.length());
 			}
 		 } catch (JSONException e) {
 			e.printStackTrace();
 		}
 	}
 	 
-	 	public void setEdus(String organization, String end_year, String degree, int i){
-	 		if (i == 0) {
-	 			unameEducation1.setText(degree);
-	 			unameEducationSchool1.setText(organization+" "+end_year);
-			} else if (i == 1) {
-				unameEducation2.setText(degree);
-				unameEducationSchool2.setText(organization+" "+end_year);
+	 	public void setEdus(String organization, String end_year, String degree, int i, int length){
+			   if (length != 0) {
+				   noEdus.setVisibility(View.INVISIBLE);
+			   }
+
+			   if (i==0) {
+				   eduTable.removeAllViewsInLayout();
+				   eduTable.removeAllViews();
+			   }
+			   child1 = getLayoutInflater().inflate(R.layout.profilerow, null);
+		       attr1 = (TextView)child1.findViewById(R.id.attr1);
+		       attr2 = (TextView)child1.findViewById(R.id.attr2);
+		       child1.setOnClickListener(new OnClickListener() {
+					@Override
+					public void onClick(View v) {
+						Toast.makeText(getApplicationContext(), "LOCAL DORDIE", 0).show();
+					}
+				});
+		       eduTable.addView(child1);	        
+		       attr1.setText(degree);
+		       attr2.setText(organization+" "+end_year);
+		       
+		       if (i==length-1) {
+		       ImageView applybg = (ImageView)child1.findViewById(R.id.prowbg);
+		       Drawable d = getResources().getDrawable(R.drawable.module_row_last);
+		       applybg.setBackgroundDrawable(d);
+		       //tablelayout1.getChildAt(num);
+		       }
 			}
-			else if (i>2) {
-				Toast.makeText(getApplicationContext(), "Make more rows for capabilities", 0).show();
+		
+		public void setCaps(String title, String price, int i, int length) {
+			   if (length != 0) {
+				   noCaps.setVisibility(View.INVISIBLE);
+			   }
+
+			   if (i==0) {
+				   capTable.removeAllViewsInLayout();
+				    capTable.removeAllViews();
+			   }
+			   child2 = getLayoutInflater().inflate(R.layout.profilerow, null);
+		       attr3 = (TextView)child2.findViewById(R.id.attr1);
+		       attr4 = (TextView)child2.findViewById(R.id.attr2);
+		       child2.setOnClickListener(new OnClickListener() {
+					@Override
+					public void onClick(View v) {
+						Toast.makeText(getApplicationContext(), "LOCAL DORDIE", 0).show();
+					}
+				});
+		       capTable.addView(child2);	        
+		       attr3.setText(title);
+		       attr4.setText(price);
+		       
+		       if (i==length-1) {
+		       ImageView applybg = (ImageView)child2.findViewById(R.id.prowbg);
+		       Drawable d = getResources().getDrawable(R.drawable.module_row_last);
+		       applybg.setBackgroundDrawable(d);
+		       }
 			}
-				
-			}
-		public void setCaps(String title, String price, int i) {
-			if (i == 0) {
-				unameJobSkillJob1.setText(title);
-				unameJobSkillRate1.setText("$"+price+"/hr");
-			} else if (i == 1) {
-				unameJobSkillJob2.setText(title);
-				unameJobSkillRate2.setText("$"+price+"/hr");
-			}
-			else if (i>2) {
-				Toast.makeText(getApplicationContext(), "Make more rows for capabilities", 0).show();
-			}
-				
-			}
-		public void setExps(String title, String description, int i) {
-			if (i == 0) {
-				unameJobExperience1.setText(title);
-				unameJobExperienceCompany1.setText(description);
-			} else if (i == 1) {
-				unameJobExperience2.setText(title);
-				unameJobExperienceCompany2.setText(description);
-			}
-			else if (i>2) {
-				Toast.makeText(getApplicationContext(), "Make more rows for capabilities", 0).show();
-			}
-				
+		
+		public void setExps(String title, String description, int i, int length) {
+			   if (length != 0) {
+				   noExps.setVisibility(View.INVISIBLE);
+			   }
+
+			   if (i==0) {
+				   expTable.removeAllViewsInLayout();
+				   expTable.removeAllViews();
+			   }
+			   child3 = getLayoutInflater().inflate(R.layout.profilerow, null);
+		       attr5 = (TextView)child3.findViewById(R.id.attr1);
+		       attr6 = (TextView)child3.findViewById(R.id.attr2);
+		       child3.setOnClickListener(new OnClickListener() {
+					@Override
+					public void onClick(View v) {
+						Toast.makeText(getApplicationContext(), "LOCAL DORDIE", 0).show();
+					}
+				});
+		       expTable.addView(child3);	        
+		       attr5.setText(title);
+		       attr6.setText(description);
+		       
+		       if (i==length-1) {
+		       ImageView applybg = (ImageView)child3.findViewById(R.id.prowbg);
+		       Drawable d = getResources().getDrawable(R.drawable.module_row_last);
+		       applybg.setBackgroundDrawable(d);
+		       }
 			}
 		@Override
 		public void onBackPressed() {
