@@ -106,6 +106,7 @@ public class HomePage extends Activity {
 	private TextView unameEducation2;
 	private TextView unameEducationSchool2;
 	private TextView unameJobExperienceCompany2;
+	private TextView unameEducationText;
 	private ImageButton unameJobExpereince2Button;
 	private String profdetails;
     private ResponseReceiver receiver;
@@ -160,6 +161,8 @@ public class HomePage extends Activity {
         unameSummaryText.setTypeface(hb); 
         unameExperienceText=(TextView)this.findViewById(R.id.unameExperienceText);
         unameExperienceText.setTypeface(hb);
+        unameEducationText=(TextView)this.findViewById(R.id.unameEducationText);
+        unameEducationText.setTypeface(hb);
         capTable = (TableLayout)this.findViewById(R.id.capTable);
         eduTable = (TableLayout)this.findViewById(R.id.eduTable);
         expTable = (TableLayout)this.findViewById(R.id.expTable);
@@ -185,6 +188,7 @@ public class HomePage extends Activity {
 	    unameSummaryText.setText(name+"'s Summary");
   	    unameJobSummaryText.setText(name+"'s Capabilities");
   	    unameExperienceText.setText(name+"'s Experience");
+  	    unameEducationText.setText(name+"'s Education");
         /*
          * Stuff From Tab
          * 
@@ -394,6 +398,7 @@ public class HomePage extends Activity {
 	 	public void setEdus(String organization, String end_year, String degree, int i, int length){
 			   if (length != 0) {
 				   noEdus.setVisibility(View.INVISIBLE);
+				   noEdus.removeAllViews();
 			   }
 
 			   if (i==0) {
@@ -424,6 +429,7 @@ public class HomePage extends Activity {
 		public void setCaps(String title, String price, int i, int length) {
 			   if (length != 0) {
 				   noCaps.setVisibility(View.INVISIBLE);
+				   noCaps.removeAllViews();
 			   }
 
 			   if (i==0) {
@@ -453,6 +459,7 @@ public class HomePage extends Activity {
 		public void setExps(String title, String description, int i, int length) {
 			   if (length != 0) {
 				   noExps.setVisibility(View.INVISIBLE);
+				   noExps.removeAllViews();
 			   }
 
 			   if (i==0) {

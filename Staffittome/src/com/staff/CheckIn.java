@@ -127,10 +127,15 @@ public class CheckIn extends Activity { //
     private int counter;
     private LayoutInflater inflater; 
     private static TableLayout tablelayout1;
+    private static TableLayout jobLayout;
     private static View child;
     private static TextView jobtitle;
     private static TextView jobdesc;
-
+    private static View child2;
+    private static TextView jtitle;
+    private static TextView jdesc;
+    private static FrameLayout noJobs;
+    private FrameLayout noApps;
     @Override
 	public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -150,44 +155,17 @@ public class CheckIn extends Activity { //
         myJobsText.setTypeface(hb);
         myJobsNum=(TextView)this.findViewById(R.id.myJobsNum);
         myJobsNum.setTypeface(hm);
-       /*
-        myJobTitle1=(TextView)this.findViewById(R.id.myJobTitle1);
-        myJobTitle1.setTypeface(hm);
-        myJobDesc1=(TextView)this.findViewById(R.id.myJobDesc1);
-        myJobDesc1.setTypeface(hm);
-        myJobManual1=(ImageButton)this.findViewById(R.id.myJobManual1);
-        myJobCheckIn1=(ImageButton)this.findViewById(R.id.myJobCheckIn1);
-      
-        myJobTitle2=(TextView)this.findViewById(R.id.myJobTitle2);
-        myJobTitle2.setTypeface(hm);
-        myJobDesc2=(TextView)this.findViewById(R.id.myJobDesc2);
-        myJobDesc2.setTypeface(hm);
-        myJobCheckIn2=(ImageButton)this.findViewById(R.id.myJobCheckIn2);
-        myJobManual2=(ImageButton)this.findViewById(R.id.myJobManual2);
-        */
         jobApplicationText=(TextView)this.findViewById(R.id.jobApplicationsText);
         jobApplicationText.setTypeface(hb);
         jobApplicationsNum=(TextView)this.findViewById(R.id.jobApplicationsNum);
         jobApplicationsNum.setTypeface(hm);
-        /*jobAppTitle1=(TextView)this.findViewById(R.id.jobAppTitle1);
-        jobAppTitle1.setTypeface(hm);
-        jobAppDesc1=(TextView)this.findViewById(R.id.jobAppDesc1);
-        jobAppDesc1.setTypeface(hm);
-        jobAppStatus1=(TextView)this.findViewById(R.id.jobAppStatus1);
-        jobAppStatus1.setTypeface(hm);
-        jobAppButton1=(ImageButton)this.findViewById(R.id.jobAppButton1);
-        jobAppTitle2=(TextView)this.findViewById(R.id.jobAppTitle2);
-        jobAppTitle2.setTypeface(hm);
-        jobAppDesc2=(TextView)this.findViewById(R.id.jobAppDesc2);
-        jobAppDesc2.setTypeface(hm);
-        jobAppStatus2=(TextView)this.findViewById(R.id.jobAppStatus2);
-        jobAppStatus2.setTypeface(hm);
-        jobAppButton2=(ImageButton)this.findViewById(R.id.jobAppButton2);
-        */
         user_pic = (ImageView)this.findViewById(R.id.userpic);
         user_pic.setScaleType( ScaleType.CENTER_CROP );
 		  tablelayout1 = (TableLayout)this.findViewById(R.id.tableLayout1);
-
+		  noApps=(FrameLayout)this.findViewById(R.id.noApps);
+		  noJobs=(FrameLayout)this.findViewById(R.id.noJobs);
+		  jobLayout=(TableLayout)this.findViewById(R.id.jobTable);
+		 
 
         /*
          * Layout inflater test stuff
@@ -381,7 +359,7 @@ public class CheckIn extends Activity { //
 	        
 	    }
 	  
-	public static void parseContracts(String stuff){
+	public  void parseContracts(String stuff){
 		JSONArray jresult;
         JSONArray jsearch;
 		JSONObject json_data = null;
@@ -397,7 +375,7 @@ public class CheckIn extends Activity { //
 	  json_data = jresult.getJSONObject(i); //For each json object
 	  String title = json_data.getString("title");
 	  String employer_name = json_data.getString("employer_name");
-	  setContracts(title, employer_name, i);
+	  setContracts(title, employer_name, i, jresult.length());
 	  count++;
     }        
 		  myJobsNum.setText(Integer.toString(count)+" jobs");
@@ -406,20 +384,36 @@ public class CheckIn extends Activity { //
 	}
 }
 	
-	private static void setContracts(String title, String employer_name, int i) {
-		if (i == 0) {
-			myJobTitle1.setText(title);
-			myJobDesc1.setText(employer_name);
-			} else if (i == 1) {
-			myJobTitle2.setText(title);
-			myJobDesc2.setText(employer_name);
-			}
-			else if (i>2) {
-				Log.d("TAG", "Need to make more rows for the contracts you have");
-			}
-				
-			
-	}
+	private  void setContracts(String title, String employer_name, int i,int  length) {
+		 if (length != 0 ) {
+			 noJobs.setVisibility(View.INVISIBLE);
+			 noJobs.removeAllViews();
+		 }
+		   if (i==0) {
+			   jobLayout.removeAllViewsInLayout();
+			   jobLayout.removeAllViews();
+		   }
+		   child2 = getLayoutInflater().inflate(R.layout.jobrow, null);
+	       jtitle = (TextView)child2.findViewById(R.id.jtitle);
+	       jdesc = (TextView)child2.findViewById(R.id.jdesc);
+	       child2.setOnClickListener(new OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					Toast.makeText(getApplicationContext(), "jobid for this job is: ", 0).show();
+				}
+			});
+	       jobLayout.addView(child2);	        
+	       jtitle.setText(title);
+	       jdesc.setText(employer_name);
+	       
+	       if (i==length-1) {
+	       ImageView applybg = (ImageView)child2.findViewById(R.id.jrowbg);
+	       Drawable d = getResources().getDrawable(R.drawable.module_row_last);
+	       applybg.setBackgroundDrawable(d);
+	       //tablelayout1.getChildAt(num);
+	       }
+	       }
+	
 
 	public  void parseResponse(String stuff){
 		JSONArray jresult;
@@ -454,7 +448,10 @@ public class CheckIn extends Activity { //
 		}
 	}
 	public  void setTexts(String title, String company_name, final String job_id, int i, int length) { 
-
+		 if (length != 0 ) {
+			 noApps.setVisibility(View.INVISIBLE);
+			 noApps.removeAllViews();
+		 }
 		   if (i==0) {
 			   tablelayout1.removeAllViewsInLayout();
 			    tablelayout1.removeAllViews();
