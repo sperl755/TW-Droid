@@ -29,6 +29,7 @@ android:screenOrientation="portrait" ></activity>
 		<activity android:name=".CheckIn" ></activity>
 		<activity android:name=".DashboardActivity" ></activity>
 		<activity android:name=".StaffYourself" ></activity>
+				<activity android:name=".TestHtml" ></activity>
 		<activity android:name=".SYourself" ></activity>
 		<activity android:name=".StaffToFriend" ></activity>
 		<activity android:name=".ListJobs" ></activity>
