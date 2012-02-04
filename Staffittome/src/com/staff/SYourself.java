@@ -152,8 +152,41 @@ public class SYourself extends Activity {
 	   		this.startActivity(intent);
 		   }
 	   }
+	   /*
+	   public void checkLoading(){
+		      framecheck.setVisibility(View.INVISIBLE);
+	    	  checkproglin.setVisibility(View.VISIBLE);
+			   try{
+			          new Thread(){
+			              public void run() {
+			                  initializeApp();
+			                  uiHandler.post( new Runnable(){
+			                      @Override
+			                      public void run() {
+			                          if(isUpdateRequired){
+			                          }else{
+			                        	  user_pic.setImageBitmap(TabMain.userpic);
+			                        	  connectionsButton.setText(TabMain.connnum);
+			                        	  checkproglin.setVisibility(View.GONE);
+			                        	  framecheck.setVisibility(View.VISIBLE);
+			                          }
+			                      }
+			                  } );
+			              }
+			              public void initializeApp(){
+			            	  while (done==null) {
+			            		  try {
+									sleep(1);
+								} catch (InterruptedException e) {
+									e.printStackTrace();
+								}
+			            	  }
+			              }
+			      }.start();
+			      }catch (Exception e) {}
+		  }
 	   
-	   
+	   */
 	   public class ResponseReceiver extends BroadcastReceiver {
 	        public static final String ACTION_RESP = "com.staff.intent.action.MESSAGE_PROCESSED";
 	        @Override

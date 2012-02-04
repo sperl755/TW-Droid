@@ -216,21 +216,6 @@ public class CheckIn extends Activity { //
 			}
 		});
 
-        
-        /*
-        jobAppButton1.setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				Toast.makeText(getApplicationContext(), "This should take you to the job apply page and set the status", 0).show();
-			}
-		});
-        jobAppButton2.setOnClickListener(new OnClickListener() {
-			@Override
-			public void onClick(View v) {
-				Toast.makeText(getApplicationContext(), "This should take you to the job apply page and set the status", 0).show();
-			}
-		});
-		*/
 
         /*
          * grabbing some stuff from PREFS

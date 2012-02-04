@@ -20,6 +20,12 @@ public class StaffService extends IntentService {
     public static final String EXTRA_PARAM = "";
     public static final String PARAM_OUT_MSG = "";
     private int counter=0;
+	private String is_manual;
+	private String checkin_or_checkout;
+	private String start_datetime;
+	private String end_datetime;
+	private String contract_id;
+    private String status_notes;
 
     public StaffService() {
         super("StaffService");
@@ -30,7 +36,26 @@ public class StaffService extends IntentService {
 
         String msg = intent.getStringExtra(PARAM_IN_MSG);
         String extraParam = intent.getStringExtra("companyid"); // This will be a job id, or message id, or company id, something of that sort that needs to be passed.
-
+        
+        /* Getting extras for the check in class) 
+         * 
+         */
+        if (intent.hasExtra("status_notes")) {
+         status_notes = intent.getStringExtra("status_notes");
+        } if (intent.hasExtra("is_manual")) {
+         is_manual = intent.getStringExtra("is_manual");
+        } if (intent.hasExtra("checkin_or_checkout")) {
+         checkin_or_checkout = intent.getStringExtra("checkin_or_checkout");
+        } if (intent.hasExtra("start_datetime")) {
+         start_datetime = intent.getStringExtra("start_datetime");
+        } if (intent.hasExtra("end_datetime")) {
+         end_datetime = intent.getStringExtra("end_datetime");
+        } if (intent.hasExtra("contract_id")) {
+         contract_id = intent.getStringExtra("contract_id");
+        }
+        
+        
+        
     	SharedPreferences prefs= PreferenceManager.getDefaultSharedPreferences(getApplicationContext()); 
         String access_token = prefs.getString("access_token", null);
         Intent broadcastIntent = new Intent();
@@ -65,6 +90,9 @@ public class StaffService extends IntentService {
         	broadcastIntent.putExtra("contracts", StaffTasks.viewContracts(this)); 
         	sendBroadcast(broadcastIntent);
             stopSelf();
+        } else if (msg.equals("checkInJob")){ // Async way of checking in/out of jobs
+        	StaffTasks.checkInCheckOut(this, status_notes, is_manual, checkin_or_checkout, start_datetime, end_datetime, contract_id); //Kind of Sketchy right now
+        	stopSelf();
         } else if (msg.equals("availOn")){ // Async way of setting availability on
         	StaffTasks.setAvailability("1", this); //Kind of Sketchy right now
         	stopSelf();       

@@ -49,7 +49,7 @@ public class TabMain extends TabActivity {
 
 	    addActivityTab(new TextView(this), "Dashboard", R.drawable.home, new Intent(TabMain.this, DashboardActivity.class));
 		addActivityTab(new TextView(this), "Job Search", R.drawable.search, new Intent(TabMain.this, transition.class));
-		addActivityTab(new TextView(this), "Staff Out", R.drawable.staff_out, new Intent(TabMain.this, TestHtml.class));
+		addActivityTab(new TextView(this), "Staff Out", R.drawable.staff_out, new Intent(TabMain.this, SYourself.class));
 		addActivityTab(new TextView(this), "My Jobs", R.drawable.jobs, new Intent(TabMain.this, CheckIn.class));
 		addActivityTab(new TextView(this), "Profile", R.drawable.profile, new Intent(TabMain.this, HomePage.class));
 	

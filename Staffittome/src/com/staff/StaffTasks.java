@@ -136,6 +136,43 @@ public class StaffTasks{
     				e.printStackTrace();
     			}
    }
+   public static String checkInCheckOut(Context c, String status_notes, String is_manual, String checkin_or_checkout, String start_datetime, String end_datetime, String contract_id) {
+		SharedPreferences prefs= PreferenceManager.getDefaultSharedPreferences(c); 
+       String key = prefs.getString("staffkey", null);
+       Log.d("TAG",key);
+       String checkreturn=null;
+   	        MyHttpClient client = new MyHttpClient(c);
+   	        
+   	        HttpPost post = new HttpPost("https://helium.staffittome.com/apis/checkin_checkout");
+   	        List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>(2);
+   	        nameValuePairs.add(new BasicNameValuePair("session_key", key));
+   	        nameValuePairs.add(new BasicNameValuePair("status_notes", status_notes));
+   	        nameValuePairs.add(new BasicNameValuePair("is_manual", is_manual));
+   	        nameValuePairs.add(new BasicNameValuePair("checkin_or_checkout", checkin_or_checkout));
+   	        nameValuePairs.add(new BasicNameValuePair("start_datetime", start_datetime));
+   	        nameValuePairs.add(new BasicNameValuePair("end_datetime", end_datetime));
+   	        nameValuePairs.add(new BasicNameValuePair("contract_id", contract_id));
+
+
+   	        try {
+   	        post.setEntity(new UrlEncodedFormEntity(nameValuePairs));
+   			ResponseHandler<String> responseHandler=new BasicResponseHandler();
+   			checkreturn = client.execute(post, responseHandler);
+   			Log.d("TAG","TEST RESULTS FROM HTTPS CAPABILITY LIST IS: "+checkreturn);
+   			//parseResponse(responseBody);
+
+   			} catch (ClientProtocolException e) {
+   				e.printStackTrace();
+   			} catch (IOException e) {
+   				e.printStackTrace();
+   			} catch (ParseException e) {
+   				e.printStackTrace();
+   			}
+   			return checkreturn;
+  }
+   
+   
+   
    private void viewApplicationStatus(String appid, Context c) {
 		SharedPreferences prefs= PreferenceManager.getDefaultSharedPreferences(c); 
        String key = prefs.getString("staffkey", null);
